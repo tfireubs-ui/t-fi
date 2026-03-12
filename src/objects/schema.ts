@@ -75,6 +75,7 @@ CREATE INDEX IF NOT EXISTS idx_signals_btc_address      ON signals(btc_address);
 CREATE INDEX IF NOT EXISTS idx_signals_created_at       ON signals(created_at);
 CREATE INDEX IF NOT EXISTS idx_signals_correction_of    ON signals(correction_of);
 CREATE INDEX IF NOT EXISTS idx_earnings_btc_address     ON earnings(btc_address);
+CREATE INDEX IF NOT EXISTS idx_classifieds_btc_address  ON classifieds(btc_address);
 CREATE INDEX IF NOT EXISTS idx_classifieds_expires_at   ON classifieds(expires_at);
 CREATE INDEX IF NOT EXISTS idx_classifieds_category     ON classifieds(category);
 `;
