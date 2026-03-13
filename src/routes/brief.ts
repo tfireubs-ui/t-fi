@@ -2,30 +2,47 @@ import { Hono } from "hono";
 import type { Env, AppVariables } from "../lib/types";
 import { getLatestBrief, getBriefByDate, listBriefDates, recordEarning } from "../lib/do-client";
 import { BRIEF_PRICE_SATS, CORRESPONDENT_SHARE } from "../lib/constants";
+import { getPacificDate } from "../lib/helpers";
 import { buildPaymentRequired, verifyPayment } from "../services/x402";
 
 const briefRouter = new Hono<{ Bindings: Env; Variables: AppVariables }>();
 
-// GET /api/brief — get the most recent compiled brief
+// GET /api/brief — get today's compiled brief, or today's date with empty content if not yet compiled.
+// Always returns today's Pacific date so the frontend can show today's signal feed before the
+// brief is compiled, rather than falling back to yesterday's stale brief.
 briefRouter.get("/api/brief", async (c) => {
   const format = c.req.query("format") ?? "json";
+  const today = getPacificDate();
   const [brief, archive] = await Promise.all([
     getLatestBrief(c.env),
     listBriefDates(c.env),
   ]);
 
-  if (!brief) {
-    return c.json(
-      {
-        error: "No briefs compiled yet",
-        hint: "POST /api/brief/compile to compile the first brief",
-      },
-      404
-    );
+  // Only use the brief if it was compiled today — if it's from a previous day, treat it as
+  // absent so the frontend shows today's date and falls through to renderSignalFeed().
+  const todaysBrief = brief?.date === today ? brief : null;
+
+  if (!todaysBrief) {
+    if (format === "text") {
+      return new Response("", {
+        headers: {
+          "Content-Type": "text/plain; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "no-store",
+        },
+      });
+    }
+    return c.json({
+      date: today,
+      compiledAt: null,
+      latest: true,
+      archive,
+      inscription: null,
+    });
   }
 
   if (format === "text") {
-    return new Response(brief.text, {
+    return new Response(todaysBrief.text, {
       headers: {
         "Content-Type": "text/plain; charset=utf-8",
         "Access-Control-Allow-Origin": "*",
@@ -34,24 +51,24 @@ briefRouter.get("/api/brief", async (c) => {
     });
   }
 
-  const jsonData = brief.json_data ? (JSON.parse(brief.json_data) as Record<string, unknown>) : {};
+  const jsonData = todaysBrief.json_data ? (JSON.parse(todaysBrief.json_data) as Record<string, unknown>) : {};
 
   // Build inscription object matching frontend expectations
-  const inscription = brief.inscription_id
-    ? { inscriptionId: brief.inscription_id, inscribedTxid: brief.inscribed_txid }
+  const inscription = todaysBrief.inscription_id
+    ? { inscriptionId: todaysBrief.inscription_id, inscribedTxid: todaysBrief.inscribed_txid }
     : (jsonData.inscription ?? null);
 
   c.header("Cache-Control", "public, max-age=60, s-maxage=300");
   return c.json({
     preview: false,
-    date: brief.date,
-    compiledAt: brief.compiled_at,
+    date: todaysBrief.date,
+    compiledAt: todaysBrief.compiled_at,
     latest: true,
     archive,
     inscription,
     price: { amount: BRIEF_PRICE_SATS, asset: "sBTC (sats)", protocol: "x402" },
     ...jsonData,
-    text: brief.text,
+    text: todaysBrief.text,
   });
 });
 
