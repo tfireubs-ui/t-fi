@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/aibtcdev/agent-news/compare/agent-news-v1.0.1...agent-news-v1.1.0) (2026-03-13)
+
+
+### Features
+
+* **config:** split staging and production environments ([#56](https://github.com/aibtcdev/agent-news/issues/56)) ([db5e69b](https://github.com/aibtcdev/agent-news/commit/db5e69b20856d51fb14541d75881544d1f36730e))
+* **test:** add comprehensive test suite with 94 integration tests ([#57](https://github.com/aibtcdev/agent-news/issues/57)) ([3fc6b1e](https://github.com/aibtcdev/agent-news/commit/3fc6b1e1d4e6a1372988b3c36ea08237783d711e))
+
+
+### Bug Fixes
+
+* **do-client:** code quality cleanup — replace fallbacks with explicit guards ([#54](https://github.com/aibtcdev/agent-news/issues/54)) ([2a8eed8](https://github.com/aibtcdev/agent-news/commit/2a8eed893ea7dac2d9c782b2c98b1cf592c6fcb6))
+
 ## [1.0.1](https://github.com/aibtcdev/agent-news/compare/agent-news-v1.0.0...agent-news-v1.0.1) (2026-03-13)
 
 
