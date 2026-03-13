@@ -26,6 +26,7 @@ async function doFetch<T>(
 export async function listBeats(env: Env): Promise<Beat[]> {
   const stub = getStub(env);
   const result = await doFetch<Beat[]>(stub, "/beats");
+  if (!result.ok) throw new Error(result.error ?? "Failed to list beats");
   return result.data ?? [];
 }
 
@@ -88,6 +89,7 @@ export async function listSignals(
   if (filters.limit !== undefined) params.set("limit", String(filters.limit));
   const qs = params.toString();
   const result = await doFetch<Signal[]>(stub, `/signals${qs ? `?${qs}` : ""}`);
+  if (!result.ok) throw new Error(result.error ?? "Failed to list signals");
   return result.data ?? [];
 }
 
@@ -161,6 +163,7 @@ export async function correctSignal(
 export async function listBriefDates(env: Env): Promise<string[]> {
   const stub = getStub(env);
   const result = await doFetch<string[]>(stub, "/briefs/dates");
+  if (!result.ok) throw new Error(result.error ?? "Failed to list brief dates");
   return result.data ?? [];
 }
 
@@ -241,6 +244,7 @@ export async function listClassifieds(
   if (filters.limit !== undefined) params.set("limit", String(filters.limit));
   const qs = params.toString();
   const result = await doFetch<Classified[]>(stub, `/classifieds${qs ? `?${qs}` : ""}`);
+  if (!result.ok) throw new Error(result.error ?? "Failed to list classifieds");
   return result.data ?? [];
 }
 
@@ -291,6 +295,7 @@ export interface CorrespondentRow {
 export async function listCorrespondents(env: Env): Promise<CorrespondentRow[]> {
   const stub = getStub(env);
   const result = await doFetch<CorrespondentRow[]>(stub, "/correspondents");
+  if (!result.ok) throw new Error(result.error ?? "Failed to list correspondents");
   return result.data ?? [];
 }
 
@@ -305,6 +310,7 @@ export async function listStreaks(
   const stub = getStub(env);
   const qs = limit !== undefined ? `?limit=${limit}` : "";
   const result = await doFetch<Streak[]>(stub, `/streaks${qs}`);
+  if (!result.ok) throw new Error(result.error ?? "Failed to list streaks");
   return result.data ?? [];
 }
 
@@ -356,6 +362,7 @@ export interface InscriptionRow {
 export async function listInscriptions(env: Env): Promise<InscriptionRow[]> {
   const stub = getStub(env);
   const result = await doFetch<InscriptionRow[]>(stub, "/inscriptions");
+  if (!result.ok) throw new Error(result.error ?? "Failed to list inscriptions");
   return result.data ?? [];
 }
 
@@ -412,6 +419,7 @@ export async function listEarnings(
     stub,
     `/earnings/${encodeURIComponent(address)}`
   );
+  if (!result.ok) throw new Error(result.error ?? "Failed to list earnings");
   return result.data ?? [];
 }
 

@@ -1478,9 +1478,9 @@ export class NewsDO extends DurableObject<Env> {
   async fetch(request: Request): Promise<Response> {
     try {
       return await this.router.fetch(request);
-    } catch {
+    } catch (e) {
       return new Response(
-        JSON.stringify({ ok: false, error: "Internal error" }),
+        JSON.stringify({ ok: false, error: e instanceof Error ? e.message : "Unknown error" }),
         { status: 500, headers: { "content-type": "application/json" } }
       );
     }
