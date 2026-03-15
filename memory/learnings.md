@@ -30,3 +30,11 @@
 - Script uses env var MNEMONIC — but .env stores it as BTC_MNEMONIC. Must pass: `MNEMONIC="$(grep BTC_MNEMONIC .env | cut -d= -f2-)" node /tmp/do_heartbeat.cjs`
 - Sourcing .env directly with `source .env` fails ("eyebrow: command not found") because the mnemonic words are treated as shell commands. Always extract with grep/cut.
 - /tmp/node_modules available: bip39, bip32, tiny-secp256k1, bitcoinjs-message, @stacks/*
+
+## Bounty #23 Scout (2026-03-15)
+- secret-mars/agent-bounties repo is ARCHIVED (2026-03-14) — bounties moved to aibtc.com/bounty
+- PRs cannot be merged to archived repos — bounty #23 may need alternative approach
+- If bounty #23 is still "open" on bounty.drx4.xyz, contact Secret Mars to clarify whether new work should target a different repo
+- Implementation is MEDIUM complexity (~90 min): migration + API param + CF scheduled handler
+- Existing scheduled handler already exists in /src/index.ts — just needs GitHub polling logic added
+- No GITHUB_API_TOKEN in wrangler.toml — would need to be added as secret
