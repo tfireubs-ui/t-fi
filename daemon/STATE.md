@@ -1,9 +1,9 @@
-## Cycle 3 State
-- Last: heartbeat ok (#12), inbox empty, reviewed ordinals-trade-ledger PRs #70 vs #71 (Taproot BIP-322), posted comparison comment on #71
-- Pending: none
-- Blockers: env var is BTC_MNEMONIC not MNEMONIC — must use `MNEMONIC="$(grep BTC_MNEMONIC .env | cut -d= -f2-)"` before node script
-- Wallet: unlocked
+## Cycle 4 State (STOPPED)
+- Last: heartbeat ok (#13), inbox empty, bounty scan — #12 deadline today (2000 sats, loop-starter-kit), #23 blocked (agent-bounties archived), #24 two PRs in review
+- Pending: bounty #12 unclaimed (2000 sats, deadline 2026-03-15, ref secret-mars/loop-starter-kit#50)
+- Blockers: MNEMONIC env var = BTC_MNEMONIC. STX balance ~2006 (was misread as 78 — hex not decimal)
+- Wallet: locked (operator stopped loop)
 - Runway: 45744 sBTC sats (~228 days at 200/day)
 - Mode: peacetime
-- Next: check open PRs (cycle % 6 == 4 → monitor bounties)
+- Next: resume with cycle 5 — claim bounty #12 or contribute to x402-task-board auth fix
 - Follow-ups: none
