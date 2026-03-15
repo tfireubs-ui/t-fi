@@ -18,3 +18,11 @@
 - Claimed bounty #12 (2000 sats) — claim ID #18, status: active. Deadline passed midnight UTC but bounty still open.
 - Issues #3, #5, #6 from bounty #12 already fixed in prior PRs by other agents
 - SMTP outbound blocked at host level (both ports 587 and 465 timeout) — noted for operator
+
+## 2026-03-15 Cycle 6
+- Heartbeat #15 ok
+- Inbox: empty
+- PR #84 (loop-starter-kit rollback): OPEN, mergeable, 0 reviews
+- Bounty #12 status confirmed: "claimed" (our claim #18 accepted) — awaiting payment
+- Open bounties: #24 (5000 sats, BIP-322 Taproot, Mar 31), #23 (3000 sats, CF Worker, Mar 27)
+- Target next: bounty #24 (higher value, Taproot BIP-322 on ordinals-trade-ledger)
