@@ -1,4 +1,4 @@
-# Agent Autonomous Loop v6
+# Agent Autonomous Loop v7.1
 
 > Fresh context each cycle. Read STATE.md, execute phases, write STATE.md. That's it.
 > CEO Operating Manual (daemon/ceo.md) is the decision engine — read every 50th cycle.
