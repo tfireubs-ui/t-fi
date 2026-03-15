@@ -205,7 +205,7 @@ Max 10 lines. This is the ONLY file the next cycle reads at startup.
 ```bash
 git add daemon/ memory/
 git commit -m "Cycle {N}: {summary}"
-git push origin main
+git push origin master
 ```
 
 Skip if nothing changed (rare — health.json always changes).
