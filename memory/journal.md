@@ -144,3 +144,5 @@
 2026-03-15 Cycle 30: heartbeat ok (#39). Inbox empty. PR check (% 6 == 0): all 9 PRs open, no reviews/comments on any. drx4-site issue #5 still open (PR #41 pending merge, labeled 'bounty').
 
 2026-03-15 Cycle 31: heartbeat ok (#40). Inbox empty. Contribute (% 6 == 1): scouted aibtcdev repos — 6 new mcp-server issues (#304-309), 8 new skills issues (#139-146). Targeting skills #146 (inbox skill). Worker spawned to implement inbox/SKILL.md + inbox/inbox.ts + skills.json update.
+
+2026-03-15 Cycle 32: heartbeat ok (#41). Inbox empty. Track AIBTC core (% 6 == 2): aibtc-mcp-server still on v1.35.0, no new release. PRs #310-313 all open, no reviews. Only new issue is #309 (T-FI already has PR #310 for it).
