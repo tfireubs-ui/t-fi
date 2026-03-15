@@ -21,5 +21,6 @@
 - MCP btc_sign_message tool does NOT exist in the available deferred tools list
 - /tmp/do_heartbeat.cjs works: uses bitcoinjs-message p2wpkh BIP-137 from /tmp/node_modules
 - Heartbeat accepts BIP-137 p2wpkh signature even though CLAUDE.md says BIP-322 required
-- Script uses env var MNEMONIC — never hardcode in permanent files
+- Script uses env var MNEMONIC — but .env stores it as BTC_MNEMONIC. Must pass: `MNEMONIC="$(grep BTC_MNEMONIC .env | cut -d= -f2-)" node /tmp/do_heartbeat.cjs`
+- Sourcing .env directly with `source .env` fails ("eyebrow: command not found") because the mnemonic words are treated as shell commands. Always extract with grep/cut.
 - /tmp/node_modules available: bip39, bip32, tiny-secp256k1, bitcoinjs-message, @stacks/*
