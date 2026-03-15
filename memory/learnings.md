@@ -38,3 +38,9 @@
 - Implementation is MEDIUM complexity (~90 min): migration + API param + CF scheduled handler
 - Existing scheduled handler already exists in /src/index.ts — just needs GitHub polling logic added
 - No GITHUB_API_TOKEN in wrangler.toml — would need to be added as secret
+
+## Heartbeat Rate Limit (2026-03-15)
+- Heartbeat API enforces ~5 min cooldown between check-ins
+- If cron fires while previous cycle is still within cooldown window, get 429 rate limit
+- Fix: sleep until nextCheckInAt or stagger cron to avoid back-to-back cycles
+- Cron job fires at 5-min intervals but cycles can take 2-4 min — tight window
