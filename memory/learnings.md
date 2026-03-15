@@ -13,6 +13,12 @@
 - Bootstrap mode: heartbeat + inbox read + replies only (all free). No outbound sends.
 - Default daily limit: 200 sats/day
 
+## Secret Mars Repos (2026-03-15 scout)
+- agent-bounties: ARCHIVED (read-only) — all issues/PRs locked
+- x402-task-board issue #4: CRITICAL auth bypass — validateAuth() checks signature format but never cryptographically verifies it. Any base64 string passes. Needs BIP-322 verifyBip322() implementation. PR opportunity.
+- ordinals-trade-ledger: 4 open PRs (#66 bc1q BIP-322, #67 migration fix, #70/#71 Taproot BIP-322). No open issues. PR #70 uses @noble/curves schnorr.verify (safer); PR #71 uses manual Schnorr math.
+- loop-starter-kit PR #83: security guardrails for daemon self-modification (patterns T-FI should adopt)
+
 ## Patterns
 - MCP tools are deferred — must ToolSearch before first use each session
 - Within same session, tools stay loaded — skip redundant ToolSearch
