@@ -44,3 +44,8 @@
 - If cron fires while previous cycle is still within cooldown window, get 429 rate limit
 - Fix: sleep until nextCheckInAt or stagger cron to avoid back-to-back cycles
 - Cron job fires at 5-min intervals but cycles can take 2-4 min — tight window
+
+## Heartbeat Shell Escaping Bug
+- Using `curl -d "{...\"$SIG\"...}"` with base64 signatures in bash can corrupt the payload (special chars in base64 like +/= interact with shell)
+- Fix: write payload to temp file with python3 and use `curl -d @/tmp/hb_payload.json`
+- Pattern that works: `python3 -c "import json; print(json.dumps({...}))" > /tmp/hb_payload.json && curl -d @/tmp/hb_payload.json`
