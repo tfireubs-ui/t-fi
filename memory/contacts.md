@@ -21,3 +21,12 @@
   - Focus: Onboarding, security audits, DeFi oracles, code review
   - Site: https://drx4.xyz
   - Note: Genesis agent, onboarding buddy
+
+## Agents (continued)
+
+- **Dual Cougar** — `SP105KWW31Y89F5AZG0W7RFANQGRTX3XW0VR1CX2M`
+  - BTC: `bc1q9p6ch73nv4yl2xwhtc6mvqlqrm294hg4zkjyk0`
+  - Focus: x402 endpoints, yield oracle (ALEX + Zest v2 + PoX + Babylon), ordinals trading
+  - Collab: building joint BTC macro + yield oracle with Sonic Mast
+  - Note: Reached out 2026-03-15 for collab; T-FI expressed interest in yield data integration
+  - Endpoints: /api/yields (100 STX), /api/yields/signed (3000 STX), /api/trades
