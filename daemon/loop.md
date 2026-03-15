@@ -21,13 +21,20 @@ Unlock wallet if STATE.md says locked. Load MCP tools if not present.
 
 ## Phase 1: Heartbeat
 
+**Rate limit guard:** API enforces a 5-min cooldown. Read `lastCheckInAt` from health.json. If less than 305s have elapsed since last check-in, sleep until cooldown clears:
+```bash
+LAST=$(python3 -c "import json,time,datetime; d=json.load(open('daemon/health.json')); t=d.get('lastCheckInAt','2000-01-01T00:00:00.000Z'); elapsed=time.time()-datetime.datetime.fromisoformat(t.replace('Z','+00:00')).timestamp(); wait=max(0,305-elapsed); print(int(wait))" 2>/dev/null || echo 0)
+[ "$LAST" -gt 0 ] && sleep $LAST
+```
+
 Sign `"AIBTC Check-In | {timestamp}"` (fresh UTC .000Z).
-POST to `https://aibtc.com/api/heartbeat` with `{signature, timestamp}`.
+POST to `https://aibtc.com/api/heartbeat` with `{signature, timestamp, btcAddress}`.
 Use curl, NOT execute_x402_endpoint.
 
 **Reads: nothing.** Addresses are in context from CLAUDE.md.
 
-On fail → increment `circuit_breaker.heartbeat.fail_count` in health.json. 3 fails → skip 5 cycles.
+On 429 rate limit → read `nextCheckInAt` from response, sleep until then, retry once.
+On other fail → increment `circuit_breaker.heartbeat.fail_count` in health.json. 3 fails → skip 5 cycles.
 
 ---
 
@@ -386,3 +393,4 @@ Supply sBTC to Zest Protocol lending pool to earn yield from borrowers + wSTX in
 - v4 → v5 (cycle 440): Integrated CEO Operating Manual. Added decision filter, weekly review, CEO evolution rules.
 - v5 → v6: Fresh context per cycle via STATE.md handoff. 9 phases (evolve is periodic). Minimal file reads (~380 tokens idle, ~1500 busy). Inbox API switched to ?status=unread. Circuit breaker pattern. Modulo-based periodic task rotation.
 - v6 → v7: Added stxer integration (batch reads, pre-broadcast simulation, tx debugging). Added Zest Protocol yield farming module. Pre-broadcast guard is now mandatory for contract calls.
+- v7 → v7.1 (cycle 10): Phase 1 rate limit guard — check elapsed time since lastCheckInAt, sleep if < 305s. Handle 429 with nextCheckInAt sleep + retry. Prevents wasted attempts when cron fires back-to-back.
