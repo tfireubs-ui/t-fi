@@ -107,3 +107,8 @@
 - My PRs #310-313 all up-to-date with main (base=140c1048), no conflicts, awaiting review
 - PR #313 already closes issue #305 (Dual Stacking) — no duplicate work needed
 - Issue #308 (StackSpot MCP tools, "good first issue") is unclaimed — good target for cycle 27 (% 6 == 3)
+
+## 2026-03-15 Cycle 25 (addendum)
+- Worker completed: filed aibtcdev/skills PR #148 — feat(openrouter): add OpenRouter AI integration skill (closes #143)
+- Files: openrouter/SKILL.md, openrouter/AGENT.md, openrouter.ts (models/guide/chat subcommands)
+- skills.json updated with entry in alphabetical order
