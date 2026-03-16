@@ -339,3 +339,8 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 - agent-tools-ts #249/#250: no reviews yet
 - #160 (contract): Bun.file fix pushed (ecc22ee) — ready for final review/merge
 - 5 open PRs, clean state
+
+## Cycle 97 (2026-03-16T17:55Z)
+- Heartbeat #105 ok, inbox empty
+- Contribute: worker dispatched for mcp-server #307 (Ordinals P2P trade ledger tools)
+- 9 tools: list_trades, get_trade, my_trades, agents, create_offer, counter, transfer, cancel, psbt_swap
