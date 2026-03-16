@@ -274,3 +274,10 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 - PR #152 Child inscription: --content-file for binary, reveal fee rate from state
 - PR #153 PSBT: signIdx void return — worker dispatched
 - PR #156 ERC-8004: SKILL.md address lookup doesn't exist in code; missing get_validation_summary subcommand
+
+## Cycle 87 (2026-03-16T14:36Z)
+- Heartbeat #95 ok, inbox empty
+- Contribute: fixed blocking issue in PR #153 (PSBT) — signIdx returns void, not boolean; signed flag now set inside try block. Also clarified +16 vbytes comment.
+- Worker dispatched for #150 (relay-diagnostic): fix stuck-tx threshold 60→600s + AbortController timeouts
+- #153 fix pushed to feat/psbt-skill branch, comment left on PR
+- Still 16 open PRs — need 2 merges to drop below 15 and resume filing new PRs
