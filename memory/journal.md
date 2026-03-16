@@ -350,3 +350,8 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 - Worker #307 completed: PR #324 filed (ordinals P2P — 9 tools for ledger.drx4.xyz)
 - AIBTC core: mcp-server v1.36.0 released. #322 renamed mempool tools to avoid duplicate registration — note for PR #324 review (ensure ordinals_p2p_ prefix is distinct)
 - 6 open PRs — well under saturation
+
+## Cycle 99 (2026-03-16T18:10Z)
+- Heartbeat #107 ok, inbox empty
+- Contribute: worker dispatched for mcp-server #306 (Taproot Multisig tools)
+- 3 tools: taproot_get_pubkey, taproot_verify_cosig, taproot_multisig_guide
