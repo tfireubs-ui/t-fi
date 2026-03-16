@@ -27,9 +27,9 @@ LAST=$(python3 -c "import json,time,datetime; d=json.load(open('daemon/health.js
 [ "$LAST" -gt 0 ] && sleep $LAST
 ```
 
-Sign via node script (outputs to stdout — MUST redirect to file):
+Sign via node script (persistent in ~/tools/, outputs to stdout — MUST redirect to file):
 ```bash
-node /tmp/do_heartbeat.cjs > /tmp/hb_payload.json 2>/dev/null
+node ~/tools/do_heartbeat.cjs > /tmp/hb_payload.json 2>/dev/null
 SIG=$(python3 -c "import json; d=json.load(open('/tmp/hb_payload.json')); print(d['signature'])")
 TS=$(python3 -c "import json; d=json.load(open('/tmp/hb_payload.json')); print(d['timestamp'])")
 curl -s -X POST https://aibtc.com/api/heartbeat \
