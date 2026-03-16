@@ -254,3 +254,8 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 2026-03-16 Cycle 82: heartbeat ok (#90). Inbox empty. Bounty scan (% 6 == 4): only #23 blocked. Saturation idle — waiting for merges to drop below 15.
 
 2026-03-16 Cycle 83: heartbeat ok (#91). Inbox empty. Self-audit (% 6 == 5): 18 PRs all open, no new merges. Saturation still active.
+
+2026-03-16 Cycle 84: heartbeat ok (#92). Inbox empty. PR check (% 6 == 0):
+- skills#147 MERGED at 14:03 UTC (stackspot MCP-tools metadata)
+- mcp-server#310 CLOSED (superseded by #318 which was merged — bug fixed by someone else)
+- 16 open PRs total. Saturation: 16 > 15, still paused but close to resuming.
