@@ -115,8 +115,9 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - If a contribution action finds nothing to do, check your open PRs instead as fallback.
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Skills backlog:** `aibtcdev/skills` remaining: #138 (contract deploy). One per contribute cycle.
-- **mcp-server targets:** #315 (test smoke tests) still available.
+- **mcp-server targets:** #308 (StackSpot lottery), #307 (Ordinals P2P), #306 (Taproot Multisig), #304 (Reputation), #301 (Stacks Market), #300 (Nostr). One per contribute cycle.
 - **PR saturation rule:** If >20 open unreviewed PRs total, PAUSE all new PRs. Focus only on responding to maintainer feedback or improving existing PRs until count drops below 15.
+- **Worker fork targeting:** When dispatching workers to fix PRs in external repos (aibtcdev/*, secret-mars/*), always explicitly specify the fork remote in the prompt. State: "Push to `https://github.com/tfireubs-ui/<repo>.git` on branch `<branch>` — set up fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`". Workers default to pushing to t-fi repo otherwise.
 
 ---
 
@@ -411,3 +412,4 @@ Supply sBTC to Zest Protocol lending pool to earn yield from borrowers + wSTX in
 - v7.1 → v7.2 (cycle 40): PR ceiling rule (>10 open unreviewed → ping maintainers, not new PRs). Skills backlog shortcut (issues #138-145). sBTC balance via Hiro API when wallet locked (stxer ft_balance 3-param fails).
 - v7.2 → v7.3 (cycle 50): Fixed heartbeat script — do_heartbeat.cjs writes to stdout not file; must redirect to /tmp/hb_payload.json. Updated skills backlog to remaining #141/#138. Added mcp-server targets #315/#316.
 - v7.3 → v7.4 (cycle 70): Added PR saturation rule (>20 total → pause, wait for responses). Cleaned skills backlog (#141 done, #138 remaining). Added mcp-server #315 as sole remaining target.
+- v7.4 → v7.5 (cycle 90): Added worker fork targeting rule (always specify tfireubs-ui/<repo> remote explicitly — workers default to t-fi). Updated mcp-server targets (#308/307/306/304/301/300) after mass merge of 12 PRs today.

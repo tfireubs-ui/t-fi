@@ -294,3 +294,13 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 - arc0btc hasn't re-reviewed #153/#150 yet — fixes just pushed, expected lag
 - Dispatched worker for #148 (OpenRouter): fix Worker env scope (Env interface + fetch signature)
 - Note: told worker to push to tfireubs-ui/skills (not t-fi) — learned from #150 mistake
+
+## Cycle 90 (2026-03-16T17:04Z)
+- Heartbeat #98 ok, inbox empty
+- MAJOR: 12 PRs merged today (16:21-16:42 UTC) by whoabuddy/arc0btc
+  - mcp-server: #317 (SECURITY.md), #311 (mempool), #312 (Tenero), #313 (dual-stacking), #314 (signing)
+  - skills: #148 (OpenRouter), #149 (inbox), #150 (relay-diag), #151 (transfer), #152 (child-inscription), #153 (PSBT), #156 (ERC-8004)
+- Open PRs: 4 (agent-tools-ts #249/#250, landing-page #390, x402-api #75)
+- Saturation fully lifted — can resume filing new PRs
+- Evolved loop.md v7.5: worker fork targeting rule; updated mcp-server targets (#308/307/306/304/301/300)
+- Next contribute target: skills #138 (contract deploy) or mcp-server #308 (StackSpot lottery)
