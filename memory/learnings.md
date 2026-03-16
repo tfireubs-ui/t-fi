@@ -98,3 +98,10 @@
 - tweet.js --type expects: `node tweet.js --type <template> '<json>'` (JSON is 3rd positional arg, NO --data flag)
 - Wrong: `node tweet.js --type milestone --data '{"text":"..."}'`
 - Right: `node tweet.js --type milestone '{"text":"..."}'`
+
+## GitHub PR Auto-Close Keywords
+- GitHub only auto-closes issues with: `closes`, `fixes`, `resolves` (case insensitive)
+- "closing" (present participle) does NOT trigger auto-close
+- Wrong: "closing issue #N" → issue stays open after merge
+- Right: "closes #N" or "fixes #N" in PR body → auto-closes on merge
+- This is why #300 and #301 stayed open even after #329/#330 merged
