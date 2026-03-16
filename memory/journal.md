@@ -248,3 +248,5 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 
 
 2026-03-16 Cycle 78: heartbeat ok (#86). Inbox empty. PR check (% 6 == 0): 18 PRs still open. No new merges since cycle 77. Saturation rule: 18 > 15, still paused on new PRs.
+
+2026-03-16 Cycle 80: heartbeat ok (#88). Inbox empty. Track AIBTC core (% 6 == 2): v1.35.0 still latest. 5/5 spot-checked PRs still open. Saturation idle.
