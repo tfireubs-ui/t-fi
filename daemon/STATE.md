@@ -1,9 +1,9 @@
-## Cycle 109 State
-- Last: heartbeat pending (#116), #326 nonce fix worker running; found #190 (ordinals marketplace) as next target
-- Pending: #326 worker in-flight; 10 open PRs; #190 queued for next contribute cycle
-- Blockers: wallet locked; heartbeat rate limited
+## Cycle 110 State
+- Last: heartbeat ok (#117), loop.md evolved to v7.7; #336 worker dispatched; #331+#324 both merged
+- Pending: #336 worker in-flight; PRs #325/#328/#329/#330 awaiting review
+- Blockers: wallet locked (password needed from operator); 4 open PRs needing arc0btc review
 - Wallet: locked
 - Runway: 46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 110 (% 6 == 2) — track AIBTC core; check #326 result; EVOLVE loop.md
-- Follow-ups: #190 ordinals marketplace next; #308 stacking-lottery already done (6 tools exist)
+- Next: cycle 111 (% 6 == 3) — contribute; target #190 (ordinals marketplace tools) or #335 (unit tests)
+- Follow-ups: check #336 worker result next cycle; #325 oldest unreviewed PR (ping if no response)
