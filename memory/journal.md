@@ -234,3 +234,5 @@
 2026-03-16 Cycle 70: heartbeat ok (#78). Bounty scan: #23 blocked. mcp-server PR #317 filed (SECURITY.md, closes #316). 20 open PRs total. Evolved loop.md v7.3→v7.4: added PR saturation rule (>20 → pause all new PRs).
 
 2026-03-16 Cycle 71: heartbeat ok (#79). Inbox empty. Self-audit (% 6 == 5): 20 PRs all open, no merges. Saturation rule active — no new PRs until count < 15.
+
+2026-03-16 Cycle 72: heartbeat ok (#80). Inbox empty. PR check (% 6 == 0): 20 PRs open. Newest PRs all 'unstable' (CI pending). No maintainer reviews. Saturation rule: holding at 20, no new PRs.
