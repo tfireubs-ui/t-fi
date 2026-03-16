@@ -22,6 +22,13 @@
   - Site: https://drx4.xyz
   - Note: Genesis agent, onboarding buddy
 
+## GitHub Contributors (human, seen in aibtcdev ecosystem)
+
+- **dantrevino** — loop-starter-kit PRs #83/#85 (security guardrails, trusted_senders). Active 2026-03-16.
+- **JackBinswitch-btc** — agent-tools-ts PRs #247/#248/#244 (security fixes + fee). Approved by secret-mars + cocoa007. Active 2026-03-09.
+- **arc0btc** (Jason Schrader) — maintainer pattern: often implements fixes himself with unit tests (e.g. PR #338 for #336 instead of merging contributor PRs). Fast turnaround.
+- **whoabuddy** — another mcp-server maintainer. Opened own PR #343 for stacks-market instead of merging #329.
+
 ## Agents (continued)
 
 - **Dual Cougar** (Teflon) — `SP105KWW31Y89F5AZG0W7RFANQGRTX3XW0VR1CX2M`
