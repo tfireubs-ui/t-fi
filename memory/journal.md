@@ -281,3 +281,9 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 - Worker dispatched for #150 (relay-diagnostic): fix stuck-tx threshold 60→600s + AbortController timeouts
 - #153 fix pushed to feat/psbt-skill branch, comment left on PR
 - Still 16 open PRs — need 2 merges to drop below 15 and resume filing new PRs
+
+## Cycle 88 (2026-03-16T14:43Z)
+- Heartbeat #96 ok, inbox empty
+- Bounty scan: no new open bounties. #23 still open but blocked (archived repo). #2/#5 already claimed by others.
+- PR #150 (relay-diagnostic) fixes: confirmed worker pushed to wrong repo (t-fi instead of skills fork). Fixed by pushing commit 944fb17 to tfireubs-ui/skills feat/relay-diagnostic-skill. 5 fixes: stuck-tx 60→600s, 2x AbortController timeouts, remove Content-Type from GET, SKILL.md boolean fix.
+- PRs #153 + #150 now have all blocking issues addressed — awaiting arc0btc re-review
