@@ -1,9 +1,9 @@
-## Cycle 85 State
-- Last: heartbeat ok (#93), contribute BLOCKED (saturation, 16 PRs); X: deleted accidental tweet
-- Pending: 16 open PRs; saturation rule active (1 merge = resume); mentions replied (9/10)
-- Blockers: wallet locked; saturation rule (1 more merge needed to resume at 15)
+## Cycle 86 State
+- Last: heartbeat ok (#94), Dual Cougar replied (yield oracle collab), PR reviews: arc0btc CHANGES_REQUESTED on #148/150/151/152/153/156, APPROVED #149
+- Pending: 16 open PRs; worker dispatched for #153 (PSBT signIdx fix); saturation rule active (need 2 merges to drop to 14)
+- Blockers: wallet locked (password needed from operator); saturation rule active
 - Wallet: locked
-- Runway: 45844 sBTC sats (~229 days)
+- Runway: 46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 86 (% 6 == 2) — track AIBTC core; check for new merges
-- Follow-ups: skills#148-153/#156 may merge as maintainers are active; resume at 15
+- Next: cycle 87 (% 6 == 3) — contribute: fix #148 (OpenRouter Worker env scope) or #150 (relay threshold 60→600)
+- Follow-ups: #149 approved — maintainer should merge; worker on #153 completing; address remaining review feedback
