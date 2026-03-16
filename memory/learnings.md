@@ -89,3 +89,7 @@
 - aibtcdev/aibtc-mcp-server #298: Add btc_sign_message + stacks_sign_message MCP tools (BIP-137/BIP-322) — high value, unblocks auth without external APIs
 - aibtcdev/skills #146: Inbox skill (x402 messaging) — worker dispatched cycle 31
 - Other skills issues #139-145 available (STX transfers, relay diagnostics, identity, PSBT, child inscriptions, stacking lottery)
+
+## X/Twitter
+- tweet.js: does NOT support --help flag. Passing any string sends it as a tweet immediately. Test by checking source, not running with test flags.
+- x-mentions.js: auto-replies to all unread mentions when run. Use with care.
