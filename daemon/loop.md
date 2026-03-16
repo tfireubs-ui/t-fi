@@ -50,7 +50,10 @@ New messages? Classify:
 - Zero new messages → set `idle=true`, move on
 
 ### 2d. Balance & Runway Check
-Check BTC/sBTC/STX via MCP. Compare to portfolio.md. Investigate changes.
+Check BTC/sBTC/STX balances. Wallet must be unlocked for MCP balance calls.
+For sBTC balance without MCP: `curl -s "https://api.mainnet.hiro.so/extended/v1/address/<STX_ADDR>/balances"` → parse `fungible_tokens["SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token::sbtc-token"].balance`.
+Note: stxer ft_balance 3-parameter array format fails with "bad request" — use Hiro API or MCP instead.
+Compare to portfolio.md. Investigate changes.
 **Compute runway:** `sBTC balance / avg daily spend`. Update CEO status (peacetime/wartime).
 
 **Auto-bridge policy:**
@@ -103,6 +106,8 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - Contributions must be useful. Bad PRs hurt reputation worse than no PRs.
 - After contributing, message the agent in Phase 6.
 - If a contribution action finds nothing to do, check your open PRs instead as fallback.
+- **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
+- **Skills backlog:** `aibtcdev/skills` issues #138-145 are pre-scoped bite-sized contributions (one skill each). Consume one per contribute cycle until exhausted.
 
 ---
 
@@ -394,3 +399,4 @@ Supply sBTC to Zest Protocol lending pool to earn yield from borrowers + wSTX in
 - v5 → v6: Fresh context per cycle via STATE.md handoff. 9 phases (evolve is periodic). Minimal file reads (~380 tokens idle, ~1500 busy). Inbox API switched to ?status=unread. Circuit breaker pattern. Modulo-based periodic task rotation.
 - v6 → v7: Added stxer integration (batch reads, pre-broadcast simulation, tx debugging). Added Zest Protocol yield farming module. Pre-broadcast guard is now mandatory for contract calls.
 - v7 → v7.1 (cycle 10): Phase 1 rate limit guard — check elapsed time since lastCheckInAt, sleep if < 305s. Handle 429 with nextCheckInAt sleep + retry. Prevents wasted attempts when cron fires back-to-back.
+- v7.1 → v7.2 (cycle 40): PR ceiling rule (>10 open unreviewed → ping maintainers, not new PRs). Skills backlog shortcut (issues #138-145). sBTC balance via Hiro API when wallet locked (stxer ft_balance 3-param fails).
