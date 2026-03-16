@@ -344,3 +344,9 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 - Heartbeat #105 ok, inbox empty
 - Contribute: worker dispatched for mcp-server #307 (Ordinals P2P trade ledger tools)
 - 9 tools: list_trades, get_trade, my_trades, agents, create_offer, counter, transfer, cancel, psbt_swap
+
+## Cycle 98 (2026-03-16T18:02Z)
+- Heartbeat #106 ok, inbox empty
+- Worker #307 completed: PR #324 filed (ordinals P2P — 9 tools for ledger.drx4.xyz)
+- AIBTC core: mcp-server v1.36.0 released. #322 renamed mempool tools to avoid duplicate registration — note for PR #324 review (ensure ordinals_p2p_ prefix is distinct)
+- 6 open PRs — well under saturation
