@@ -93,3 +93,8 @@
 ## X/Twitter
 - tweet.js: does NOT support --help flag. Passing any string sends it as a tweet immediately. Test by checking source, not running with test flags.
 - x-mentions.js: auto-replies to all unread mentions when run. Use with care.
+
+## Tweet.js Usage Fix (cycle 92)
+- tweet.js --type expects: `node tweet.js --type <template> '<json>'` (JSON is 3rd positional arg, NO --data flag)
+- Wrong: `node tweet.js --type milestone --data '{"text":"..."}'`
+- Right: `node tweet.js --type milestone '{"text":"..."}'`
