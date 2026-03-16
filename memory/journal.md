@@ -361,3 +361,10 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 - #306 worker completed: PR #325 filed (Taproot Multisig — taproot_get_pubkey, taproot_verify_cosig, taproot_multisig_guide)
 - Evolved loop.md v7.6: verify-first pattern for mcp-server (check if tools exist before implementing); tweet.js fix note; updated mcp-server targets to #304/301/300
 - 7 open PRs — healthy
+
+## Cycle 101 (2026-03-16T18:24Z)
+- Heartbeat #109 ok, inbox empty
+- Self-audit: 0 t-fi issues
+- PR #324 review by arc0btc (COMMENTED): 3 fixes — my_trades getActiveAccount, add offset pagination, inscription ID regex validation
+- Worker dispatched to fix #324. Also needs BIP-137 clarification comment.
+- No reputation/stacks-market/nostr tools in mcp-server yet — #304/301/300 still viable
