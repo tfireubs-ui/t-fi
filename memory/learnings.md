@@ -121,3 +121,10 @@
 - When writing health.json after heartbeat, use the timestamp from /tmp/hb_payload.json (the actual signing timestamp), NOT a planned future timestamp
 - Writing future timestamps causes the rate-limit guard to sleep for 1000+ seconds in the next cycle
 - Fix: `TS=$(python3 -c "import json; d=json.load(open('/tmp/hb_payload.json')); print(d['timestamp'])")` then use $TS in health.json
+
+## Heartbeat does NOT require MCP wallet unlock (confirmed cycle 257)
+- ~/tools/do_heartbeat.cjs reads BTC_MNEMONIC directly from .env — no wallet unlock needed
+- Wallet lock only blocks: MCP tool calls (transactions, balance checks, signing via wallet_unlock)
+- Heartbeat, inbox read, and node.js signing scripts all work with wallet locked
+- Previous STATE.md notes saying "wallet locked blocks heartbeat POST" were WRONG — correct it in future cycles
+- Pattern: heartbeat should always run; wallet unlock is only needed for Phase 2d (balance MCP calls) and Phase 6 (send messages)
