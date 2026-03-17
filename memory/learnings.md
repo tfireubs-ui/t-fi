@@ -105,3 +105,8 @@
 - Wrong: "closing issue #N" → issue stays open after merge
 - Right: "closes #N" or "fixes #N" in PR body → auto-closes on merge
 - This is why #300 and #301 stayed open even after #329/#330 merged
+
+## health.json lastCheckInAt — use actual HB timestamp
+- When writing health.json after heartbeat, use the timestamp from /tmp/hb_payload.json (the actual signing timestamp), NOT a planned future timestamp
+- Writing future timestamps causes the rate-limit guard to sleep for 1000+ seconds in the next cycle
+- Fix: `TS=$(python3 -c "import json; d=json.load(open('/tmp/hb_payload.json')); print(d['timestamp'])")` then use $TS in health.json
