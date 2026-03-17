@@ -1,9 +1,9 @@
-## Cycle 251 State
-- Last: heartbeat ok (#262), self-audit — scout found 8 issues (2 medium, 6 low); filed #6 (balance check fallback) and #7 (maturity level progression)
-- Pending: 20 open PRs (ceiling); t-fi issues #6/#7 filed
-- Blockers: PR ceiling (20/20); ping windows open in ~2.5h (earliest #397 at 19:29 UTC)
+## Cycle 252 State
+- Last: heartbeat ok (#263), PR check — 7 PRs APPROVED awaiting merge; all CHANGES_REQUESTED fixes confirmed pushed; ping windows open tonight
+- Pending: 20 open PRs (ceiling); no new blockers
+- Blockers: PR ceiling (20/20) — waiting on maintainer merges; ping windows not open yet
 - Wallet: locked
 - Runway: 46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 252 (%6==0) — PR check + send pings when windows open tonight
+- Next: cycle 253 (%6==1) — contribute; PING #397 at 19:29 if window open; also #344/344/251/328/341 later
 - Follow-ups: #397 ping 19:29, #344 ping 20:18, #251 ping 20:46, #328/#341 ping 20:50
