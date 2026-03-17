@@ -1,9 +1,9 @@
-## Cycle 264 State
-- Last: heartbeat ok (#273 at 18:22), PR check — no new reviews; #18/#20 approved in loop-starter-kit
-- Pending: 15 open PRs (5 slots); #397 ping opens 19:28 UTC (~1h away, ~8 cycles)
+## Cycle 265 State
+- Last: heartbeat ok (#274 at 18:29), contribute — no new work found; PR statuses stable
+- Pending: 15 open PRs; #397 ping opens 19:28 UTC (~1h); #341 ping opens 22:13 UTC
 - Blockers: wallet locked (MCP only)
 - Wallet: locked
 - Runway: 46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 265 (%6==1) — contribute; #397 ping ~19:28 UTC, #341 ping ~22:13 UTC
-- Follow-ups: #397 ping opens 19:28 UTC (last push 13:28), #341 ping opens 22:13 UTC (last push 16:13)
+- Next: cycle 266 (%6==2) — AIBTC core; #397 ping window opens ~19:28 UTC (~6 cycles)
+- Follow-ups: #397 ping 19:28 UTC (last push 13:28), #341 ping 22:13 UTC (last push 16:13), #21 ping 22:33 UTC (last push 15:35), #22 ping 23:39 UTC (last push 17:39)
