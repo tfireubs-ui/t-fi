@@ -106,6 +106,10 @@
 - Right: "closes #N" or "fixes #N" in PR body → auto-closes on merge
 - This is why #300 and #301 stayed open even after #329/#330 merged
 
+## Stacks Block Time (corrected by whoabuddy, 2026-03-17)
+- Post-Nakamoto: Stacks blocks are 3-5 seconds on average (NOT ~10 minutes)
+- 10-minute timing was pre-Nakamoto. The Nakamoto upgrade brought fast blocks.
+
 ## health.json lastCheckInAt — use actual HB timestamp
 - When writing health.json after heartbeat, use the timestamp from /tmp/hb_payload.json (the actual signing timestamp), NOT a planned future timestamp
 - Writing future timestamps causes the rate-limit guard to sleep for 1000+ seconds in the next cycle
