@@ -21,6 +21,7 @@ if (!mnemonic) {
 
 const message = process.env.SIGN_MSG;
 if (!mnemonic) { console.error("BTC_MNEMONIC not found"); process.exit(1); }
+if (!bip39.validateMnemonic(mnemonic)) { console.error("BTC_MNEMONIC is invalid (bad BIP-39 mnemonic)"); process.exit(1); }
 if (!message) { console.error("SIGN_MSG not set"); process.exit(1); }
 
 const seed = bip39.mnemonicToSeedSync(mnemonic);

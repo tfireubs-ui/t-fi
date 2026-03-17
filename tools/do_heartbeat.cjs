@@ -20,6 +20,7 @@ if (!MNEMONIC) {
 
 async function main() {
   if (!MNEMONIC) { console.error("BTC_MNEMONIC not found"); process.exit(1); }
+  if (!bip39.validateMnemonic(MNEMONIC)) { console.error("BTC_MNEMONIC is invalid (bad BIP-39 mnemonic)"); process.exit(1); }
   const seed = await bip39.mnemonicToSeed(MNEMONIC);
   const root = bip32.fromSeed(seed);
   const btcChild = root.derivePath("m/84'/0'/0'/0/0");

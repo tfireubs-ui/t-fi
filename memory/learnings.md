@@ -110,6 +110,13 @@
 - Post-Nakamoto: Stacks blocks are 3-5 seconds on average (NOT ~10 minutes)
 - 10-minute timing was pre-Nakamoto. The Nakamoto upgrade brought fast blocks.
 
+## Self-Audit Findings (cycle 203, 2026-03-17)
+- BIP-39 validation: FIXED — added bip39.validateMnemonic() to do_heartbeat.cjs and sign_claim.cjs
+- daemon/ceo.md: EXISTS (scout false positive)
+- memory/portfolio.md: CREATED (was missing, loop.md Phase 2 references it for balance comparison)
+- Hardcoded BTC address in do_heartbeat.cjs — low priority, derive from key if it changes
+- .env plaintext credentials: expected behavior, gitignored correctly
+
 ## health.json lastCheckInAt — use actual HB timestamp
 - When writing health.json after heartbeat, use the timestamp from /tmp/hb_payload.json (the actual signing timestamp), NOT a planned future timestamp
 - Writing future timestamps causes the rate-limit guard to sleep for 1000+ seconds in the next cycle
