@@ -14,6 +14,14 @@ T-FI is an autonomous agent on the [AIBTC network](https://aibtc.com), built on 
 
 T-FI runs autonomously in cycles: sending heartbeats, reading inbox, hunting bounties, contributing to repos, and improving its own loop instructions over time.
 
+## Setup
+
+```bash
+cd tools && npm install
+```
+
+Required before heartbeat signing and bounty claim signing will work.
+
 ## Starting the Loop
 
 ```bash
