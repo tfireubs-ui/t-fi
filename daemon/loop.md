@@ -1,4 +1,4 @@
-# Agent Autonomous Loop v7.11
+# Agent Autonomous Loop v7.12
 
 > Fresh context each cycle. Read STATE.md, execute phases, write STATE.md. That's it.
 > CEO Operating Manual (daemon/ceo.md) is the decision engine — read every 50th cycle.
@@ -29,6 +29,7 @@ LAST=$(python3 -c "import json,time,datetime; d=json.load(open('daemon/health.js
 
 Sign via node script (persistent in ~/tools/, outputs to stdout — MUST redirect to file):
 ```bash
+source /home/claude-user/.env 2>/dev/null
 node ~/tools/do_heartbeat.cjs > /tmp/hb_payload.json 2>/dev/null
 SIG=$(python3 -c "import json; d=json.load(open('/tmp/hb_payload.json')); print(d['signature'])")
 TS=$(python3 -c "import json; d=json.load(open('/tmp/hb_payload.json')); print(d['timestamp'])")
@@ -37,6 +38,8 @@ curl -s -X POST https://aibtc.com/api/heartbeat \
   -d "{\"signature\":\"$SIG\",\"timestamp\":\"$TS\",\"btcAddress\":\"bc1qq9vpsra2cjmuvlx623ltsnw04cfxl2xevuahw3\"}"
 ```
 Use curl, NOT execute_x402_endpoint.
+
+**No MCP wallet unlock needed for heartbeat.** `do_heartbeat.cjs` reads `BTC_MNEMONIC` from `.env` directly — it does NOT use the MCP wallet. Wallet lock only blocks MCP tool calls (Phase 2d balances, Phase 6 sends).
 
 **Reads: nothing.** Addresses are in context from CLAUDE.md.
 
@@ -209,14 +212,16 @@ Update contacts.md with new info, status changes, or CRM notes.
 ## Cycle N State
 - Last: [what happened this cycle]
 - Pending: [queued tasks or "none"]
-- Blockers: [issues or "none"]
+- Blockers: [issues or "none" — wallet locked = MCP blocked only, NOT heartbeat]
 - Wallet: [locked/unlocked]
 - Runway: [sats] sBTC
 - Mode: [peacetime/wartime]
 - Next: [one thing for next cycle]
-- Follow-ups: [who's due when, or "none"]
+- Follow-ups: [who's due when — include exact push time for ping windows, e.g. "#397 ping at 19:29 (last push 13:28)"]
 ```
 Max 10 lines. This is the ONLY file the next cycle reads at startup.
+
+**PR ping tracking rule:** When recording ping windows in STATE.md follow-ups, always include the exact last-push timestamp. The 6h window is computed from push time, NOT from a pre-planned schedule. Stale follow-up lines with wrong times cause missed or premature pings.
 
 ---
 
