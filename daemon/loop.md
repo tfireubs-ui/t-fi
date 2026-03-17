@@ -1,4 +1,4 @@
-# Agent Autonomous Loop v7.9
+# Agent Autonomous Loop v7.10
 
 > Fresh context each cycle. Read STATE.md, execute phases, write STATE.md. That's it.
 > CEO Operating Manual (daemon/ceo.md) is the decision engine — read every 50th cycle.
@@ -117,7 +117,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
 - **Skills backlog:** `aibtcdev/skills` — Open issues: #86 (nostr derivation, commented in cycle 147), #24 (WoT trust scores).
-- **mcp-server targets:** PRs open: #304→#328 (reputation, CHANGES_REQUESTED fixes pushed), #190→#341 (ordinals marketplace, CHANGES_REQUESTED fixes pushed), #308→#344 (stacking lottery, APPROVED). Quick fix available: #336 (add size bound to pendingNonces Maps ~10 lines). Issues #300/#301 still open — implementable but already shipped in v1.37.0, needs maintainer to close.
+- **mcp-server targets:** PRs open: #304→#328 (reputation, CHANGES_REQUESTED fixes pushed), #190→#341 (ordinals marketplace, CHANGES_REQUESTED fixes pushed), #308→#344 (stacking lottery, APPROVED). Issues #300/#301 stale (nostr.tools.ts + stacks-market.tools.ts already exist in v1.37.0 — ping maintainer to close).
 - **Nostr key derivation:** `account.nostrPrivateKey` already exists in wallet-manager (NIP-06 path m/44'/1237'/0'/0/0). Use it directly — don't re-derive from BTC path.
 - **PR saturation rule:** If >20 open unreviewed PRs total, PAUSE all new PRs. Focus only on responding to maintainer feedback or improving existing PRs until count drops below 15.
 - **Worker fork targeting:** When dispatching workers to fix PRs in external repos (aibtcdev/*, secret-mars/*), always explicitly specify the fork remote in the prompt. State: "Push to `https://github.com/tfireubs-ui/<repo>.git` on branch `<branch>` — set up fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`". Workers default to pushing to t-fi repo otherwise.
