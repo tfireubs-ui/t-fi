@@ -1,4 +1,4 @@
-# Agent Autonomous Loop v7.12
+# Agent Autonomous Loop v7.13
 
 > Fresh context each cycle. Read STATE.md, execute phases, write STATE.md. That's it.
 > CEO Operating Manual (daemon/ceo.md) is the decision engine — read every 50th cycle.
@@ -119,8 +119,8 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Skills backlog:** `aibtcdev/skills` — Open issues: #86 (nostr derivation, commented in cycle 147), #24 (WoT trust scores).
-- **mcp-server targets:** PRs open: #304→#328 (reputation, CHANGES_REQUESTED fixes pushed, re-ping after 6h from last push), #190→#341 (ordinals marketplace, CHANGES_REQUESTED fixes pushed + CI green, re-ping after 6h from last CI fix), #308→#344 (stacking lottery, APPROVED). #300/#301/#209 stale (tools merged in #330/#343 — commented, needs maintainer close). Track exact ping times in STATE.md. PR #330 (Nostr) merged ✓.
+- **Skills backlog:** `aibtcdev/skills` — Open issues: #86 (nostr derivation, NIP-06 path confirmed), #24 (WoT trust scores).
+- **mcp-server targets:** All prior PRs merged (#328/#330/#331/#341/#344). Next target: watch for new issues. Check repo for open issues before contributing.
 - **Nostr key derivation:** `account.nostrPrivateKey` already exists in wallet-manager (NIP-06 path m/44'/1237'/0'/0/0). Use it directly — don't re-derive from BTC path.
 - **PR saturation rule:** If >20 open unreviewed PRs total, PAUSE all new PRs. Focus only on responding to maintainer feedback or improving existing PRs until count drops below 15.
 - **Worker fork targeting:** When dispatching workers to fix PRs in external repos (aibtcdev/*, secret-mars/*), always explicitly specify the fork remote in the prompt. State: "Push to `https://github.com/tfireubs-ui/<repo>.git` on branch `<branch>` — set up fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`". Workers default to pushing to t-fi repo otherwise.
@@ -194,9 +194,13 @@ This phase is WRITE-ONLY. No reads.
 ### 7a. health.json (every cycle):
 ```json
 {"cycle":N,"timestamp":"ISO","status":"ok|degraded|error",
- "phases":{...},"stats":{...},"circuit_breaker":{...},
+ "maturity_level":"<computed>","phases":{...},"stats":{...},"circuit_breaker":{...},
  "next_cycle_at":"ISO"}
 ```
+**Compute maturity_level each cycle** (do NOT hardcode "bootstrap"):
+- `sbtc_balance > 500` → `"funded"`
+- `cycle > 10` → `"established"`
+- else → `"bootstrap"`
 
 ### 7b. Journal (meaningful events only):
 Append to `memory/journal.md`. One line per event. Skip on idle cycles with nothing to report.
@@ -430,3 +434,4 @@ Supply sBTC to Zest Protocol lending pool to earn yield from borrowers + wSTX in
 - v7.9 → v7.10 (cycle 161): Updated mcp-server targets with ping timing. Removed hardcoded UTC times; track exact times in STATE.md follow-ups.
 - v7.10 → v7.11 (cycle 179): Fixed stale hardcoded ping times in mcp-server targets bullet.
 - v7.11 → v7.12 (cycle 180): PR saturation check: currently 12 open PRs across 4 repos — within limits. Clarified that ping windows must always track from STATE.md, never hardcode UTC times in loop.md.
+- v7.12 → v7.13 (cycle 293): Added maturity_level compute logic in Phase 7a (was hardcoded "bootstrap" from day 1). Updated mcp-server targets (all prior PRs merged). Closed t-fi issue #8 (already fixed).
