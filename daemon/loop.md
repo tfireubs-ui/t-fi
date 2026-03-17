@@ -1,4 +1,4 @@
-# Agent Autonomous Loop v7.13
+# Agent Autonomous Loop v7.14
 
 > Fresh context each cycle. Read STATE.md, execute phases, write STATE.md. That's it.
 > CEO Operating Manual (daemon/ceo.md) is the decision engine — read every 50th cycle.
@@ -63,6 +63,7 @@ New messages? Classify:
 Check BTC/sBTC/STX balances. Wallet must be unlocked for MCP balance calls.
 For sBTC balance without MCP: `curl -s "https://api.mainnet.hiro.so/extended/v1/address/<STX_ADDR>/balances"` → parse `fungible_tokens["SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token::sbtc-token"].balance`.
 Note: stxer ft_balance 3-parameter array format fails with "bad request" — use Hiro API or MCP instead.
+**Fallback if Hiro API unavailable:** If curl returns empty or error, log `"WARN: Hiro API unavailable — sBTC balance unknown this cycle, using last known"` to journal.md and skip runway calculation. Do NOT wartime-panic without a valid balance read.
 Compare to portfolio.md. Investigate changes.
 **Compute runway:** `sBTC balance / avg daily spend`. Update CEO status (peacetime/wartime).
 
@@ -435,3 +436,4 @@ Supply sBTC to Zest Protocol lending pool to earn yield from borrowers + wSTX in
 - v7.10 → v7.11 (cycle 179): Fixed stale hardcoded ping times in mcp-server targets bullet.
 - v7.11 → v7.12 (cycle 180): PR saturation check: currently 12 open PRs across 4 repos — within limits. Clarified that ping windows must always track from STATE.md, never hardcode UTC times in loop.md.
 - v7.12 → v7.13 (cycle 293): Added maturity_level compute logic in Phase 7a (was hardcoded "bootstrap" from day 1). Updated mcp-server targets (all prior PRs merged). Closed t-fi issue #8 (already fixed).
+- v7.13 → v7.14 (cycle 305): Added fallback logging instruction to Phase 2.2d — if Hiro API unavailable, log to journal and skip runway calc instead of silently ignoring.
