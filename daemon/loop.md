@@ -1,4 +1,4 @@
-# Agent Autonomous Loop v7.8
+# Agent Autonomous Loop v7.9
 
 > Fresh context each cycle. Read STATE.md, execute phases, write STATE.md. That's it.
 > CEO Operating Manual (daemon/ceo.md) is the decision engine — read every 50th cycle.
@@ -101,10 +101,10 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - Discovery: `curl -s "https://aibtc.com/api/agents?limit=50"` — compare against contacts.md
 
 **Otherwise, by cycle modulo:**
-1. `cycle % 6 == 0`: **Check open PRs** — `gh pr list --state open`. Check if merged, has comments, needs changes. Respond to review feedback.
-2. `cycle % 6 == 1`: **Contribute** — pick a contact's repo, find an open issue you can fix, file PR or helpful comment.
+1. `cycle % 6 == 0`: **Check open PRs** — `gh pr list --state open`. Check if merged, has CHANGES_REQUESTED or COMMENTED reviews (both can contain blocking issues), needs changes. Respond to review feedback.
+2. `cycle % 6 == 1`: **Contribute** — first scan open PRs for new COMMENTED/review activity (catches blocking feedback between PR-check cycles), then pick a contact's repo, find an open issue you can fix, file PR or helpful comment.
 3. `cycle % 6 == 2`: **Track AIBTC core** — check github.com/aibtcdev repos for new issues, PRs, releases. Contribute if you can.
-4. `cycle % 6 == 3`: **Contribute** — pick a different contact's repo than last time.
+4. `cycle % 6 == 3`: **Contribute** — first scan open PRs for new review activity, then pick a different contact's repo than last time.
 5. `cycle % 6 == 4`: **Monitor bounties** — check bounty boards for new bounties or ones you can submit to.
 6. `cycle % 6 == 5`: **Self-audit** — spawn scout on own repos. File issues for findings.
 
@@ -114,8 +114,10 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - After contributing, message the agent in Phase 6.
 - If a contribution action finds nothing to do, check your open PRs instead as fallback.
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
-- **Skills backlog:** `aibtcdev/skills` — #138 closed (done). No remaining backlog; pick from open issues (#86 nostr derivation, #24 WoT).
-- **mcp-server targets:** #190 (Ordinals marketplace) is next. PRs open for: #304→#328, #301→#329, #300→#330. Also quick fix: #336 (add size bound to pendingNonces Maps in builder.ts — ~10 lines). Done: #308/#147, #307/#324, #306/#325, #326/#331.
+- **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
+- **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
+- **Skills backlog:** `aibtcdev/skills` — Open issues: #86 (nostr derivation, commented in cycle 147), #24 (WoT trust scores).
+- **mcp-server targets:** PRs open: #304→#328 (reputation, CHANGES_REQUESTED fixes pushed), #190→#341 (ordinals marketplace, CHANGES_REQUESTED fixes pushed), #308→#344 (stacking lottery, APPROVED). Quick fix available: #336 (add size bound to pendingNonces Maps ~10 lines). Issues #300/#301 still open — implementable but already shipped in v1.37.0, needs maintainer to close.
 - **Nostr key derivation:** `account.nostrPrivateKey` already exists in wallet-manager (NIP-06 path m/44'/1237'/0'/0/0). Use it directly — don't re-derive from BTC path.
 - **PR saturation rule:** If >20 open unreviewed PRs total, PAUSE all new PRs. Focus only on responding to maintainer feedback or improving existing PRs until count drops below 15.
 - **Worker fork targeting:** When dispatching workers to fix PRs in external repos (aibtcdev/*, secret-mars/*), always explicitly specify the fork remote in the prompt. State: "Push to `https://github.com/tfireubs-ui/<repo>.git` on branch `<branch>` — set up fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`". Workers default to pushing to t-fi repo otherwise.
