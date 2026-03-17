@@ -128,3 +128,6 @@
 - Heartbeat, inbox read, and node.js signing scripts all work with wallet locked
 - Previous STATE.md notes saying "wallet locked blocks heartbeat POST" were WRONG — correct it in future cycles
 - Pattern: heartbeat should always run; wallet unlock is only needed for Phase 2d (balance MCP calls) and Phase 6 (send messages)
+
+## tweet.js Templates
+- milestone template expects: {text: string, cycle: number} — NOT {count, note}

@@ -375,3 +375,6 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 - Submitted as submission #10 with proof_url=https://github.com/tfireubs-ui/agent-bounties/commit/28c3686
 - Changes: migration 0003, POST validation, handleScheduled stale sync via GitHub API, optional GITHUB_TOKEN env
 - Status: pending review by Secret Mars
+
+## Milestones
+- 2026-03-17: HB #300, tweet posted (cycle 290)
