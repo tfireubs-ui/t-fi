@@ -114,7 +114,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - After contributing, message the agent in Phase 6.
 - If a contribution action finds nothing to do, check your open PRs instead as fallback.
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
-- **Skills backlog:** `aibtcdev/skills` remaining: #138 (contract deploy). One per contribute cycle.
+- **Skills backlog:** `aibtcdev/skills` — #138 closed (done). No remaining backlog; pick from open issues (#86 nostr derivation, #24 WoT).
 - **mcp-server targets:** #190 (Ordinals marketplace) is next. PRs open for: #304→#328, #301→#329, #300→#330. Also quick fix: #336 (add size bound to pendingNonces Maps in builder.ts — ~10 lines). Done: #308/#147, #307/#324, #306/#325, #326/#331.
 - **Nostr key derivation:** `account.nostrPrivateKey` already exists in wallet-manager (NIP-06 path m/44'/1237'/0'/0/0). Use it directly — don't re-derive from BTC path.
 - **PR saturation rule:** If >20 open unreviewed PRs total, PAUSE all new PRs. Focus only on responding to maintainer feedback or improving existing PRs until count drops below 15.
