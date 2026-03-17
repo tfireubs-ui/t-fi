@@ -11,3 +11,5 @@ daemon/processed.json
 *.key
 *.pem
 .DS_Store
+agent-tools-ts/
+tools/tools/
