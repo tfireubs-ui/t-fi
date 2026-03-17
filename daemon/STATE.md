@@ -1,9 +1,9 @@
-## Cycle 220 State
-- Last: heartbeat ok (#231), bounty scan (0 open) + pinged #398 at 13:11 UTC
-- Pending: 19 open PRs; APPROVED: 8 total; CHANGES_REQUESTED: #328/#341/#398
+## Cycle 226 State
+- Last: heartbeat ok (#237), bounty scan — 0 open
+- Pending: 19 open PRs; 7 APPROVED; pings: #341 at 15:39 UTC (1h47m), #328 at 16:22 UTC (2h30m)
 - Blockers: none
 - Wallet: locked
 - Runway: 46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 221 (% 6 == 5) — self-audit; pings: #341 at 15:39, #328 at 16:22, #398 at 19:11 UTC
-- Follow-ups: #341 ping at 15:39, #328 at 16:22 UTC
+- Next: cycle 227 (% 6 == 5) — self-audit; ping #341 at 15:39
+- Follow-ups: #341 at 15:39, #328 at 16:22 UTC
