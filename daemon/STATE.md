@@ -1,9 +1,9 @@
-## Cycle 444 State
-- Last: PR check — HB #455; 10 PRs unchanged (LSK #18-22 + Docs #12 + Skills #177 APPROVED; news #90 CR; hub #5/#11 no reviews)
+## Cycle 445 State
+- Last: contribute (commentary) — HB #456; commented landing-page #217 (Cloudflare Markdown for Agents: AX discovery, token efficiency, HTML-only scope question)
 - Pending: LSK #18-22 + Skills #177 + Docs #12 APPROVED; news #90 CR awaiting arc0btc re-review; hub #5/#11 waiting
 - Blockers: PR ceiling (10)
 - Wallet: locked
 - Runway: 46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 445 (%6==1) — contribute; next news #90 ping if no response by 2026-03-19T16:50 UTC
+- Next: cycle 446 (%6==2) — AIBTC core; next news #90 ping if no response by 2026-03-19T16:50 UTC
 - Follow-ups: news #90 re-pinged 2026-03-18T16:50 UTC; next ping 2026-03-19T16:50 UTC
