@@ -5,7 +5,7 @@ import type { Env, Beat, Signal, SignalStatus, Streak, Brief, Classified, Earnin
 import { validateSlug, validateHexColor, sanitizeString } from "../lib/validators";
 import { generateId, getPacificDate, getPacificYesterday, getPacificDayStartUTC, getNextDate } from "../lib/helpers";
 import { CLASSIFIED_DURATION_DAYS, SIGNAL_COOLDOWN_HOURS, BEAT_EXPIRY_DAYS, MAX_SIGNALS_PER_DAY, SIGNAL_STATUSES, CONFIG_PUBLISHER_KEY } from "../lib/constants";
-import { SCHEMA_SQL, MIGRATION_PHASE0_SQL } from "./schema";
+import { SCHEMA_SQL, MIGRATION_PHASE0_SQL, MIGRATION_BEAT_RESTRUCTURE_SQL } from "./schema";
 
 /**
  * Raw SQL row returned by signal SELECT queries.
@@ -97,6 +97,17 @@ export class NewsDO extends DurableObject<Env> {
         // Log in case the error is unexpected (e.g. malformed SQL introduced later).
         console.error("Migration statement failed (likely already applied):", e);
       }
+    }
+
+    // Run Phase 3 beat-restructure migration as a single exec() call.
+    // DO SQLite uses automatic atomic write coalescing — all writes within a
+    // single exec() are applied atomically (no manual BEGIN/COMMIT needed).
+    // This ensures signal remaps and beat deletes are all-or-nothing.
+    // The SQL itself is idempotent, so re-running on a fully-migrated DB is a no-op.
+    try {
+      this.ctx.storage.sql.exec(MIGRATION_BEAT_RESTRUCTURE_SQL);
+    } catch (e) {
+      console.error("Beat restructure migration failed:", e);
     }
 
     // Internal Hono router for DO-internal routing
