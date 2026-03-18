@@ -386,3 +386,6 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 ## Cycle 325 — 2026-03-18T03:06:30Z
 - Filed PR #360: feat(news): add aibtc-news MCP tools — news_list_signals, news_front_page, news_leaderboard, news_check_status, news_list_beats, news_file_signal (closes #354)
 - Also: rebased PR #357 (MERGEABLE) and skills #172 (MERGEABLE) — conflicts resolved
+
+## Cycle 331 — 2026-03-18T03:59:39Z
+- Filed PR #415: fix(install): add recommended path guidance to LP install page (closes #351)
