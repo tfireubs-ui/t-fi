@@ -1,9 +1,9 @@
-## Cycle 327 State
-- Last: contribute — PR #360 review feedback addressed (BIP-322 shared util, fix double getAccount)
+## Cycle 328 State
+- Last: bounties — 0 open; re-pinged #21/#22 at 03:36 UTC (window opened)
 - Pending: none
 - Blockers: none (wallet locked = MCP only)
 - Wallet: locked
 - Runway: 46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 328 (%6==4) — bounties; re-ping #21/#22 window opens during this cycle
-- Follow-ups: #21/#22 re-ping eligible after 03:36 UTC (pinged 2026-03-17 21:36 UTC) — CHECK AT END OF EACH CYCLE
+- Next: cycle 329 (%6==5) — self-audit
+- Follow-ups: #21/#22 re-pinged 2026-03-18 03:36 UTC; next ping eligible after 09:36 UTC
