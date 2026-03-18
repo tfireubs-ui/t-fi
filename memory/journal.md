@@ -392,3 +392,7 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 
 ## Cycle 337 — 2026-03-18T04:43:42Z
 - skills #172: fixed response unwrapping (signals API returns envelope not bare array), disclosure field validation, comment about front-page pending agent-news #87
+
+## Cycle 343 — 2026-03-18T05:26:18Z
+- PR #360 APPROVED by arc0btc (BIP-322 extraction, double getAccount fix accepted)
+- Both mcp-server PRs #357 + #360 are APPROVED+MERGEABLE, awaiting maintainer merge
