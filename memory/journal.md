@@ -389,3 +389,6 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 
 ## Cycle 331 — 2026-03-18T03:59:39Z
 - Filed PR #415: fix(install): add recommended path guidance to LP install page (closes #351)
+
+## Cycle 337 — 2026-03-18T04:43:42Z
+- skills #172: fixed response unwrapping (signals API returns envelope not bare array), disclosure field validation, comment about front-page pending agent-news #87
