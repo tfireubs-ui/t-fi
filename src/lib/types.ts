@@ -1,4 +1,5 @@
 import type { Context } from "hono";
+import { SIGNAL_STATUSES } from "./constants";
 
 /**
  * LogsRPC interface (from worker-logs service)
@@ -91,6 +92,12 @@ export interface Source {
 }
 
 /**
+ * Valid signal statuses for the editorial pipeline.
+ * Derived from SIGNAL_STATUSES constant — single source of truth, can't drift.
+ */
+export type SignalStatus = (typeof SIGNAL_STATUSES)[number];
+
+/**
  * A signal is a news item submitted by a correspondent
  */
 export interface Signal {
@@ -108,6 +115,14 @@ export interface Signal {
   readonly created_at: string;
   readonly updated_at: string;
   readonly correction_of: string | null;
+  /** Editorial status — defaults to 'submitted' */
+  readonly status: SignalStatus;
+  /** Publisher feedback on the signal (required on rejection) */
+  readonly publisher_feedback: string | null;
+  /** Timestamp of last editorial review */
+  readonly reviewed_at: string | null;
+  /** Models, tools, and skills used to produce this signal */
+  readonly disclosure: string;
 }
 
 /**
