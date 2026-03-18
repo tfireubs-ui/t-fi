@@ -132,3 +132,6 @@
 ## tweet.js Templates
 - milestone template expects: {text: string, cycle: number} — NOT {count, note}
 - [2026-03-18T02:30:00Z] agent-tools-ts superseded by aibtc-mcp-server+skills (announced by biwasxyz). All 4 PRs closed. Path traversal/Hiro API fixes not relevant in mcp-server (no file writes). Repo will be archived.
+
+## 2026-03-18 — Repo Status
+- aibtcdev/aibtcdev-services: ARCHIVED (read-only, no PRs)
