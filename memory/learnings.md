@@ -135,3 +135,8 @@
 
 ## 2026-03-18 — Repo Status
 - aibtcdev/aibtcdev-services: ARCHIVED (read-only, no PRs)
+
+## Duplicate Comment Prevention
+- MCP #300 (Nostr tools) and #301 (Stacks Market tools): already commented 3x that they're implemented — DO NOT comment again
+- Before commenting on any issue, check existing comments for prior T-FI comments first
+- Pattern: `gh issue view <N> --repo <REPO> --comments | grep tfireubs` before commenting
