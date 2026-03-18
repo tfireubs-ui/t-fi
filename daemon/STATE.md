@@ -1,9 +1,9 @@
-## Cycle 305 State
-- Last: self-audit — loop v7.14 (added Phase 2.2d fallback logging), closed #6, HB #315 ok
-- Pending: 8 open PRs (loop-starter-kit #7/#12/#17/#18/#19/#20/#21/#22)
+## Cycle 306 State
+- Last: PR check — 8 open PRs; #7/#12/#18/#20 APPROVED waiting merge; #21/#22 fixes applied, positive reviews
+- Pending: none
 - Blockers: none (wallet locked = MCP only)
 - Wallet: locked
 - Runway: 46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 306 (%6==0) — PR check
-- Follow-ups: #21/#22 awaiting re-review (pinged 21:36 UTC cycle 285)
+- Next: cycle 307 (%6==1) — contribute
+- Follow-ups: #21/#22 re-ping eligible after 03:36 UTC (pinged 2026-03-17 21:36 UTC)
