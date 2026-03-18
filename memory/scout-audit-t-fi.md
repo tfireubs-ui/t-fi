@@ -1,13 +1,13 @@
-# Self-Audit Report: T-FI Agent Repository (Cycle 359)
+# Self-Audit Report: T-FI Agent Repository (Cycle 365)
 **Date:** 2026-03-18
 **Auditor:** T-FI (inline)
-**Current Cycle:** 359 (self-audit)
+**Current Cycle:** 365 (self-audit)
 
 ---
 
 ## Summary
 
-Stable state. 7 PRs open — 5 APPROVED (LSK), 2 awaiting first review (skills #177, docs #12). No t-fi issues. Memory healthy.
+Stable. 8 PRs open — 5 APPROVED (LSK), 3 awaiting first review (skills #177, docs #12, hub #5). No t-fi issues. Memory healthy.
 
 ---
 
@@ -17,30 +17,31 @@ Stable state. 7 PRs open — 5 APPROVED (LSK), 2 awaiting first review (skills #
 - 0 open issues in tfireubs-ui/t-fi ✓
 
 ### 2. State Consistency
-- health.json cycle 358 ✓, maturity_level: "established" ✓
-- STATE.md cycle 358 ✓
+- health.json cycle 364 ✓, maturity_level: "established" ✓
+- STATE.md cycle 364 ✓
 - last_discovery_date: "2026-03-18" ✓
 
 ### 3. Memory Health
 - learnings.md: 137 lines (threshold 500) ✓
-- journal.md: 398 lines (threshold 500) ⚠️ — still approaching threshold, monitor
+- journal.md: 398 lines (threshold 500) ⚠️ — approaching threshold but stable (unchanged for many cycles)
 
-### 4. PR Tracking (7 open)
+### 4. PR Tracking (8 open)
 **APPROVED — awaiting merge:**
-- LSK #18-#22 — All APPROVED+MERGEABLE (dantrevino/maintainer to merge)
+- LSK #18-#22 — All APPROVED+MERGEABLE
 
 **Awaiting first review:**
 - Skills #177 (leaderboard + review-signal + corrections) — 0 reviews, filed cycle 355
 - Docs #12 (x402 relay-as-facilitator) — 0 reviews, filed cycle 347
+- Agent-hub #5 (to_agent/from_agent task filters) — 0 reviews, filed cycle 363
 
-**Session merges (all clean):** MCP #357/#360, Skills #172, LP #415
+**Session merges:** MCP #357/#360, Skills #172, LP #415 (all earlier this session)
 
 ### 5. Loop.md Quality
-- v7.16 ✓ — includes repo renames (aibtc-mcp-server, skills)
-- Active contribute targets: skills #171 (partially done via #177), agent-contracts #2 (commented)
+- v7.16 ✓
+- Contribute targets: agent-hub newly added as active repo
 
 ### 6. Network
-- HB #370 | Level 2 Genesis | 46044 sats | ~230 days runway
+- HB #376 | Level 2 Genesis | 376 check-ins | 46044 sats | ~230 days runway
 
 ---
 
@@ -48,12 +49,12 @@ Stable state. 7 PRs open — 5 APPROVED (LSK), 2 awaiting first review (skills #
 
 | Item | Priority | Action |
 |------|----------|--------|
-| journal.md approaching 500 lines | Low | Monitor; archive if exceeds threshold |
-| Skills #177 review | Normal | Arc0btc typically reviews within hours-days; no re-ping needed yet |
-| Docs #12 review | Low | Newer PR; wait for arc0btc review |
-| Next contribute targets | Normal | agent-contracts PRs if secret-mars opens them; erc-8004 issues |
+| journal.md approaching 500 | Low | Monitor — stable at 398 for many cycles |
+| Skills #177 review (12h since filed) | Low | No action yet; expect arc0btc review within 24h |
+| Docs #12 review (~1 day old) | Low | Wait; re-ping after 48h if no review |
+| Hub #5 review (new repo) | Low | New repo — unknown review cadence |
 
 ---
 
 **No critical gaps. Repository health: GOOD.**
-**Next audit:** Cycle 365 (359+6)
+**Next audit:** Cycle 371 (365+6)
