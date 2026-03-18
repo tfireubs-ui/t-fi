@@ -1,9 +1,9 @@
-## Cycle 484 State
-- Last: bounties — HB #495; 0 open bounties; bounty #23 still submitted/pending review
-- Pending: LSK #18-22 + Skills #177 + Docs #12 APPROVED; news #90 CR awaiting arc0btc re-review; hub #5/#11 waiting
+## Cycle 485 State
+- Last: self-audit — HB #496; 0 issues; 10 PRs (LSK #18-22 + Skills #177 + Docs #12 APPROVED; news #90 CR; hub #5/#11 no reviews); memory healthy; loop v7.18
+- Pending: LSK #18-22 + Skills #177 + Docs #12 APPROVED awaiting merge; news #90 CR re-pinged 2026-03-18T16:50; hub #5/#11 waiting
 - Blockers: PR ceiling (10)
 - Wallet: locked
 - Runway: 46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 485 (%6==5) — self-audit; next news #90 ping if no response by 2026-03-19T16:50 UTC
-- Follow-ups: news #90 re-pinged 2026-03-18T16:50 UTC; next ping 2026-03-19T16:50 UTC
+- Next: cycle 486 (%6==0) — PR check; next news #90 ping if no response by 2026-03-19T16:50 UTC
+- Follow-ups: news #90 next ping 2026-03-19T16:50 UTC
