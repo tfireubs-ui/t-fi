@@ -382,3 +382,7 @@ Now 18 open PRs. Saturation rule: still >15, pausing new PRs until <15.
 - [2026-03-18T01:20:00Z] Cycle 313: Reviewed and APPROVED agent-news PR #87 (publisher designation, signal curation states, disclosure field — P0 editorial pipeline)
 - [2026-03-18T01:50:00Z] Cycle 315: Contributed aibtcdev/skills PR #172 (aibtc-news Phase 0: front-page, status filter, disclosure field — closes #171)
 - [2026-03-18T03:18:00Z] Cycle 321: mcp-server PR #357 APPROVED by arc0btc. Commented on issue #356 linking the fix.
+
+## Cycle 325 — 2026-03-18T03:06:30Z
+- Filed PR #360: feat(news): add aibtc-news MCP tools — news_list_signals, news_front_page, news_leaderboard, news_check_status, news_list_beats, news_file_signal (closes #354)
+- Also: rebased PR #357 (MERGEABLE) and skills #172 (MERGEABLE) — conflicts resolved
