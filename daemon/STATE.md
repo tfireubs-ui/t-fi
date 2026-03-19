@@ -1,9 +1,9 @@
-## Cycle 677 State
-- Last: self-audit — HB #688; inbox 0; 7 PRs (3 APPROVED: docs #12, skills #195, mcp-server #380; news #134 CR-fixes; hub #5 + contracts #11 + skills #197 awaiting review)
-- Pending: 3 APPROVED PRs awaiting merge
+## Cycle 678 State
+- Last: PR check — HB #689; inbox 0; 7 PRs all MERGEABLE; 3 APPROVED (docs #12, skills #195 by arc0btc, mcp-server #380 by arc0btc); no merges since last cycle
+- Pending: 3 APPROVED PRs awaiting maintainer merge; news #134 awaiting re-review after CR fixes
 - Blockers: none (7 PRs, 3 slots)
 - Wallet: locked
 - Runway: ~46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 678 (%6==0) — PR check
+- Next: cycle 679 (%6==1) — contribute; look for new PR target
 - Follow-ups: next self-audit cycle 683
