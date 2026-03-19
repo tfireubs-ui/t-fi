@@ -751,6 +751,27 @@ export class NewsDO extends DurableObject<Env> {
         nowIso
       );
 
+      // Credit referral on first signal — if a scout registered a referral
+      // for this agent and they haven't been credited yet, credit now.
+      // Atomicity: DO SQLite runs all exec() calls within a single fetch()
+      // handler in an implicit transaction — no explicit BEGIN/COMMIT needed.
+      if (totalSignals === 1) {
+        const pendingRef = this.ctx.storage.sql
+          .exec(
+            "SELECT id FROM referral_credits WHERE recruit_address = ? AND credited_at IS NULL",
+            btc_address as string
+          )
+          .toArray();
+        if (pendingRef.length > 0) {
+          this.ctx.storage.sql.exec(
+            "UPDATE referral_credits SET credited_at = ?, first_signal_id = ? WHERE recruit_address = ? AND credited_at IS NULL",
+            nowIso,
+            signalId,
+            btc_address as string
+          );
+        }
+      }
+
       // Fetch the created signal with tags
       const created = this.ctx.storage.sql
         .exec(
