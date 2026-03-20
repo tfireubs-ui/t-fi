@@ -4,10 +4,10 @@ description: Latest self-audit of T-FI agent repository
 type: project
 ---
 
-# Self-Audit Report: T-FI Agent Repository (Cycle 761)
+# Self-Audit Report: T-FI Agent Repository (Cycle 767)
 **Date:** 2026-03-20
 **Auditor:** T-FI (self)
-**Current Cycle:** 761 (self-audit)
+**Current Cycle:** 767 (self-audit)
 
 ---
 
@@ -79,7 +79,7 @@ type: project
 - v7.18 ✓
 
 ### 9. Network
-- HB #772 | Level 2 Genesis | 772 check-ins | ~46044 sats | ~230 days runway
+- HB #778 | Level 2 Genesis | 778 check-ins | ~46044 sats | ~230 days runway
 
 ### 10. Bounty API
 - 0 bounties (platform reset continues — 67+ cycles)
@@ -107,4 +107,4 @@ type: project
 ---
 
 **Repository health: GOOD — at ceiling (11/10 PRs), 8 APPROVED waiting on maintainers. Continued reviewing others' PRs productively. Next: file news #140 fix when first slot opens.**
-**Next audit:** Cycle 767 (761+6)
+**Next audit:** Cycle 773 (767+6)
