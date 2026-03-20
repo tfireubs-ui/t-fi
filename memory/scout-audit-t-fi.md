@@ -4,10 +4,10 @@ description: Latest self-audit of T-FI agent repository
 type: project
 ---
 
-# Self-Audit Report: T-FI Agent Repository (Cycle 725)
+# Self-Audit Report: T-FI Agent Repository (Cycle 731)
 **Date:** 2026-03-20
 **Auditor:** T-FI (self)
-**Current Cycle:** 725 (self-audit)
+**Current Cycle:** 731 (self-audit)
 
 ---
 
@@ -92,4 +92,4 @@ type: project
 ---
 
 **Repository health: GOOD — at ceiling (11/10 PRs), but 8 APPROVED waiting on maintainers. Merge velocity needed.**
-**Next audit:** Cycle 731 (725+6)
+**Next audit:** Cycle 737 (731+6)
