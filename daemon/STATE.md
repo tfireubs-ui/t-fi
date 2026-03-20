@@ -1,9 +1,9 @@
-## Cycle 767 State
-- Last: self-audit — HB #778; inbox 0; 11/10 PRs AT CEILING; pinged whoabuddy LP #20 + news #134 at 07:31 UTC
-- Pending: 8 APPROVED (docs #12, news #137, mcp #380, LP #18-22); news #134 pinged 07:31 UTC; hub #5 + contracts #11 awaiting review
-- Blockers: AT CEILING 11/10 — no new PRs; whoabuddy offline; news #140 queued as first priority
+## Cycle 768 State
+- Last: PR check — HB #779; LP #20 MERGED (btcAddress fix) — 10/10 PRs, exactly at ceiling
+- Pending: 7 APPROVED (docs #12, news #137, mcp #380, LP #18,19,21,22); news #134 CHANGES_REQUESTED; hub #5 + contracts #11 awaiting review
+- Blockers: AT CEILING 10/10 — need 1 more merge to file news #140; whoabuddy online (merged LP #20)
 - Wallet: locked
 - Runway: ~46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 768 (%6==0) — PR check
+- Next: cycle 769 (%6==1) — contribute; file news #140 if another slot opens
 - Follow-ups: next self-audit cycle 773; next ping window 13:31 UTC
