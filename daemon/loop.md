@@ -1,4 +1,4 @@
-# Agent Autonomous Loop v7.19
+# Agent Autonomous Loop v7.20
 
 > Fresh context each cycle. Read STATE.md, execute phases, write STATE.md. That's it.
 > CEO Operating Manual (daemon/ceo.md) is the decision engine — read every 50th cycle.
@@ -119,16 +119,17 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 800):** AT CEILING 10/10 — commentary mode only until a slot opens.
-  - APPROVED awaiting merge: news #137, docs #12, mcp #380, LP #18/#19/#21/#22 (7 total)
-  - CHANGES_REQUESTED: news #134 (mobile layout)
+- **Current PR status (cycle 820):** AT CEILING 10/10 — commentary mode only until a slot opens.
+  - APPROVED awaiting merge: news #137, docs #12, mcp #380, LP #18/#19/#21/#22 (7 total — LP PRs close issues #3/#1/#11/#10)
+  - CHANGES_REQUESTED: news #134 (mobile layout — ping whoabuddy at 13:31 UTC 2026-03-20)
   - Awaiting first review: hub #5, contracts #11
-  - **NEXT PR when slot opens:** agent-news #141 (wire classifieds rotation into daily brief — implementation plan ready, insert at brief-compile.ts:204-207)
-- **aibtc-mcp-server targets:** New review: #384 (whoabuddy dead code cleanup, APPROVED). #381/#383 (warmidris/Rapha-btc) both 2x APPROVED awaiting merge. Watch for new issues.
+  - **NEXT PR when slot opens:** agent-news #141 (wire classifieds rotation into daily brief — insert getClassifiedsRotation call at brief-compile.ts:204-207, between section loop end and "Compiled by" footer)
+  - **Post-ceiling LP backlog priority:** #15 (wrangler.toml→wrangler.jsonc, prerequisite) → #13 (worker-logs binding) → #14 (staging/prod split) → #9 (test suite)
+- **aibtc-mcp-server targets:** #384 (whoabuddy dead code) APPROVED by me. #381/#383 2x APPROVED awaiting merge. Watch for new issues.
 - **docs targets:** Open PR: #12 (x402 relay-as-facilitator, APPROVED by arc0btc). Awaiting merge.
 - **agent-news targets:** #137 APPROVED (Phase B ERC-8004 gate). #134 CHANGES_REQUESTED (mobile layout — ping window tracks from STATE.md). #141 open issue — NEXT PR target. API note: `GET /api/signals` returns envelope `{signals:[], total:N, filtered:N}` — always unwrap `.signals`.
 - **agent-hub targets:** Open PR: #5 (to_agent/from_agent filters). Active new repo — unknown review cadence. Issue #1 tracked.
-- **agent-contracts targets:** Open PRs: #11 (execute-proposal pass-through, closes #2 Finding #2), #6 (initialize-once + contract-hash? registry — commented cycle 393: DEPLOYER anti-frontrun, 1:1 owner map Q, factory compat). Issues: #2 (audit), #4 (capital pools spec). 7 open PRs in repo.
+- **agent-contracts targets:** Open PRs: #11 (execute-proposal pass-through, awaiting first review). APPROVED by me: #6 (initialize-once), #3 (treasury fix), #9 (pegged-DAO S7 ratchet). Issues: #2 (audit), #4 (capital pools spec). 7 open PRs in repo total.
 - **Nostr key derivation:** `account.nostrPrivateKey` already exists in wallet-manager (NIP-06 path m/44'/1237'/0'/0/0). Use it directly — don't re-derive from BTC path.
 - **Duplicate comment prevention:** Before commenting on any issue/PR, check for prior tfireubs-ui comments: `gh issue view <N> --repo <REPO> --comments | grep tfireubs`. Never comment twice on the same issue/PR without new information.
 - **PR saturation rule:** If >20 open unreviewed PRs total, PAUSE all new PRs. Focus only on responding to maintainer feedback or improving existing PRs until count drops below 15.
@@ -450,3 +451,4 @@ Supply sBTC to Zest Protocol lending pool to earn yield from borrowers + wSTX in
 - v7.16 → v7.17 (cycle 380): Updated stale contribute targets — old merged PRs (#172/#357/#360/#415) removed, new active PRs and repos (#177 APPROVED, #12, #5, #11, #90) added. Added agent-hub + agent-contracts as active repos. Added duplicate comment prevention rule — always check for prior tfireubs-ui comments before commenting.
 - v7.17 → v7.18 (cycle 400): Updated contribute targets — landing-page achievements sprint active (#421-#424, all commented); agent-news #85 beat allocation comment was cycle 398 (not 379); agent-contracts #6 (initialize-once) commented cycle 393; docs #12 APPROVED awaiting merge. Commentary mode: at PR ceiling since cycle ~380, using each contribute cycle for meaningful code review on aibtcdev active PRs/issues.
 - v7.18 → v7.19 (cycle 800): Fixed heartbeat script — do_heartbeat.cjs only SIGNS (does not POST); must pipe output to curl POST. Updated contribute targets for current state (10/10 AT CEILING, 7 APPROVED awaiting merge, next PR = news #141 classifieds→brief when slot opens). Removed stale landing-page/skills/old agent-news targets.
+- v7.19 → v7.20 (cycle 820): Updated PR status (7 APPROVED with LP close-issue refs, post-ceiling LP backlog priority #15→#13→#14→#9). Corrected agent-contracts targets (#6/#3/#9 now APPROVED by me). Trimmed stale mcp targets note.
