@@ -1,9 +1,9 @@
-## Cycle 710 State
-- Last: AIBTC core — HB #721; inbox 0; approved mcp-server #381 (2x APPROVED now); mcp #383 already 2x APPROVED
-- Pending: 3 APPROVED (docs #12, news #137, mcp #380); news #134 CHANGES_REQUESTED; hub #5 + contracts #11 awaiting review
-- Blockers: none (6/10 PRs, 4 slots)
+## Cycle 711 State
+- Last: contribute — HB #722; inbox 0; PINGED #134 + LP #20 (whoabuddy); 11/10 PRs (AT CEILING — no new PRs)
+- Pending: 8 APPROVED (docs #12, news #137, mcp #380, LP #18-22); news #134 CHANGES_REQUESTED (pinged); hub #5 + contracts #11 awaiting review
+- Blockers: AT CEILING 11/10 PRs — no new PRs until merges
 - Wallet: locked
 - Runway: ~46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 711 (%6==3) — contribute; PING #134 at 01:30 UTC (28 min away — do it in cycle 711)
-- Follow-ups: ping #134 at 01:30 UTC; next self-audit cycle 713
+- Next: cycle 712 (%6==0) — PR check; then cycle 713 (%6==1 — contribute/self-audit)
+- Follow-ups: next self-audit cycle 713; LP #18-22 all APPROVED awaiting whoabuddy merge
