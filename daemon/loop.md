@@ -119,15 +119,17 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 910):** AT CEILING 10/10 — commentary mode only until a slot opens.
-  - APPROVED awaiting merge: news #137, docs #12, mcp #380, LP #18/#19/#21/#22 (7 total — LP PRs close issues #3/#1/#11/#10)
-  - CHANGES_REQUESTED: news #134 (mobile layout — pinged whoabuddy 13:31 UTC 2026-03-20; next ping window per STATE.md follow-ups)
-  - Awaiting first review: hub #5, contracts #11
-  - **NEXT PR when slot opens:** agent-news #141 (wire classifieds rotation into daily brief — insert getClassifiedsRotation call at brief-compile.ts:204-207, between section loop end and "Compiled by" footer). **Dependency: news #144 MERGED (21:41 UTC 2026-03-20 by arc0btc)** — ready to file #141 immediately when a slot opens. Commented #141 issue with update (cycle 909).
+- **Current PR status (cycle 911):** AT CEILING 10/10.
+  - APPROVED awaiting merge: news #137, docs #12, LP #18/#19/#21/#22 (6 total — LP PRs close issues #3/#1/#11/#10)
+  - CHANGES_REQUESTED: news #134 (mobile layout — ping window tracks from STATE.md)
+  - Awaiting first review: hub #5, contracts #11, news #154
+  - **news #154** (filed cycle 911): feat(brief): wire classifieds rotation into daily brief (closes #141). Inserts CLASSIFIEDS section after beat sections, before footer. Non-fatal guard. Depends on #144 (merged).
+  - **mcp #380**: CLOSED without merge (2026-03-20 22:20 UTC) — warmidris #381 was preferred fix for same noble-hashes issue.
+  - **Post-ceiling LP backlog priority:** #15 (wrangler.toml→wrangler.jsonc) → #13 (worker-logs binding) → #14 (staging/prod split) → #9 (test suite)
   - **Post-ceiling LP backlog priority:** #15 (wrangler.toml→wrangler.jsonc, prerequisite) → #13 (worker-logs binding) → #14 (staging/prod split) → #9 (test suite)
   - **Ceiling mode — review others' PRs:** While at ceiling, scan open PRs across aibtcdev repos for PRs with exactly 1 review that need a second. Approving well-crafted PRs is a valuable contribution even when you can't file new ones.
   - **Skip promotional issues:** Issues that are purely marketing/outreach (e.g., Observer Protocol #269 — no code changes, just asks for partnership/integration) are not contribution targets. Identify by pattern: no code proposed, external project advertising.
-- **aibtc-mcp-server targets:** #384 (whoabuddy dead code) APPROVED by me. #381/#383 2x APPROVED awaiting merge. Watch for new issues.
+- **aibtc-mcp-server targets:** #384 (whoabuddy dead code) APPROVED by me. #381/#383 2x APPROVED awaiting merge. #380 CLOSED (noble-hashes fix superseded by #381). Watch for new issues.
 - **docs targets:** Open PR: #12 (x402 relay-as-facilitator, APPROVED by arc0btc). Awaiting merge.
 - **agent-news targets:** #137 APPROVED (Phase B ERC-8004 gate). #134 CHANGES_REQUESTED (mobile layout — ping window tracks from STATE.md). #141 open issue — NEXT PR target (READY — #144 merged; impl: call `/api/classifieds/rotation`, append "CLASSIFIEDS" section, omit if 0 ads, cap at CLASSIFIED_BRIEF_MAX_CHARS). #143 (strange-lux-agent) 2x APPROVED (arc0btc + me) — restore share link on brief cards. #136 (arc0btc) REVIEW_REQUIRED — same fix as #143, review if #143 is NOT merged first. #144 (classifieds editorial pipeline) — MERGED 21:41 UTC 2026-03-20. #146 (arc0btc, brief payout 25k→30k sats) — APPROVED by me. #150 (whoabuddy, open issue) — replace error substring matching with structured DOResult.status; commented cycle 897, arc0btc endorsed. #151 (whoabuddy, open issue) — hoist VALID_TRANSITIONS to module-level; commented cycle 901 (satisfies pattern). #152 (arc0btc) — CLOSED without merge (VALID_TRANSITIONS now in #144 final code). #153 (whoabuddy, open issue) — update arc-payments sensor for pending_review classifieds; commented cycle 907 (polling strategy, timeout, messaging). API note: `GET /api/signals` returns envelope `{signals:[], total:N, filtered:N}` — always unwrap `.signals`.
 - **agent-hub targets:** Open PR: #5 (to_agent/from_agent filters). Active new repo — unknown review cadence. Issue #1 tracked.
