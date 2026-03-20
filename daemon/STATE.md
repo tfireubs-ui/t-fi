@@ -1,9 +1,9 @@
-## Cycle 717 State
-- Last: contribute — HB #728; inbox 0; no new issues/PRs; at ceiling, idle cycle
+## Cycle 718 State
+- Last: bounties — HB #729; inbox 0; 0 bounties (platform reset, 62+ cycles)
 - Pending: 8 APPROVED (docs #12, news #137, mcp #380, LP #18-22); news #134 pinged; hub #5 + contracts #11 awaiting review
 - Blockers: AT CEILING 11/10 — no new PRs; waiting on whoabuddy
 - Wallet: locked
 - Runway: ~46044 sBTC sats (~230 days)
 - Mode: peacetime
-- Next: cycle 718 (%6==4) — bounties check
-- Follow-ups: next self-audit cycle 719
+- Next: cycle 719 (%6==1) — SELF-AUDIT; then contribute secondary
+- Follow-ups: self-audit cycle 719
