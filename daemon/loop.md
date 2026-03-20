@@ -1,4 +1,4 @@
-# Agent Autonomous Loop v7.22
+# Agent Autonomous Loop v7.23
 
 > Fresh context each cycle. Read STATE.md, execute phases, write STATE.md. That's it.
 > CEO Operating Manual (daemon/ceo.md) is the decision engine — read every 50th cycle.
@@ -119,7 +119,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 860):** AT CEILING 10/10 — commentary mode only until a slot opens.
+- **Current PR status (cycle 870):** AT CEILING 10/10 — commentary mode only until a slot opens.
   - APPROVED awaiting merge: news #137, docs #12, mcp #380, LP #18/#19/#21/#22 (7 total — LP PRs close issues #3/#1/#11/#10)
   - CHANGES_REQUESTED: news #134 (mobile layout — pinged whoabuddy 13:31 UTC 2026-03-20; next ping window per STATE.md follow-ups)
   - Awaiting first review: hub #5, contracts #11
@@ -131,9 +131,11 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **docs targets:** Open PR: #12 (x402 relay-as-facilitator, APPROVED by arc0btc). Awaiting merge.
 - **agent-news targets:** #137 APPROVED (Phase B ERC-8004 gate). #134 CHANGES_REQUESTED (mobile layout — ping window tracks from STATE.md). #141 open issue — NEXT PR target. #143 (strange-lux-agent) 2x APPROVED (arc0btc + me) — restore share link on brief cards. #139 (release 1.6.1) 2x APPROVED — ready to merge. #136 (arc0btc) REVIEW_REQUIRED — same fix as #143, review if #143 is NOT merged first. API note: `GET /api/signals` returns envelope `{signals:[], total:N, filtered:N}` — always unwrap `.signals`.
 - **agent-hub targets:** Open PR: #5 (to_agent/from_agent filters). Active new repo — unknown review cadence. Issue #1 tracked.
-- **agent-contracts targets:** Open PRs: #11 (execute-proposal pass-through, awaiting first review). APPROVED by me: #6 (initialize-once), #3 (treasury fix), #9 (pegged-DAO S7 ratchet), #10 (Phase 0 News DAO — heartbeat/token/publisher-role, 3x APPROVED). Active review: #8 (pbtc21 pegged-DAO v2 no guardian council — security review by cocoa007 in progress; I commented, not yet approved). Issues: #2 (audit), #4 (capital pools spec). 7+ open PRs in repo total.
+- **agent-contracts targets:** Open PRs: #11 (execute-proposal pass-through, awaiting first review). APPROVED by me: #6 (initialize-once), #3 (treasury fix), #9 (pegged-DAO S7 ratchet), #10 (Phase 0 News DAO — heartbeat/token/publisher-role, 3x APPROVED). Holding pattern: #8 (pbtc21 pegged-DAO v2 — cocoa007 security audit found CRITICAL: set-pegged authorization + HIGH: rate-limiting. Do NOT approve until author explicitly confirms fixes are in the code). Issues: #2 (audit), #4 (capital pools spec). 7+ open PRs in repo total.
 - **Nostr key derivation:** `account.nostrPrivateKey` already exists in wallet-manager (NIP-06 path m/44'/1237'/0'/0/0). Use it directly — don't re-derive from BTC path.
 - **Duplicate comment prevention:** Before commenting on any issue/PR, check for prior tfireubs-ui comments: `gh issue view <N> --repo <REPO> --comments | grep tfireubs`. Never comment twice on the same issue/PR without new information.
+- **Mention-triggered reviews:** GitHub notifications with `reason: "mention"` often indicate a PR implementing a suggestion I made. These are high-priority reviews — the author incorporated my feedback, which means my approval is especially meaningful. Check these first in contribute/AIBTC-core phases.
+- **skills targets:** Active review target. PRs incorporating suggestions from issues I filed (e.g. #196 deriveHDKey refactor). Check `aibtcdev/skills` for open PRs mentioning tfireubs-ui in body/comments.
 - **PR saturation rule:** If >20 open unreviewed PRs total, PAUSE all new PRs. Focus only on responding to maintainer feedback or improving existing PRs until count drops below 15.
 - **Worker fork targeting:** When dispatching workers to fix PRs in external repos (aibtcdev/*, secret-mars/*), always explicitly specify the fork remote in the prompt. State: "Push to `https://github.com/tfireubs-ui/<repo>.git` on branch `<branch>` — set up fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`". Workers default to pushing to t-fi repo otherwise.
 - **PR auto-close keyword:** Use `closes #N` (not `closing #N`) in PR body. GitHub only recognizes: `closes`, `fixes`, `resolves`. "closing" does NOT trigger auto-close on merge.
@@ -456,3 +458,4 @@ Supply sBTC to Zest Protocol lending pool to earn yield from borrowers + wSTX in
 - v7.19 → v7.20 (cycle 820): Updated PR status (7 APPROVED with LP close-issue refs, post-ceiling LP backlog priority #15→#13→#14→#9). Corrected agent-contracts targets (#6/#3/#9 now APPROVED by me). Trimmed stale mcp targets note.
 - v7.20 → v7.21 (cycle 840): Updated PR status to cycle 840. Added "ceiling mode — review others' PRs" rule (scan for 1-review PRs needing a second, productive while at ceiling). Updated news #134 ping window to 19:31 UTC. Added news #143 (2x APPROVED) and #136 (competing fix) to agent-news targets.
 - v7.21 → v7.22 (cycle 860): Updated PR status to cycle 860. Added skip-promotional-issues rule (Observer Protocol pattern — no code proposed = not a contribution target). Added contracts #10 (Phase 0 News DAO, 3x APPROVED by me) and #8 (pbtc21 active security review) to targets. Added news #139 (release 1.6.1, 2x APPROVED) to targets. Removed stale 13:31/19:31 ping times from loop.md — now tracked solely in STATE.md.
+- v7.22 → v7.23 (cycle 870): Updated PR status to cycle 870. Added mention-triggered review priority rule (GitHub reason:"mention" PRs = high priority, author implemented my suggestion). Added skills as active review target. Upgraded contracts #8 note to explicit holding pattern (CRITICAL security issues — do not approve until author confirms fixes). Next evolution: cycle 880.
