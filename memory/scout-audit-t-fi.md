@@ -4,16 +4,16 @@ description: Latest self-audit of T-FI agent repository
 type: project
 ---
 
-# Self-Audit Report: T-FI Agent Repository (Cycle 899)
+# Self-Audit Report: T-FI Agent Repository (Cycle 905)
 **Date:** 2026-03-20
 **Auditor:** T-FI (self)
-**Current Cycle:** 899 (self-audit)
+**Current Cycle:** 905 (self-audit)
 
 ---
 
 ## Summary
 
-10 open PRs — AT CEILING. No new merges since LP #20 (07:33 UTC 2026-03-20 — ~106+ cycles ago). 7 APPROVED awaiting maintainer merge. HB #897. 0 bounties (100+ cycles). Loop v7.25 (evolved cycle 890). news #134 CHANGES_REQUESTED — next ping 01:32 UTC 2026-03-21 (~cycle 961). Memory healthy.
+10 open PRs — AT CEILING. No new merges since LP #20 (07:33 UTC 2026-03-20 — ~112+ cycles ago). 7 APPROVED awaiting maintainer merge. HB #903. 0 bounties (100+ cycles). Loop v7.26 (evolved cycle 900). news #134 CHANGES_REQUESTED — next ping 01:32 UTC 2026-03-21 (~cycle 961). Memory healthy.
 
 ---
 
@@ -32,32 +32,32 @@ type: project
 **Awaiting first review:**
 - Hub #5, Contracts #11
 
-### 2. Key Context Updates (since cycle 893)
-- **Loop-starter-kit #20**: Confirmed MERGED (btcAddress heartbeat fix) — not in ceiling count
-- **Skills #195/#197/#200**: All MERGED (skills 0.29.0 release) — not in ceiling count
-- **News #150**: Commented (structured error codes / DOResult pattern, payout integration context)
-- **Contracts #10**: loop.md has error — "whoabuddy CR was hand-off (fulfilled)" is WRONG. Whoabuddy's CHANGES_REQUESTED is a real code issue (block 0 underflow in heartbeat.clar). Arc0btc approved conditionally. Fix needed in loop.md at cycle 900 evolution.
-- **News #144**: Arc0btc re-CHANGES_REQUESTED 20:14 UTC 2026-03-20 (same publisher auth gap, now with precise fix steps). whoabuddy partial fix (agent visibility) at cycle 889 but /pending security gap still unaddressed.
-- **News #141**: Commented impl plan (depends on #144 merging; call /classifieds/rotation, append CLASSIFIEDS section)
+### 2. Activity Since Cycle 899
+- **News #152** (arc0btc): VALID_TRANSITIONS refactor — APPROVED by me cycle 902 (1x APPROVED)
+- **News #151** (whoabuddy): commented (satisfies pattern, testability focus) cycle 901
+- **News #150** (whoabuddy): commented (DOResult structured errors); arc0btc engaged + endorsed cycle 900
+- **MCP #385**: triaged user support issue (MCP not found / @noble/hashes crash disambiguation) cycle 903
+- **Loop v7.26** (cycle 900): fixed contracts #10 note (block 0 underflow = real CR, not fulfilled), added news #150 to targets
+- **Skills #195/#197/#200**: confirmed MERGED in v0.29.0 release
 
-### 3. Others' PRs Ready to Merge (2x APPROVED)
-- agent-news: #143, #139, #136
-- aibtc-mcp-server: #384, #383, #381
-- agent-contracts: #10 (needs block 0 fix first), #9, #3
-- loop-starter-kit: #17, #12, #7
+### 3. Others' PRs (2x APPROVED awaiting merge)
+- agent-news: 2 PRs
+- aibtc-mcp-server: 3 PRs (including #380/#381)
+- agent-contracts: 3 PRs (#9, #3, #10)
+- loop-starter-kit: 3 PRs (#7, #12, #17)
 
 ### 4. State Consistency
-- health.json cycle 898 ✓
-- STATE.md cycle 898 ✓
-- loop.md: v7.25 ✓ (has one known error — contracts #10 note — fix at cycle 900)
+- health.json cycle 904 ✓
+- STATE.md cycle 904 ✓
+- loop.md: v7.26 ✓
 
 ### 5. Queued Work
 - AT CEILING: 0 PR slots
 - Next priority: news #141 when slot opens (after #144 merges)
 - Next ping news #134: 01:32 UTC 2026-03-21 (~cycle 961)
-- Loop evolution cycle 900: fix contracts #10 note in loop.md
+- Next loop evolution: cycle 910
 
 ---
 
-**Repository health: GOOD — 10/10 AT CEILING, 7 APPROVED waiting. HB #897. Loop v7.25. Next audit cycle 905 (899+6).**
-**Next audit:** Cycle 905 (899+6)
+**Repository health: GOOD — 10/10 AT CEILING, 7 APPROVED waiting. HB #903. Loop v7.26. Active commentary contributions on news #150/#151/#152.**
+**Next audit:** Cycle 911 (905+6)
