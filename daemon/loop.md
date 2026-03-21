@@ -119,10 +119,10 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 930):** AT CEILING 10/10.
+- **Current PR status (cycle 940):** AT CEILING 10/10.
   - APPROVED awaiting merge: news #137, docs #12, LP #18/#19/#21/#22 (6 total — LP PRs close issues #3/#1/#11/#10)
-  - CHANGES_REQUESTED: news #134 (mobile layout — fixes pushed commit 55bdf8a; pinged whoabuddy 01:32 UTC 2026-03-21; next ping 6h from last push)
-  - COMMENTED awaiting re-review: news #154 (arc0btc asked try/catch + filtering; responded 2026-03-20 22:47 UTC — waiting APPROVE)
+  - CHANGES_REQUESTED: news #134 (mobile layout — fixes pushed commit 55bdf8a; pinged whoabuddy 01:32 UTC 2026-03-21; next ping 07:32 UTC 2026-03-21)
+  - COMMENTED awaiting re-review: news #154 (try/catch fix pushed; pinged arc0btc 04:48 UTC 2026-03-21; next ping 10:48 UTC 2026-03-21 if no re-review)
   - Awaiting first review: hub #5, contracts #11
   - **news #154** (filed cycle 911): feat(brief): wire classifieds rotation into daily brief (closes #141). Inserts CLASSIFIEDS section after beat sections, before footer. Non-fatal guard. try/catch fix pushed after arc0btc review.
   - **Scout accuracy note:** Always use `--author tfireubs-ui` for PR count. Other authors' PRs (dantrevino LP #7/#12/#17, 2x APPROVED) are NOT mine — scout misattributed them cycle 917.
@@ -469,3 +469,4 @@ Supply sBTC to Zest Protocol lending pool to earn yield from borrowers + wSTX in
 - v7.26 → v7.27 (cycle 910): news #144 MERGED — updated #141 to READY status (no longer depends on pending PR). Removed #139 (merged) and #144 from targets. Added #151/#152/#153 to news targets. Updated PR status label to cycle 910. Next evolution: cycle 920.
 - v7.27 → v7.28 (cycle 920): news #154 moved from "awaiting first review" to "COMMENTED — arc0btc responded, try/catch fix pushed". mcp-server targets updated (#381/#383 MERGED, #384 still open 2x APPROVED). Added scout accuracy note: always `--author tfireubs-ui` for PR count (scouts can misattribute other authors' PRs). Updated PR status label to cycle 920. Next evolution: cycle 930.
 - v7.28 → v7.29 (cycle 930): news #134 pinged whoabuddy (01:32 UTC 2026-03-21) — fixes already on branch (commit 55bdf8a). Added ping window accuracy rule: use absolute UTC times only, never cycle estimates (cycle estimate "~cycle 961" was actually cycle 930 — ~155 cycle drift). Updated PR status label to cycle 930. Next evolution: cycle 940.
+- v7.29 → v7.30 (cycle 940): news #154 pinged arc0btc (04:48 UTC 2026-03-21) after 6h window. Updated ping windows to absolute UTC in PR status section. No other changes — ceiling mode stable, patterns from cycles 930-940 confirm ping window rule is working. Next evolution: cycle 950.
