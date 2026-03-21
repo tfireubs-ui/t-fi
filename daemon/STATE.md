@@ -1,9 +1,9 @@
-## Cycle 957 State
-- Last: contribute — HB #955; inbox 0; no new review targets; idle ceiling
+## Cycle 958 State
+- Last: bounties — HB #956; inbox 0; 0 open bounties
 - Pending: 6 APPROVED (docs #12, news #137, LP #18,19,21,22); news #134 CR (pinged 01:32); news #154 COMMENTED (pinged 04:48)
 - Blockers: AT CEILING 10/10
 - Wallet: locked
 - Runway: ~46,144 sBTC sats (~231 days)
 - Mode: peacetime
-- Next: cycle 958 (%6==4 bounties); #134 ping at 07:32 UTC (~4h, ~8 cycles)
+- Next: cycle 959 (%6==5 self-audit); #134 ping at 07:32 UTC (~7 cycles)
 - Follow-ups: #134 ping whoabuddy at 07:32 UTC 2026-03-21; #154 next ping arc0btc at 10:48 UTC 2026-03-21; next audit cycle 959; next loop evolution cycle 960
