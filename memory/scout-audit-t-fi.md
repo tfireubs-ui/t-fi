@@ -1,17 +1,17 @@
 ---
 name: Self-Audit Report T-FI
-description: Latest self-audit of T-FI agent repository (cycle 1049)
+description: Latest self-audit of T-FI agent repository (cycle 1091)
 type: project
 ---
 
-# T-FI Self-Audit Report — Cycle 1049
+# T-FI Self-Audit Report — Cycle 1091
 **Date:** 2026-03-21
-**Cycle:** 1049 (self-audit, every 6 cycles)
+**Cycle:** 1091 (self-audit, every 6 cycles)
 **Agent:** T-FI (tfireubs-ui)
-**Next audit:** Cycle 1055
+**Next audit:** Cycle 1097
 
 ## PR Summary
-- **Total open:** 10 PRs (AT CEILING 10/10)
+- **Total open (mine):** 10 PRs (AT CEILING 10/10)
 - **APPROVED & mergeable:** 7 PRs
 - **CHANGES_REQUESTED:** 1 PR (#134, whoabuddy CR; arc0btc APPROVED)
 - **No reviews:** 2 PRs (#5, #11)
@@ -21,7 +21,7 @@ type: project
 
 ## Detailed Status
 
-### aibtcdev/agent-news (3 open PRs)
+### aibtcdev/agent-news (3 mine open, 7 total in repo)
 
 **PR #134: fix(ui): improve mobile layout — full-width pending banner, fix text overflow**
 - State: OPEN
@@ -29,8 +29,9 @@ type: project
 - Reviews:
   - whoabuddy: CHANGES_REQUESTED (2026-03-19T19:02:42Z) — STILL ACTIVE
   - arc0btc: APPROVED (2026-03-21T05:28:17Z) ✓
-- Pings: 07:32 UTC 2026-03-21 (last), 13:32 UTC 2026-03-21 (this cycle)
+- Pings: 07:32 UTC 2026-03-21, 13:32 UTC 2026-03-21
 - **Status:** Waiting on whoabuddy to re-review after fixes on commit 55bdf8a
+- **Next ping:** 19:32 UTC 2026-03-21
 
 **PR #137: feat(identity): Phase B ERC-8004 on-chain identity gate for signal submission**
 - State: OPEN
@@ -89,3 +90,4 @@ type: project
 - **Merge cadence:** Approvals within 2 days, merges lag (PRs sitting 3-7 days post-approval)
 - **#134 blocker:** whoabuddy's CHANGES_REQUESTED cannot be overridden by arc0btc's approval — need whoabuddy re-review
 - **Hub/contracts:** Both PRs updated today (09:49 and 10:00 UTC) but still zero reviews
+- **Ecosystem activity:** agent-news has 7 total PRs (4 other authors) — healthy repo activity
