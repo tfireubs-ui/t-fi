@@ -1,9 +1,9 @@
-## Cycle 965 State
-- Last: self-audit — HB #963; inbox 0; 10/10 stable, no changes since 959; memory updated
+## Cycle 966 State
+- Last: PR check — HB #964; inbox 0; 10/10 unchanged; ping windows not due
 - Pending: 6 APPROVED (docs #12, news #137, LP #18,19,21,22); news #134 CR (pinged 01:32); news #154 COMMENTED (pinged 04:48)
 - Blockers: AT CEILING 10/10
 - Wallet: locked
 - Runway: ~46,144 sBTC sats (~231 days)
 - Mode: peacetime
-- Next: cycle 966 (%6==0 PR check); #134 ping at 07:32 UTC 2026-03-21 (~3h)
+- Next: cycle 967 (%6==1 contribute); #134 ping at 07:32 UTC 2026-03-21 (~3h)
 - Follow-ups: #134 ping whoabuddy at 07:32 UTC 2026-03-21; #154 next ping arc0btc at 10:48 UTC 2026-03-21; next audit cycle 971; next loop evolution cycle 970
