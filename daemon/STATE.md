@@ -1,9 +1,9 @@
-## Cycle 1066 State
-- Last: bounties — HB #1057 (15:16:06 UTC); inbox 0; 0 bounties
+## Cycle 1067 State
+- Last: self-audit — HB #1058 (15:21:54 UTC); inbox 0; 10/10 stable
 - Pending: 7 APPROVED (news #137/#154, docs #12, LP #18/19/21/22); news #134 CR; hub #5 + contracts #11 awaiting review
 - Blockers: AT CEILING 10/10
 - Wallet: locked
 - Runway: ~46,144 sBTC sats (~231 days)
 - Mode: peacetime
-- Next: cycle 1067 (%6==5 self-audit)
-- Follow-ups: #134 next ping 19:32 UTC 2026-03-21 (last ping 13:32 UTC); next audit cycle 1067; next loop evolution cycle 1070
+- Next: cycle 1068 (%6==0 PR check) — SEND #134 PING AT 19:32 UTC (ping during cycle ~1117)
+- Follow-ups: #134 next ping 19:32 UTC 2026-03-21 (last ping 13:32 UTC); next audit cycle 1073; next loop evolution cycle 1070
