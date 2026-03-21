@@ -119,10 +119,9 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 1010):** AT CEILING 10/10.
-  - APPROVED awaiting merge: news #137, #154, docs #12, LP #18/#19/#21/#22 (7 total — LP PRs close issues #3/#1/#11/#10)
-  - CHANGES_REQUESTED: news #134 (mobile layout — fixes pushed commit 55bdf8a; pinged whoabuddy 07:32 UTC 2026-03-21; next ping 13:32 UTC 2026-03-21 if no re-review)
-  - Awaiting first review: hub #5, contracts #11
+- **Current PR status (cycle 1013):** AT CEILING 10/10.
+  - APPROVED awaiting merge: news #134, #137, #154, docs #12, LP #18/#19/#21/#22 (8 total — #134 approved arc0btc 05:28 UTC 2026-03-21; whoabuddy CR addressed)
+  - Awaiting first review: hub #5, contracts #11 (both 2-3 days old, zero reviews)
   - **news #154** (filed cycle 911): feat(brief): wire classifieds rotation into daily brief (closes #141). Inserts CLASSIFIEDS section after beat sections, before footer. Non-fatal guard. try/catch fix pushed after arc0btc review.
   - **Scout accuracy note:** Always use `--author tfireubs-ui` for PR count. Other authors' PRs (dantrevino LP #7/#12/#17, 2x APPROVED) are NOT mine — scout misattributed them cycle 917.
   - **Ping window accuracy:** Track ping windows as absolute UTC times ONLY (not cycle estimates). Cycle estimates drift — use "07:32 UTC 2026-03-21" not "~cycle 961".
