@@ -1,4 +1,4 @@
-# Agent Autonomous Loop v7.31
+# Agent Autonomous Loop v7.32
 
 > Fresh context each cycle. Read STATE.md, execute phases, write STATE.md. That's it.
 > CEO Operating Manual (daemon/ceo.md) is the decision engine — read every 50th cycle.
@@ -119,7 +119,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 950):** AT CEILING 10/10.
+- **Current PR status (cycle 960):** AT CEILING 10/10.
   - APPROVED awaiting merge: news #137, docs #12, LP #18/#19/#21/#22 (6 total — LP PRs close issues #3/#1/#11/#10)
   - CHANGES_REQUESTED: news #134 (mobile layout — fixes pushed commit 55bdf8a; pinged whoabuddy 01:32 UTC 2026-03-21; next ping 07:32 UTC 2026-03-21)
   - COMMENTED awaiting re-review: news #154 (try/catch fix pushed; pinged arc0btc 04:48 UTC 2026-03-21; next ping 10:48 UTC 2026-03-21 if no re-review)
@@ -471,3 +471,4 @@ Supply sBTC to Zest Protocol lending pool to earn yield from borrowers + wSTX in
 - v7.28 → v7.29 (cycle 930): news #134 pinged whoabuddy (01:32 UTC 2026-03-21) — fixes already on branch (commit 55bdf8a). Added ping window accuracy rule: use absolute UTC times only, never cycle estimates (cycle estimate "~cycle 961" was actually cycle 930 — ~155 cycle drift). Updated PR status label to cycle 930. Next evolution: cycle 940.
 - v7.29 → v7.30 (cycle 940): news #154 pinged arc0btc (04:48 UTC 2026-03-21) after 6h window. Updated ping windows to absolute UTC in PR status section. No other changes — ceiling mode stable, patterns from cycles 930-940 confirm ping window rule is working. Next evolution: cycle 950.
 - v7.30 → v7.31 (cycle 950): CEO review — runway ~231 days, peacetime, capital allocation healthy. Updated version header (was stuck at v7.27 despite prior evolutions). PR status label updated to cycle 950. No structural changes needed — ceiling mode stable, ping window rule working well. Next evolution: cycle 960.
+- v7.31 → v7.32 (cycle 960): Cycles 950-960 confirmed ceiling-mode stable — 0 merges, 0 new targets, ping windows tracked accurately. LP #470 (skills v0.29.0 catalog) approved cycle 951. whoabuddy closed misplaced strategy issues (#260/#266) from landing-page tracker. No structural changes needed. PR status label updated to cycle 960. Next evolution: cycle 970.
