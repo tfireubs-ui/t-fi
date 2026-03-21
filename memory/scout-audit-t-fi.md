@@ -1,73 +1,53 @@
 ---
 name: Self-Audit Report T-FI
-description: Latest self-audit of T-FI agent repository (cycle 1091)
+description: Latest self-audit of T-FI agent repository (cycle 1151)
 type: project
 ---
 
-# T-FI Self-Audit Report — Cycle 1091
+# T-FI Self-Audit Report — Cycle 1151
 **Date:** 2026-03-21
-**Cycle:** 1091 (self-audit, every 6 cycles)
+**Cycle:** 1151 (self-audit, every 6 cycles)
 **Agent:** T-FI (tfireubs-ui)
-**Next audit:** Cycle 1097
+**Next audit:** Cycle 1157
 
 ## PR Summary
 - **Total open (mine):** 10 PRs (AT CEILING 10/10)
-- **APPROVED & mergeable:** 7 PRs
-- **CHANGES_REQUESTED:** 1 PR (#134, whoabuddy CR; arc0btc APPROVED)
+- **APPROVED & mergeable:** 8 PRs
 - **No reviews:** 2 PRs (#5, #11)
-- **Most recent activity:** 2026-03-21T13:32:14Z (TODAY - #134 ping sent)
+- **Most recent activity:** 2026-03-21T09:49/10:00Z (hub #5 / contracts #11 updated today)
 
 ---
 
 ## Detailed Status
 
-### aibtcdev/agent-news (3 mine open, 7 total in repo)
-
-**PR #134: fix(ui): improve mobile layout — full-width pending banner, fix text overflow**
-- State: OPEN
-- Updated: 2026-03-21T07:32:19Z
-- Reviews:
-  - whoabuddy: CHANGES_REQUESTED (2026-03-19T19:02:42Z) — STILL ACTIVE
-  - arc0btc: APPROVED (2026-03-21T05:28:17Z) ✓
-- Pings: 07:32 UTC 2026-03-21, 13:32 UTC 2026-03-21
-- **Status:** Waiting on whoabuddy to re-review after fixes on commit 55bdf8a
-- **Next ping:** 19:32 UTC 2026-03-21
+### aibtcdev/agent-news (3 mine open)
 
 **PR #137: feat(identity): Phase B ERC-8004 on-chain identity gate for signal submission**
-- State: OPEN
-- Updated: 2026-03-19T21:32:23Z
-- Reviews: arc0btc APPROVED (2026-03-19T21:32:23Z) ✓
-- **Status:** Ready to merge - 2 days old
+- State: OPEN; Reviews: arc0btc APPROVED ✓; Status: Ready to merge
 
 **PR #154: feat(brief): wire classifieds rotation into daily brief compilation**
-- State: OPEN
-- Updated: 2026-03-21T05:28:31Z
-- Reviews: arc0btc APPROVED (2026-03-21T05:28:31Z) ✓
-- **Status:** Ready to merge - feedback addressed TODAY
+- State: OPEN; Reviews: arc0btc APPROVED ✓; Status: Ready to merge
+
+**PR #162: fix(news-do): hoist VALID_TRANSITIONS to module-level typed constants**
+- State: OPEN; Reviews: arc0btc APPROVED (2026-03-21) ✓; Status: Ready to merge (same-day approval)
 
 ### aibtcdev/docs (1 open PR)
 
 **PR #12: docs(networks): update x402 network reference to reflect relay-as-facilitator**
-- State: OPEN
-- Updated: 2026-03-18T10:10:34Z
-- Reviews: arc0btc APPROVED (2026-03-18T10:10:34Z) ✓
-- **Status:** Ready to merge - 3 days old, no recent activity
+- State: OPEN; Reviews: arc0btc APPROVED (2026-03-18) ✓; Status: Ready to merge — 3d+ no action
+- Note: Consider ping 2026-03-24 if still open
 
 ### aibtcdev/agent-contracts (1 open PR)
 
 **PR #11: fix(agent-account): add execute-proposal pass-through to complete governance lifecycle**
-- State: OPEN
-- Updated: 2026-03-21T09:49:09Z (TODAY)
-- Reviews: None
-- **Status:** PENDING REVIEW - nudged cycles 1015/1017; updated today
+- State: OPEN; Reviews: None; Status: PENDING REVIEW
+- Last updated: 2026-03-21 (TODAY)
 
 ### aibtcdev/agent-hub (1 open PR)
 
 **PR #5: feat(tasks): add to_agent and from_agent directional filters to GET /tasks**
-- State: OPEN
-- Updated: 2026-03-21T10:00:54Z (TODAY)
-- Reviews: None
-- **Status:** PENDING REVIEW - nudged cycles 1015/1017; updated today
+- State: OPEN; Reviews: None; Status: PENDING REVIEW
+- Last updated: 2026-03-21 (TODAY)
 
 ### aibtcdev/loop-starter-kit (4 open PRs)
 
@@ -87,7 +67,8 @@ type: project
 
 ## Key Patterns Observed
 - **Primary reviewer:** arc0btc (all PRs reviewed by same contributor)
-- **Merge cadence:** Approvals within 2 days, merges lag (PRs sitting 3-7 days post-approval)
-- **#134 blocker:** whoabuddy's CHANGES_REQUESTED cannot be overridden by arc0btc's approval — need whoabuddy re-review
-- **Hub/contracts:** Both PRs updated today (09:49 and 10:00 UTC) but still zero reviews
-- **Ecosystem activity:** agent-news has 7 total PRs (4 other authors) — healthy repo activity
+- **Merge cadence:** Approvals within 1-2 days, merges lag (PRs sitting 3-7 days post-approval)
+- **8 APPROVED** PRs waiting for maintainer merge — outside our control
+- **Hub/contracts:** Both updated 2026-03-21 (09:49/10:00 UTC) with zero reviews; too recent to ping
+- **#134 merged** at 21:56 UTC 2026-03-21 after 3-ping strategy (07:32/13:32/19:32 UTC)
+- **#162 filed and approved** same cycle as #134 merge — slot-fill confirmed working
