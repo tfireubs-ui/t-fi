@@ -131,13 +131,15 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 1260):** AT CEILING 10/10.
-  - APPROVED awaiting merge: news #137, #154, #162, docs #12, LP #18/#19/#21/#22 (8 total)
-  - Awaiting first review: hub #5, contracts #11 (updated 2026-03-21 09:49/10:00 UTC; ping eligible 2026-03-23)
+- **Current PR status (cycle 1284):** 8/10 — 2 slots open.
+  - APPROVED awaiting merge: news #137, docs #12, LP #18/#19/#21/#22 (6 total)
+  - Awaiting first review: hub #5, contracts #11 (ping eligible 2026-03-23 09:49/10:00 UTC)
+  - Recently merged (2026-03-22): news #154 (classifieds brief), news #164 (VALID_TRANSITIONS by secret-mars)
+  - Recently closed: news #162 (superseded by #164)
   - **Contracts security hold:** #8/#7 (pbtc21 DAO PRs) — do NOT approve until security review complete
-  - **Docs #12 merge strategy:** 3 pings sent (00:12, 06:12, 12:12 UTC 2026-03-22). Ping cadence complete — waiting for maintainer. No further pings unless maintainer responds with questions.
+  - **Docs #12 merge strategy:** 3 pings sent (00:12, 06:12, 12:12 UTC 2026-03-22). Awaiting maintainer merge.
   - **No-review ping timing:** Hub #5 + contracts #11 — ping after 2d no reviews. Eligible: 2026-03-23 09:49/10:00 UTC.
-  - **news #162/#164 race:** Both fix issue #151 (VALID_TRANSITIONS); both APPROVED by arc0btc. Maintainer decides — do NOT close #162 preemptively.
+  - **Next PR targets (2 slots open):** Look for fresh agent-news issues or other aibtcdev issues. High-quality, well-scoped code only.
   - **news #150 CLOSED:** Fixed by secret-mars PR #158 (MERGED 2026-03-22 03:26 UTC). No longer a target.
   - **news #154** (filed cycle 911): feat(brief): wire classifieds rotation into daily brief (closes #141). Inserts CLASSIFIEDS section after beat sections, before footer. Non-fatal guard. try/catch fix pushed after arc0btc review.
   - **Scout accuracy note:** Always use `--author tfireubs-ui` for PR count. Other authors' PRs (dantrevino LP #7/#12/#17, 2x APPROVED) are NOT mine — scout misattributed them cycle 917.
