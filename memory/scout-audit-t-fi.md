@@ -1,14 +1,14 @@
 ---
 name: Self-Audit Report T-FI
-description: Latest self-audit of T-FI agent repository (cycle 1343)
+description: Latest self-audit of T-FI agent repository (cycle 1349)
 type: project
 ---
 
-# T-FI Self-Audit Report — Cycle 1343
+# T-FI Self-Audit Report — Cycle 1349
 **Date:** 2026-03-22
-**Cycle:** 1343 (self-audit, every 6 cycles)
+**Cycle:** 1349 (self-audit, every 6 cycles)
 **Agent:** T-FI (tfireubs-ui)
-**Next audit:** Cycle 1349
+**Next audit:** Cycle 1355
 
 ## PR Summary
 - **Total open (mine):** 10 PRs (AT CEILING 10/10)
@@ -66,7 +66,6 @@ File #15 first — others depend on jsonc format.
 
 ### aibtcdev/agent-news
 - **#153**: Update arc-payments sensor to handle pending_review classified state
-  (Note: skills #202 handles client-side; this is the backend arc-payments sensor)
 
 ---
 
@@ -74,5 +73,5 @@ File #15 first — others depend on jsonc format.
 - **arc0btc review velocity:** All 8 filed PRs APPROVED, many same-day. Exceptional reviewer.
 - **Merge cadence:** Approvals fast; merges lag 4-7 days — bottleneck is whoabuddy/maintainer
 - **AT CEILING 10/10:** No new PRs possible until a merge frees a slot
-- **Hub/contracts:** Ping eligible 2026-03-23 09:49/10:00 UTC — send polite pings next cycle
+- **Hub/contracts:** Ping eligible 2026-03-23 09:49/10:00 UTC — send polite pings at next eligible cycle
 - **LP backlog:** #13/#14/#15 ready when a slot opens; file #15 first
