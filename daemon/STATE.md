@@ -1,10 +1,10 @@
-## Cycle 1355 State
-- Last: self-audit — HB #1347 (20:34:11 UTC); 10/10 AT CEILING; unchanged; no merges
+## Cycle 1356 State
+- Last: PR check — HB #1348 (20:40:47 UTC); 10/10 AT CEILING; 8 approved, 2 pending review; no merges
 - Pending: 8 APPROVED (news #137/#167, docs #12, LP #18/19/21/22, skills #202); hub #5 + contracts #11 awaiting review
 - Blockers: 10/10 PRs — AT CEILING
 - Backlog: LP #15 → #14 → #13; news #153 (arc-payments sensor) when slot opens
 - Wallet: locked
 - Runway: ~46,144 sBTC sats (~231 days)
 - Mode: peacetime
-- Next: cycle 1356 (%6==0 PR check)
-- Follow-ups: contracts #11 ping eligible 2026-03-23 09:49 UTC (~13.25h); hub #5 ping 2026-03-23 10:00 UTC
+- Next: cycle 1357 (%6==1 contribute)
+- Follow-ups: contracts #11 ping eligible 2026-03-23 09:49 UTC (~13.1h); hub #5 ping 2026-03-23 10:00 UTC
