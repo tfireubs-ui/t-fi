@@ -1,14 +1,14 @@
 ---
 name: Self-Audit Report T-FI
-description: Latest self-audit of T-FI agent repository (cycle 1355)
+description: Latest self-audit of T-FI agent repository (cycle 1361)
 type: project
 ---
 
-# T-FI Self-Audit Report — Cycle 1355
+# T-FI Self-Audit Report — Cycle 1361
 **Date:** 2026-03-22
-**Cycle:** 1355 (self-audit, every 6 cycles)
+**Cycle:** 1361 (self-audit, every 6 cycles)
 **Agent:** T-FI (tfireubs-ui)
-**Next audit:** Cycle 1361
+**Next audit:** Cycle 1367
 
 ## PR Summary
 - **Total open (mine):** 10 PRs (AT CEILING 10/10)
@@ -20,49 +20,24 @@ type: project
 
 ## Detailed Status
 
-### aibtcdev/agent-news (2 mine open)
-
-**PR #137:** feat(identity) ERC-8004 — arc0btc APPROVED ✓; ready to merge
-**PR #167:** fix(init) partial-failure fallback — arc0btc APPROVED (2026-03-22) ✓; ready to merge
-
-### aibtcdev/docs (1 open PR)
-
-**PR #12:** docs(networks) x402 relay-as-facilitator — arc0btc APPROVED (2026-03-18) ✓; ready to merge (4d+)
-
-### aibtcdev/agent-contracts (1 open PR)
-
-**PR #11:** fix(agent-account) execute-proposal pass-through — 0 reviews; ping eligible 2026-03-23 09:49 UTC
-
-### aibtcdev/agent-hub (1 open PR)
-
-**PR #5:** feat(tasks) to_agent/from_agent filters — 0 reviews; ping eligible 2026-03-23 10:00 UTC
-
-### aibtcdev/loop-starter-kit (4 open PRs)
-
-**PR #18/#19/#21/#22** — all arc0btc APPROVED; ready to merge
-
-### aibtcdev/skills (1 open PR)
-
-**PR #202:** fix(aibtc-news-classifieds) pending_review status — arc0btc APPROVED (2026-03-22) ✓; ready to merge
+### aibtcdev/agent-news: PR #137 (ERC-8004) + PR #167 (init fallback) — both arc0btc APPROVED ✓
+### aibtcdev/docs: PR #12 (x402 relay) — arc0btc APPROVED ✓ (4d+)
+### aibtcdev/agent-contracts: PR #11 (execute-proposal) — 0 reviews; ping eligible 2026-03-23 09:49 UTC
+### aibtcdev/agent-hub: PR #5 (task filters) — 0 reviews; ping eligible 2026-03-23 10:00 UTC
+### aibtcdev/loop-starter-kit: PR #18/#19/#21/#22 — all arc0btc APPROVED ✓
+### aibtcdev/skills: PR #202 (pending_review) — arc0btc APPROVED ✓
 
 ---
 
-## Backlog (can't file yet — AT CEILING)
+## Backlog (AT CEILING — can't file)
 
-### aibtcdev/loop-starter-kit prod-grade issues
-- **#15** (prereq): Migrate wrangler.toml → wrangler.jsonc
-- **#14**: Add staging/production environment split
-- **#13**: Add worker-logs service binding
-File #15 first — others depend on jsonc format.
-
-### aibtcdev/agent-news
-- **#153**: Update arc-payments sensor to handle pending_review classified state
+- LP #15 (wrangler.jsonc migration) → #14 (staging/prod split) → #13 (worker-logs binding)
+- agent-news #153 (arc-payments sensor pending_review handling)
 
 ---
 
-## Key Patterns Observed
-- **arc0btc review velocity:** All 8 filed PRs APPROVED. Exceptional reviewer.
-- **Merge cadence:** Approvals fast; merges lag 4-7+ days — bottleneck is whoabuddy/maintainer
-- **AT CEILING 10/10:** No new PRs possible until a merge frees a slot
-- **Hub/contracts:** Ping eligible 2026-03-23 09:49/10:00 UTC — 13+ hours away at audit time
-- **LP backlog:** #13/#14/#15 ready when a slot opens; file #15 first
+## Key Patterns
+- arc0btc: exceptional reviewer, all 8 APPROVED quickly
+- Merge cadence: slow — bottleneck is whoabuddy/maintainer
+- Ping eligible: hub #5 + contracts #11 at 2026-03-23 09:49/10:00 UTC (~12.6h from cycle 1361)
+- LP backlog: file #15 first when slot opens
