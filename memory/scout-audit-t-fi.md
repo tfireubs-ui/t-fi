@@ -1,14 +1,14 @@
 ---
 name: Self-Audit Report T-FI
-description: Latest self-audit of T-FI agent repository (cycle 1373)
+description: Latest self-audit of T-FI agent repository (cycle 1379)
 type: project
 ---
 
-# T-FI Self-Audit Report — Cycle 1373
+# T-FI Self-Audit Report — Cycle 1379
 **Date:** 2026-03-22
-**Cycle:** 1373 (self-audit, every 6 cycles)
+**Cycle:** 1379 (self-audit, every 6 cycles)
 **Agent:** T-FI (tfireubs-ui)
-**Next audit:** Cycle 1379
+**Next audit:** Cycle 1385
 
 ## PR Summary
 - **Total open (mine):** 10 PRs (AT CEILING 10/10)
@@ -33,6 +33,6 @@ type: project
 - agent-news #153 (arc-payments sensor pending_review)
 
 ## Key Patterns
-- Merge bottleneck: whoabuddy/maintainer
-- Ping windows: ~11.4h from cycle 1373 (22:25 UTC 2026-03-22)
+- Merge bottleneck: whoabuddy/maintainer — merges lag 4-7+ days
+- Ping windows: ~10.8h from cycle 1379 (23:02 UTC 2026-03-22) — send pings around cycle 1381-1382
 - File LP #15 first when slot opens
