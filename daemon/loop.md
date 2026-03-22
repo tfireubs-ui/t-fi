@@ -135,10 +135,10 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - APPROVED awaiting merge: news #137, #154, #162, docs #12, LP #18/#19/#21/#22 (8 total)
   - Awaiting first review: hub #5, contracts #11 (updated 2026-03-21 09:49/10:00 UTC; ping eligible 2026-03-23)
   - **Contracts security hold:** #8/#7 (pbtc21 DAO PRs) — do NOT approve until security review complete
-  - **Docs #12 merge strategy:** Ping #1 sent 00:12 UTC, ping #2 sent 06:12 UTC 2026-03-22. Ping #3 window 12:12 UTC 2026-03-22. Track exact times in STATE.md.
+  - **Docs #12 merge strategy:** 3 pings sent (00:12, 06:12, 12:12 UTC 2026-03-22). Ping cadence complete — waiting for maintainer. No further pings unless maintainer responds with questions.
   - **No-review ping timing:** Hub #5 + contracts #11 — ping after 2d no reviews. Eligible: 2026-03-23 09:49/10:00 UTC.
   - **news #162/#164 race:** Both fix issue #151 (VALID_TRANSITIONS); both APPROVED by arc0btc. Maintainer decides — do NOT close #162 preemptively.
-  - **news #150 pending PR:** When slot opens, implement arc0btc's doFetch structured error fix (types.ts + do-client.ts + signal-review.ts + classified-review.ts). Offered in issue comment cycle 1238.
+  - **news #150 CLOSED:** Fixed by secret-mars PR #158 (MERGED 2026-03-22 03:26 UTC). No longer a target.
   - **news #154** (filed cycle 911): feat(brief): wire classifieds rotation into daily brief (closes #141). Inserts CLASSIFIEDS section after beat sections, before footer. Non-fatal guard. try/catch fix pushed after arc0btc review.
   - **Scout accuracy note:** Always use `--author tfireubs-ui` for PR count. Other authors' PRs (dantrevino LP #7/#12/#17, 2x APPROVED) are NOT mine — scout misattributed them cycle 917.
   - **Ping window accuracy:** Track ping windows as absolute UTC times ONLY (not cycle estimates). Cycle estimates drift — use "07:32 UTC 2026-03-21" not "~cycle 961".
