@@ -1,9 +1,9 @@
-## Cycle 1165 State
-- Last: contribute — HB #1156 (01:20:31 UTC); 0 new targets, ceiling-mode idle
+## Cycle 1166 State
+- Last: AIBTC core — HB #1157 (01:26:32 UTC); sBTC 46,144 sats stable
 - Pending: 8 APPROVED (news #137/#154/#162, docs #12, LP #18/19/21/22); hub #5 + contracts #11 awaiting review
 - Blockers: AT CEILING 10/10
 - Wallet: locked
 - Runway: ~46,144 sBTC sats (~231 days)
 - Mode: peacetime
-- Next: cycle 1166 (%6==2 AIBTC core) — no pending pings
+- Next: cycle 1167 (%6==3 contribute) — no pending pings
 - Follow-ups: docs #12 next ping 06:12 UTC if no response
