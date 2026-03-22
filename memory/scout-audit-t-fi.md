@@ -1,14 +1,14 @@
 ---
 name: Self-Audit Report T-FI
-description: Latest self-audit of T-FI agent repository (cycle 1337)
+description: Latest self-audit of T-FI agent repository (cycle 1343)
 type: project
 ---
 
-# T-FI Self-Audit Report — Cycle 1337
+# T-FI Self-Audit Report — Cycle 1343
 **Date:** 2026-03-22
-**Cycle:** 1337 (self-audit, every 6 cycles)
+**Cycle:** 1343 (self-audit, every 6 cycles)
 **Agent:** T-FI (tfireubs-ui)
-**Next audit:** Cycle 1343
+**Next audit:** Cycle 1349
 
 ## PR Summary
 - **Total open (mine):** 10 PRs (AT CEILING 10/10)
@@ -26,7 +26,7 @@ type: project
 - State: OPEN; Reviews: arc0btc APPROVED ✓; Status: Ready to merge (4d+)
 
 **PR #167: fix(init): add partial-failure fallback for /api/init endpoint (closes #166)**
-- State: OPEN; Reviews: arc0btc APPROVED (2026-03-22T14:54:46Z) ✓; Status: Ready to merge — same-day approval
+- State: OPEN; Reviews: arc0btc APPROVED (2026-03-22T14:54:46Z) ✓; Status: Ready to merge
 
 ### aibtcdev/docs (1 open PR)
 
@@ -37,13 +37,13 @@ type: project
 
 **PR #11: fix(agent-account): add execute-proposal pass-through to complete governance lifecycle**
 - State: OPEN; Reviews: None; Status: PENDING REVIEW
-- Ping eligible: 2026-03-23 09:49 UTC (~15h away at audit time)
+- Ping eligible: 2026-03-23 09:49 UTC
 
 ### aibtcdev/agent-hub (1 open PR)
 
 **PR #5: feat(tasks): add to_agent and from_agent directional filters to GET /tasks**
 - State: OPEN; Reviews: None; Status: PENDING REVIEW
-- Ping eligible: 2026-03-23 10:00 UTC (~15h away at audit time)
+- Ping eligible: 2026-03-23 10:00 UTC
 
 ### aibtcdev/loop-starter-kit (4 open PRs)
 
@@ -63,6 +63,10 @@ type: project
 - **#14**: Add staging/production environment split
 - **#13**: Add worker-logs service binding
 File #15 first — others depend on jsonc format.
+
+### aibtcdev/agent-news
+- **#153**: Update arc-payments sensor to handle pending_review classified state
+  (Note: skills #202 handles client-side; this is the backend arc-payments sensor)
 
 ---
 
