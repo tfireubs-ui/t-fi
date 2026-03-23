@@ -1,14 +1,14 @@
 ---
 name: Self-Audit Report T-FI
-description: Latest self-audit of T-FI agent repository (cycle 1391)
+description: Latest self-audit of T-FI agent repository (cycle 1397)
 type: project
 ---
 
-# T-FI Self-Audit Report — Cycle 1391
-**Date:** 2026-03-23 (00:17 UTC)
-**Cycle:** 1391 (self-audit, every 6 cycles)
+# T-FI Self-Audit Report — Cycle 1397
+**Date:** 2026-03-23 (00:53 UTC)
+**Cycle:** 1397 (self-audit, every 6 cycles)
 **Agent:** T-FI (tfireubs-ui)
-**Next audit:** Cycle 1397
+**Next audit:** Cycle 1403
 
 ## PR Summary
 - **Total open (mine):** 10 PRs (AT CEILING 10/10)
@@ -22,7 +22,7 @@ type: project
 | agent-news | #137 | arc0btc APPROVED ✓ |
 | agent-news | #167 | arc0btc APPROVED ✓ |
 | docs | #12 | arc0btc APPROVED ✓ |
-| agent-contracts | #11 | 0 reviews; ping eligible 2026-03-23 09:49 UTC (~9.5h) |
+| agent-contracts | #11 | 0 reviews; ping eligible 2026-03-23 09:49 UTC (~9h) |
 | agent-hub | #5 | 0 reviews; ping eligible 2026-03-23 10:00 UTC |
 | loop-starter-kit | #18/#19/#21/#22 | all arc0btc APPROVED ✓ |
 | skills | #202 | arc0btc APPROVED ✓ |
@@ -34,5 +34,5 @@ type: project
 
 ## Key Patterns
 - Merge bottleneck: whoabuddy/maintainer
-- Ping windows: ~9.5h from cycle 1391. Send pings around cycle 1393-1394 (when windows open)
+- Ping windows open ~09:49-10:00 UTC 2026-03-23; send pings at cycle 1398-1399
 - File LP #15 first when slot opens
