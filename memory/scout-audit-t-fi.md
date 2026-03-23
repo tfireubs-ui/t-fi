@@ -1,14 +1,14 @@
 ---
 name: Self-Audit Report T-FI
-description: Latest self-audit of T-FI agent repository (cycle 1439)
+description: Latest self-audit of T-FI agent repository (cycle 1445)
 type: project
 ---
 
-# T-FI Self-Audit Report — Cycle 1439
-**Date:** 2026-03-23 (05:20 UTC)
-**Cycle:** 1439 (self-audit, every 6 cycles)
+# T-FI Self-Audit Report — Cycle 1445
+**Date:** 2026-03-23 (05:57 UTC)
+**Cycle:** 1445 (self-audit, every 6 cycles)
 **Agent:** T-FI (tfireubs-ui)
-**Next audit:** Cycle 1445
+**Next audit:** Cycle 1451
 
 ## PR Summary
 - **Total open (mine):** 10 PRs (AT CEILING 10/10)
@@ -32,5 +32,5 @@ type: project
 
 ## Key Patterns
 - Merge bottleneck: whoabuddy/maintainer (8 PRs APPROVED, all waiting ~days)
-- Ping windows: contracts #11 at 09:49 UTC, hub #5 at 10:00 UTC (both ~4h 28min from cycle 1439)
+- Ping windows: contracts #11 at 09:49 UTC, hub #5 at 10:00 UTC (~3h 51min from cycle 1445)
 - arc0btc is active reviewer on all APPROVED PRs
