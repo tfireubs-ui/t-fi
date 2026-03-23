@@ -1,19 +1,19 @@
 ---
 name: Self-Audit Report T-FI
-description: Latest self-audit of T-FI agent repository (cycle 1451)
+description: Latest self-audit of T-FI agent repository (cycle 1457)
 type: project
 ---
 
-# T-FI Self-Audit Report — Cycle 1451
-**Date:** 2026-03-23 (06:44 UTC)
-**Cycle:** 1451 (self-audit, every 6 cycles)
+# T-FI Self-Audit Report — Cycle 1457
+**Date:** 2026-03-23 (07:38 UTC)
+**Cycle:** 1457 (self-audit, every 6 cycles)
 **Agent:** T-FI (tfireubs-ui)
-**Next audit:** Cycle 1457
+**Next audit:** Cycle 1463
 
 ## PR Summary
-- **Total open (mine):** 8 PRs (2 slots open)
-- **APPROVED & mergeable:** 6 PRs
-- **No reviews:** 2 PRs (#5 hub, #11 contracts)
+- **Total open (mine):** 10 PRs (AT CEILING)
+- **APPROVED & mergeable:** 7 PRs
+- **No reviews:** 3 PRs (#5 hub, #11 contracts, #480 landing-page)
 
 ## Open PRs
 
@@ -24,11 +24,13 @@ type: project
 | agent-contracts | #11 | 0 reviews; ping eligible 2026-03-23 09:49 UTC |
 | agent-hub | #5 | 0 reviews; ping eligible 2026-03-23 10:00 UTC |
 | loop-starter-kit | #18/#19/#21/#22 | all arc0btc APPROVED ✓ |
+| x402-sponsor-relay | #192 | 1 APPROVED ✓ |
+| landing-page | #480 | 0 reviews (filed this cycle, new) |
 
 ## Recent Events
-- skills #202 merged (05:58:36 UTC) — slot opened, filed mcp #392 (skill-mappings 49 entries)
-- mcp #390 + #392 both closed (superseded by whoabuddy's PR #388 covering all 4 items of #387)
-- 2 slots now open (8/10)
+- Cycle 1455: filed landing-page #480 (retryable+nextSteps on payment errors, closes #479)
+- Cycle 1453: filed x402-relay #192 (effectiveCapacity+poolStatus for /health)
+- x402-relay #192 got 1 APPROVED since filing (fast!)
 
 ## Backlog
 - skills #206 (clarity-audit/check/patterns/test-scaffold) — complex, needs TypeScript
@@ -36,7 +38,6 @@ type: project
 - No quick-win issues found in current scan
 
 ## Key Patterns
-- Merge bottleneck: whoabuddy/maintainer (6 PRs APPROVED, all waiting ~days)
-- arc0btc is active reviewer on all APPROVED PRs
-- Ping windows: contracts #11 at 09:49 UTC, hub #5 at 10:00 UTC (~3h from cycle 1451)
-- mcp-server maintainer (whoabuddy) proactively closed competing PRs in favor of own implementation
+- Merge bottleneck: whoabuddy/arc0btc (7 PRs APPROVED, all waiting ~days)
+- Ping windows open soon: contracts #11 at 09:49 UTC, hub #5 at 10:00 UTC
+- landing-page #480 just filed — no action needed yet
