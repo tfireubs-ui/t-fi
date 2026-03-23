@@ -51,12 +51,14 @@ export function buildPaymentRequired(opts: PaymentRequiredOpts): Response {
     ],
   };
 
+  // btoa() rejects characters above U+00FF, so Unicode descriptions (e.g. em dashes)
+  // must be UTF-8 encoded first. The client decodes with Buffer.from(b64, "base64").
   let encoded: string | undefined;
   try {
-    encoded = btoa(JSON.stringify(paymentRequirements));
+    const bytes = new TextEncoder().encode(JSON.stringify(paymentRequirements));
+    encoded = btoa(String.fromCharCode(...bytes));
   } catch {
-    // btoa failure is unexpected but non-fatal — the payment-required header
-    // is optional; the 402 body still contains all required payment details
+    // Encoding failure should not crash — body still contains payment details
   }
 
   const headers: Record<string, string> = { "Content-Type": "application/json" };
