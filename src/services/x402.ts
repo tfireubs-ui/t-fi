@@ -41,10 +41,11 @@ export function buildPaymentRequired(opts: PaymentRequiredOpts): Response {
     accepts: [
       {
         scheme: "exact",
-        network: "stacks:mainnet",
+        network: "stacks:1",
         amount: String(amount),
         asset: SBTC_CONTRACT_MAINNET,
         payTo: TREASURY_STX_ADDRESS,
+        maxTimeoutSeconds: 60,
         description,
       },
     ],
@@ -92,6 +93,14 @@ export async function verifyPayment(
   paymentHeader: string,
   amount: number
 ): Promise<PaymentVerifyResult> {
+  let paymentPayload: Record<string, unknown>;
+  try {
+    paymentPayload = JSON.parse(atob(paymentHeader)) as Record<string, unknown>;
+  } catch {
+    // Malformed payment header — client error, not a relay error
+    return { valid: false };
+  }
+
   let settleRes: Response;
 
   try {
@@ -104,13 +113,15 @@ export async function verifyPayment(
         headers: { "Content-Type": "application/json" },
         signal: controller.signal,
         body: JSON.stringify({
-          paymentSignature: paymentHeader,
+          x402Version: 2,
+          paymentPayload,
           paymentRequirements: {
             scheme: "exact",
-            network: "stacks:mainnet",
+            network: "stacks:1",
             amount: String(amount),
             asset: SBTC_CONTRACT_MAINNET,
             payTo: TREASURY_STX_ADDRESS,
+            maxTimeoutSeconds: 60,
           },
         }),
       });
@@ -135,25 +146,16 @@ export async function verifyPayment(
     return { valid: false, relayError: true };
   }
 
-  if (!settleRes.ok || !result.success) {
-    // 4xx or success:false = payment genuinely invalid
+  // Relay returns 200 for both success and failure — check the success field.
+  // 4xx = schema/idempotency error; 2xx + !success = payment rejected by relay.
+  // Both are payment-invalid, not transient relay errors (5xx handled above).
+  if (!result.success) {
     return { valid: false };
-  }
-
-  // Decode payment header for payer info
-  let paymentData: Record<string, unknown> = {};
-  try {
-    paymentData = JSON.parse(atob(paymentHeader)) as Record<string, unknown>;
-  } catch {
-    // ignore decode errors
   }
 
   return {
     valid: true,
-    txid: (result.txid as string | undefined) || (paymentData.txid as string | undefined),
-    payer:
-      (result.payer as string | undefined) ||
-      (paymentData.btcAddress as string | undefined) ||
-      (paymentData.from as string | undefined),
+    txid: result.transaction as string | undefined,
+    payer: result.payer as string | undefined,
   };
 }

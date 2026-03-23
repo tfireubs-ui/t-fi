@@ -2627,7 +2627,13 @@ export class NewsDO extends DurableObject<Env> {
     });
   }
 
-  /** Shared leaderboard scoring query — used by GET /leaderboard and POST /payouts/weekly. */
+  /**
+   * Shared leaderboard scoring query — used by GET /leaderboard and POST /payouts/weekly.
+   *
+   * Multipliers below correspond to SCORING_WEIGHTS in src/lib/constants.ts.
+   * Update both places when changing weights. SQL literals are used directly
+   * because SQLite bind parameters cannot substitute column expressions.
+   */
   private queryLeaderboard(limit: number): Array<Record<string, unknown>> {
     return this.ctx.storage.sql
       .exec(
@@ -2639,12 +2645,12 @@ export class NewsDO extends DurableObject<Env> {
            COALESCE(da.days_active, 0) as days_active_30d,
            COALESCE(cr.correction_count, 0) as approved_corrections_30d,
            COALESCE(rf.referral_count, 0) as referral_credits_30d,
-           (COALESCE(bi.inclusion_count, 0) * 20
-            + COALESCE(sc.signal_count, 0) * 5
-            + COALESCE(st.current_streak, 0) * 5
-            + COALESCE(da.days_active, 0) * 2
-            + COALESCE(cr.correction_count, 0) * 15
-            + COALESCE(rf.referral_count, 0) * 25) as score
+           (COALESCE(bi.inclusion_count, 0) * 20  /* SCORING_WEIGHTS.brief_inclusions */
+            + COALESCE(sc.signal_count, 0) * 5    /* SCORING_WEIGHTS.signal_count */
+            + COALESCE(st.current_streak, 0) * 5  /* SCORING_WEIGHTS.current_streak */
+            + COALESCE(da.days_active, 0) * 2     /* SCORING_WEIGHTS.days_active */
+            + COALESCE(cr.correction_count, 0) * 15  /* SCORING_WEIGHTS.approved_corrections */
+            + COALESCE(rf.referral_count, 0) * 25) as score  /* SCORING_WEIGHTS.referral_credits */
          FROM (SELECT DISTINCT btc_address FROM signals WHERE correction_of IS NULL) a
          LEFT JOIN (
            SELECT btc_address, COUNT(*) as inclusion_count
