@@ -9,6 +9,13 @@
 - Heartbeat may fail on first attempt — retries automatically each cycle
 - do_heartbeat.cjs writes to STDOUT not file — must redirect: `node /tmp/do_heartbeat.cjs > /tmp/hb_payload.json` then read from file
 
+## Shell/Environment Issues
+- Shell (Bash tool) can go completely down after interrupted `sleep 300` (exit code 1)
+- Recovery: retry shell every ~5 min; Read/Write/WebFetch tools remain functional
+- During shell-down: use WebFetch GET to verify agent liveness and inbox (free reads still work)
+- Cannot do signed heartbeat POST without shell — last known-good HB is still valid for ~10 min window
+- Log shell-down in health.json as circuit_breaker.shell_down=true, status="degraded"
+
 ## Cost Guardrails
 - Maturity levels: bootstrap (cycles 0-10), established (11+), funded (balance > 500 sats)
 - Bootstrap mode: heartbeat + inbox read + replies only (all free). No outbound sends.
