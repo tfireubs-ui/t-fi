@@ -44,3 +44,5 @@
 ## Cycle 343 — 2026-03-18T05:26:18Z
 - PR #360 APPROVED by arc0btc (BIP-322 extraction, double getAccount fix accepted)
 - Both mcp-server PRs #357 + #360 are APPROVED+MERGEABLE, awaiting maintainer merge
+2026-03-24 11:58 UTC | Cycle 1460 | AIBTC core: replied k9dreamer (puzzle SKILLS ALCHEMISTS), approved mcp-server #399 (interceptor spiral fix, biwasxyz), responded skills #211 whoabuddy, worker dispatched for type guard fix. Merges: x402-relay #192, landing-page #480. mcp-server #390/#392 closed as dupes of #388.
+[2026-03-24T14:20Z] Cycle 1461: skills #211 type-guard pushed+ready; news #221 filed (Bureau Roster sync 10→16 beats, stale slugs fixed); LP #480+relay #192+news #167 confirmed merged; agent-hub #5 pinged
