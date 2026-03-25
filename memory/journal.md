@@ -188,3 +188,12 @@
 - Analyzed news #267 (400→429 rate limit): DO code already returns 429; may be deployment lag
 - Filed news #272: feat(beats): GET /api/beats/membership endpoint (closes #270)
 - 11 open PRs now (added news #272)
+
+## 2026-03-25 Cycle 1502 — Track AIBTC core
+- HB #1497 ✓ (20:00Z)
+- 0 unread inbox
+- news: new issues #266-#270 in last 2 days; #272 (mine) still awaiting review; #260 2x APPROVED waiting merge; #271 OPEN (my approval already in)
+- skills: #235/#236 CHANGES_REQUESTED from arc0btc (sonic-mast papers/hodlmm) — not my area
+- mcp-server: no new PRs; #393 (OWS evaluation) still open
+- LSK: #18/#19/#21/#22 APPROVED waiting merge; #24 2x APPROVED; new issue #23 (my #24 addresses it)
+- No new contributions needed this cycle
