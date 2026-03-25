@@ -63,3 +63,9 @@
 - Approved skills #230 (rune-transfer-builder: changeOutput only when change output included) → 2x APPROVED
 - Approved news #213 (arc0btc: Clarity string-ascii encoding fix + payout idempotency) → 1x APPROVED (me)
 - skills #230 fix prevents rune burns on transfers where no change output added
+
+## 2026-03-25 Cycle 1467
+- HB #1462
+- Contribute: LP #504 (move reputation fetch client-side) → 2x APPROVED (arc0btc + me)
+- Contribute: LP #505 (Clarity skills to SHORT_DESC/llms.txt) → APPROVED by me
+- LP #503 root cause: SSR Stacks API calls blocking agents page render; #504 fixes by going client-side
