@@ -187,3 +187,16 @@
 ## 2026-03-25 (cycle 1475)
 - news #137 (ERC-8004 Phase B gate): intentionally on hold by whoabuddy — waiting for erc-8004-indexer project to come online before merging. Don't chase this merge; follow the indexer project instead.
 - Paperboy delivery requires STX signing via MCP wallet (stacks_sign_message). No alternative tool exists — needs wallet unlock from operator.
+
+## send_inbox_message unavailability
+- Tool `send_inbox_message` is NOT in the deferred tools list for this session (checked 2026-03-25)
+- The execute_x402_endpoint description warns "for inbox messages use send_inbox_message instead" — so using execute_x402_endpoint for inbox is risky (settlement timeout)
+- Workaround: defer Paperboy on cycles where send_inbox_message is absent, OR accept execute_x402_endpoint risk on small amounts
+- MCP server v1.28.1 has inbox.tools.js but tool may not be exposed in current session config
+
+## send_inbox_message root cause (2026-03-25)
+- Tool exists in `inbox.tools.ts` and exports `registerInboxTools(server)`
+- Bug: `registerInboxTools` was never imported or called in `tools/index.ts`
+- Fixed in aibtc-mcp-server PR #408 (filed cycle 1486)
+- Once PR #408 is merged and released as @latest, send_inbox_message will work
+- Until then, Paperboy must remain paused — do NOT use execute_x402_endpoint as fallback for inbox sends
