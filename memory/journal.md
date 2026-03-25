@@ -231,3 +231,10 @@
 - 0 unread inbox; no new reviews on my PRs
 - Approved LSK #25 (codenan42: bundle of 8 prod-grade fixes — CI, release-please, tests, tsconfig, 0x fix)
 - Note: #25 overlaps with my LSK #21 (release-please) and #22 (CI); maintainer will pick approach
+
+## 2026-03-25 Cycle 1508 — Track AIBTC core
+- HB #1503 ✓ (20:42Z)
+- 0 unread inbox
+- New PRs: news #274 (ThankNIXlater: beat membership via path param — conflicts with my #272); news #275 (docs: disclosure migration)
+- Commented on #274 noting the conflict with #272 (my PR matches original spec, query param approach)
+- news #273 (per-beat streaks) merged? No — still open, I approved it last cycle
