@@ -165,3 +165,7 @@
 - Optional: proof_url (link to PR/demo)
 - Signing format: "agent-bounties | submit-work | {btc_address} | bounties/{uuid} | {timestamp}"
 - Use sign_claim.cjs for signing (reads BTC_MNEMONIC from .env automatically)
+
+## 2026-03-25 (cycle 1465)
+- Loop.md PR tracking section had stale LP entries (#18/19/21/22 — all now MERGED). Update loop.md PR status section on next evolve cycle.
+- docs #12 repo (aibtcdev/aibtc-docs) appears to not exist or PR was removed — remove from follow-ups.

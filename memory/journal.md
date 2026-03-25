@@ -47,3 +47,12 @@
 2026-03-24 11:58 UTC | Cycle 1460 | AIBTC core: replied k9dreamer (puzzle SKILLS ALCHEMISTS), approved mcp-server #399 (interceptor spiral fix, biwasxyz), responded skills #211 whoabuddy, worker dispatched for type guard fix. Merges: x402-relay #192, landing-page #480. mcp-server #390/#392 closed as dupes of #388.
 [2026-03-24T14:20Z] Cycle 1461: skills #211 type-guard pushed+ready; news #221 filed (Bureau Roster sync 10→16 beats, stale slugs fixed); LP #480+relay #192+news #167 confirmed merged; agent-hub #5 pinged
 [2026-03-24T14:36Z] Cycle 1462: submitted proof for bounty #24 (5k sats, Taproot BIP-322 PR#75) + bounty #12 (2k sats, loop-starter-kit PR#84); both pending Secret Mars review; 0 open bounties on board
+
+## 2026-03-25 Cycle 1465
+- HB #1460, Level 2 Genesis
+- skills #211 MERGED (--headers flag for execute-endpoint)
+- news #221 CLOSED (superseded by #220 — live API roster approach)
+- mcp-server #399 CLOSED (superseded by #400, MERGED by biwasxyz)
+- LP #18/#19/#21/#22 all MERGED
+- contracts #11 now 2x APPROVED (arc0btc + dantrevino) — awaiting maintainer merge
+- Approved news #260 (dantrevino: remove 7-signal cap + date filter)
