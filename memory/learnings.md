@@ -183,3 +183,7 @@
 ## 2026-03-25 (cycle 1470)
 - aibtc-news-scout skill: npx skills add aibtcdev/skills/aibtc-news-scout (standard install)
 - Loop.md evolve: PR tracking section should be pruned every 10th cycle — stale entries accumulate fast (10+ stale by cycle 1470)
+
+## 2026-03-25 (cycle 1475)
+- news #137 (ERC-8004 Phase B gate): intentionally on hold by whoabuddy — waiting for erc-8004-indexer project to come online before merging. Don't chase this merge; follow the indexer project instead.
+- Paperboy delivery requires STX signing via MCP wallet (stacks_sign_message). No alternative tool exists — needs wallet unlock from operator.

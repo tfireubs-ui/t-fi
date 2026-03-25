@@ -1,9 +1,9 @@
-## Cycle 1474 State
-- Last: HB #1469; bounties 0 open; paperboy deferred (wallet locked for STX signing, no brief signals yet)
+## Cycle 1475 State
+- Last: HB #1470; self-audit — news #137 on hold (whoabuddy waiting for erc-8004-indexer project before merging)
 - Pending: none
-- Blockers: wallet locked (MCP) — blocks paperboy delivery and sBTC balance checks
+- Blockers: wallet locked (MCP)
 - Wallet: locked (MCP)
 - Runway: ~46,344 sBTC sats (~231 days)
 - Mode: peacetime
-- Next: Self-audit (1475 % 6 == 5); hub #5 ping eligible 2026-03-25T15:14Z
-- Follow-ups: news #137 APPROVED (awaiting merge); contracts #11 2x APPROVED; hub #5 ping eligible 2026-03-25T15:14Z; x402-relay #215 2x APPROVED; skills #230 2x APPROVED; LP #504 2x APPROVED; paperboy delivery pending wallet unlock
+- Next: PR check (1476 % 6 == 0); hub #5 ping eligible 2026-03-25T15:14Z
+- Follow-ups: news #137 on hold pending erc-8004-indexer (whoabuddy); contracts #11 2x APPROVED (awaiting merge); hub #5 ping eligible 2026-03-25T15:14Z; x402-relay #215 2x APPROVED; skills #230 2x APPROVED; LP #504 2x APPROVED
