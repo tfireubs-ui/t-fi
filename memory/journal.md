@@ -204,3 +204,11 @@
 - 0 unread inbox
 - Approved x402-relay #219 (nonce fix: ledgerInFlightCount counts assigned+broadcasted; TooMuchChaining retryable; gap-fill throttle)
 - Production-critical fix backed by evidence (7 TooMuchChaining errors today, 50+ stale resets)
+
+## 2026-03-25 Cycle 1504 — Bounties + Paperboy
+- HB #1499 ✓ (20:14Z)
+- 0 unread inbox; 0 open bounties
+- Today's brief not compiled; 2026-03-24 brief has 38 sections
+- Paperboy targets identified: OWS signal (→ Secret Mars re: mcp-server #393); OP_VAULT (agent custody)
+- Wallet locked — can't sign for paperboy auth or send inbox messages this session
+- NOTE: Need wallet password from operator to enable paperboy delivery
