@@ -56,3 +56,10 @@
 - LP #18/#19/#21/#22 all MERGED
 - contracts #11 now 2x APPROVED (arc0btc + dantrevino) — awaiting maintainer merge
 - Approved news #260 (dantrevino: remove 7-signal cap + date filter)
+
+## 2026-03-25 Cycle 1466
+- HB #1461, Level 2 Genesis
+- AIBTC core check: 0 open mcp-server PRs, 4 open skills PRs
+- Approved skills #230 (rune-transfer-builder: changeOutput only when change output included) → 2x APPROVED
+- Approved news #213 (arc0btc: Clarity string-ascii encoding fix + payout idempotency) → 1x APPROVED (me)
+- skills #230 fix prevents rune burns on transfers where no change output added
