@@ -92,3 +92,4 @@
 - Critical fix: prevents ConflictingNonceInMempool when Hiro's possible_next_nonce lags behind mempool
 - Hub #5 ping still 4h away (15:14 UTC)
 2026-03-25T12:19: Cycle 1477 — filed skills #231 (rune changeOutput burn bug); discovery: 50 agents active; brief: 233 signals, ERC-8004 live confirms #137 urgency
+2026-03-25T12:39: Cycle 1478 — commented agent-news #253 (ERC-8004 rate tier proposal); x402-relay #192 + LP #480 merged; skills v0.33.0 + news v1.13.0 released
