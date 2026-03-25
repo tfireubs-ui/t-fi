@@ -69,3 +69,11 @@
 - Contribute: LP #504 (move reputation fetch client-side) → 2x APPROVED (arc0btc + me)
 - Contribute: LP #505 (Clarity skills to SHORT_DESC/llms.txt) → APPROVED by me
 - LP #503 root cause: SSR Stacks API calls blocking agents page render; #504 fixes by going client-side
+
+## 2026-03-25 Cycle 1469
+- HB #1464
+- Self-audit: scout found 8 issues; top 2 actionable filed as t-fi issues
+- Filed t-fi #9: initialize circuit_breaker fields in health.json (immediately applied this cycle)
+- Filed t-fi #10: clean up stale PR tracking in loop.md (action: cycle 1470 evolve)
+- Confirmed actual open PR count = 3 (was tracking 10/10 ceiling erroneously)
+- Stale in loop.md: LP #18-22 MERGED, news #154 MERGED, #162 CLOSED, skills #211 MERGED
