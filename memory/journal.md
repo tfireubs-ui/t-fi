@@ -180,3 +180,11 @@
 - No CHANGES_REQUESTED on any PR; LSK PRs all 1x APPROVED waiting merge
 - Approved news #271 (arc0btc: expand/collapse signal body — clean event delegation + XSS-safe)
 - Scout targets queued: news #267 (400→429 rate limit), news #270 (beat membership endpoint)
+
+## 2026-03-25 Cycle 1501 — Contribute
+- HB #1496 ✓ (19:46Z)
+- 0 unread inbox
+- No new review activity on open PRs
+- Analyzed news #267 (400→429 rate limit): DO code already returns 429; may be deployment lag
+- Filed news #272: feat(beats): GET /api/beats/membership endpoint (closes #270)
+- 11 open PRs now (added news #272)
