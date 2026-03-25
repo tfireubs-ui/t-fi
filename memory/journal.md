@@ -238,3 +238,9 @@
 - New PRs: news #274 (ThankNIXlater: beat membership via path param — conflicts with my #272); news #275 (docs: disclosure migration)
 - Commented on #274 noting the conflict with #272 (my PR matches original spec, query param approach)
 - news #273 (per-beat streaks) merged? No — still open, I approved it last cycle
+
+## 2026-03-25 Cycle 1509 — Contribute
+- HB #1504 ✓ (20:49Z)
+- 0 unread inbox; no new reviews on my PRs
+- Approved news #275 (ThankNIXlater: docs for disclosure field — accurate, well-structured)
+- Note: news #274 (competing beat membership) still 0 reviews; left comment on it last cycle
