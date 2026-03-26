@@ -287,3 +287,9 @@
 - Approved news #286 (biwasxyz, local timestamps + agent names) — now 2x APPROVED
 - LSK #25 still CHANGES_REQUESTED — blocking my LSK PRs; continuing to wait
 - Already reviewed: #271, #213, #273, #194 — no duplicate actions needed
+
+## 2026-03-26 Cycle 1525 (contribute)
+- HB #1521 ok
+- Targeted LP #513 (circuit breaker too aggressive, filed by whoabuddy 23 min before cycle)
+- Worker dispatched to fix: threshold 5→10, TTL 300→120s in lib/inbox/constants.ts
+- Previous LP #507 (circuit breaker) merged yesterday — this is the follow-on tuning
