@@ -206,3 +206,8 @@
 - Without unlock: MCP send_inbox_message blocked, Stacks signing blocked → paperboy deliveries skip
 - Pattern: heartbeat works (BTC_MNEMONIC in .env), inbox reads work (curl, free), but sends/signs need wallet
 - Fix: ask operator for wallet password at loop-start if wallet is locked and paperboy deliveries are planned
+
+## Reviewing DO client types
+- When reviewing PRs that add types to do-client.ts, verify interface field names EXACTLY match the route response keys
+- Common mistake: route returns camelCase (slug, claimedAt, name) but interface uses snake_case (beat_slug, claimed_at, beat_name) — TypeScript compiles fine but callers get wrong data at runtime
+- Also check: if a DO client helper calls doFetch() to a Worker route (not DO handler), the request won't reach the right handler — DO stubs route to the DO's internal fetch, not the Worker router
