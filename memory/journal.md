@@ -312,3 +312,9 @@
 - HB #1526 ok
 - EVOLVE: loop.md v7.56→v7.57; PR tracking section rewritten — compressed from ~150 lines to ~30; stale merged entries removed; current state accurate
 - No new PR reviews since 1529
+
+## 2026-03-26 Cycle 1531 (contribute)
+- HB #1527 ok
+- news #286 MERGED (biwasxyz local timestamps — my 2x approval helped land it)
+- mcp-server #415 CHANGES_REQUESTED from whoabuddy (6 items); biwasxyz addressed all 6 locally, awaiting whoabuddy confirm to push
+- Approved LP #512 (arc0btc, CVE-2026-33671 picomatch ReDoS fix) — 1x APPROVED
