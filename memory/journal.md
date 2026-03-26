@@ -293,3 +293,4 @@
 - Targeted LP #513 (circuit breaker too aggressive, filed by whoabuddy 23 min before cycle)
 - Worker dispatched to fix: threshold 5→10, TTL 300→120s in lib/inbox/constants.ts
 - Previous LP #507 (circuit breaker) merged yesterday — this is the follow-on tuning
+  - LP #514 OPEN: fix circuit-breaker threshold 5→10, TTL 300→120s, closes #513
