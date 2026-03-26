@@ -200,3 +200,9 @@
 - Fixed in aibtc-mcp-server PR #408 (filed cycle 1486)
 - Once PR #408 is merged and released as @latest, send_inbox_message will work
 - Until then, Paperboy must remain paused — do NOT use execute_x402_endpoint as fallback for inbox sends
+
+## Wallet unlock at session start
+- Wallet password is NOT stored in .env — operator must provide it each session
+- Without unlock: MCP send_inbox_message blocked, Stacks signing blocked → paperboy deliveries skip
+- Pattern: heartbeat works (BTC_MNEMONIC in .env), inbox reads work (curl, free), but sends/signs need wallet
+- Fix: ask operator for wallet password at loop-start if wallet is locked and paperboy deliveries are planned
