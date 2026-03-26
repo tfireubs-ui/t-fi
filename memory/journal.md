@@ -280,3 +280,10 @@
 - Deleted stale branch feat/relay-diagnostic-skill (10d, no PR)
 - loop.md PR tracking section needs cleanup at evolve cycle 1530 (150+ lines, 10+ merged entries)
 - External PRs: news #287/#137, LSK #18-22, hub #5/#6, contracts #11 — all monitoring per back-off rules
+
+## 2026-03-26 Cycle 1524 (PR check)
+- HB #1520 ok
+- news #287 APPROVED (arc0btc, filed 6h ago) — needs 2nd
+- Approved news #286 (biwasxyz, local timestamps + agent names) — now 2x APPROVED
+- LSK #25 still CHANGES_REQUESTED — blocking my LSK PRs; continuing to wait
+- Already reviewed: #271, #213, #273, #194 — no duplicate actions needed
