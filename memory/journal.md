@@ -271,3 +271,5 @@
 - skills #231 CLOSED (competing PR #230 merged first — cleaner diff, same fix)
 - Dispatched worker: agent-news #278 (homepage day grouping, Pacific timezone partitioning)
 - sBTC: 46,344 sats | STX: 78.00 | Runway: 232 days
+
+  - agent-news #287 OPEN: feat(homepage) group signals by Pacific day, closes #278
