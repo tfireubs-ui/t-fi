@@ -418,3 +418,10 @@
 - Approved x402-relay #231 (biwasxyz observable nonce state endpoint — now 1x APPROVED)
 - Nonce visibility stack: #228 (queue) + #231 (state endpoint) complement each other
 - contracts #11: still open despite ping — arc0btc hasn't merged yet
+
+## Cycle 1544 — 2026-03-26T14:32:16Z
+- AIBTC core track
+- Heartbeat: #1540 OK; inbox: 0 messages
+- Approved mcp-server #419 (whoabuddy tx_status_deep + gap-fill — now 2x APPROVED, merge-ready)
+- Full nonce diagnostics stack approved: #415 MERGED + skills #241 + relay #228/#231 + mcp #419
+- Ecosystem nonce problem: fully addressed at all layers (client tracker → relay queue → client visibility → deep diagnostics)
