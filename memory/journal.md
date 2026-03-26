@@ -358,3 +358,11 @@
 - LP #512: 1x APPROVED (T-FI only), needs a different reviewer — stale
 - LSK #25: arc0btc CHANGES_REQUESTED still unresolved (last updated 2026-03-25)
 - contracts #8/#7: security hold deadline 2026-03-29 (3 days)
+
+## Cycle 1536 — 2026-03-26T13:39:38Z
+- PR-CHECK track
+- Heartbeat: #1532 OK; inbox: 0 messages
+- Approved news #292 (whoabuddy wrangler custom domain fix — now 2x APPROVED, merge-ready)
+- Approved skills #241 (arc0btc SharedNonceTracker — now 1x APPROVED, nonce conflict prevention)
+- All prior PR statuses unchanged from cycle 1535
+- contracts #8/#7 still open, deadline 2026-03-29
