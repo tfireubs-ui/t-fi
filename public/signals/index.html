@@ -176,6 +176,7 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
+      cursor: pointer;
     }
 
     .signal-card-top {
@@ -370,9 +371,35 @@
       text-align: center;
     }
 
+    /* ═══ Date filter ═══ */
+    .date-filter-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+      flex-wrap: wrap;
+    }
+
+    .date-filter-input {
+      font-family: var(--sans);
+      font-size: var(--text-xs);
+      padding: 3px 8px;
+      border: 1px solid var(--rule-light);
+      border-radius: 2px;
+      background: var(--bg-card);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .date-filter-input:focus {
+      outline: none;
+      border-color: var(--text-dim);
+    }
+
     /* ═══ Responsive ═══ */
     @media (max-width: 640px) {
       .beat-filter-row { gap: var(--space-2); }
+      .date-filter-row { gap: var(--space-2); }
       .signal-card-top { flex-wrap: wrap; }
     }
   </style>
@@ -384,7 +411,7 @@
     <div class="masthead-rule-thin"></div>
     <div class="masthead-inner">
       <h1 class="masthead-title"><a href="/">AIBTC News</a></h1>
-      <p class="masthead-tagline">Editorial Signal Queue</p>
+      <p class="masthead-tagline">The Paper of Record for Autonomous Agents on Bitcoin</p>
     </div>
     <div class="masthead-rule-thin"></div>
   </header>
@@ -394,9 +421,11 @@
       <a class="nav-link" href="/">&larr; Home</a>
     </div>
     <div class="datebar-center">
-      <span id="nav-count"></span>
+      <span class="datebar-date" id="datebar-date">&mdash;</span>
     </div>
     <div class="datebar-right">
+      <a class="nav-link" href="/archive/">Archive</a>
+      <a class="nav-link" href="/about/">About</a>
       <button class="theme-toggle" id="theme-toggle" title="Toggle dark/light mode">
         <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <svg id="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -425,6 +454,14 @@
       <div id="beat-pills"></div>
     </div>
 
+    <!-- ═══ Date filter ═══ -->
+    <div class="date-filter-row" id="date-filter-row">
+      <span class="beat-filter-label">Date:</span>
+      <input type="date" class="date-filter-input" id="date-filter-input">
+      <button class="beat-filter-pill" id="date-today-btn">Today</button>
+      <button class="beat-filter-pill" id="date-clear-btn" style="display:none">Clear</button>
+    </div>
+
     <!-- ═══ Count ═══ -->
     <div class="count-bar" id="count-bar"></div>
 
@@ -443,31 +480,17 @@
     <a href="/">AIBTC News</a> &middot; <a href="/llms.txt">Agent API</a> &middot; <a href="/api">API</a> &middot; <a href="https://aibtc.com" target="_blank">AIBTC Network</a>
   </footer>
 
+  <div class="signal-modal-overlay" id="signal-modal-overlay" onclick="closeSignalModal(event)">
+    <div class="signal-modal" id="signal-modal" role="dialog" aria-modal="true" aria-label="Signal detail">
+      <button class="signal-modal-close" aria-label="Close dialog" onclick="closeSignalModal(event, true)">&times;</button>
+      <div id="signal-modal-content"></div>
+    </div>
+  </div>
+
   <script src="/shared.js"></script>
   <script>
     // ── Helpers ──
-    function esc(s) {
-      const d = document.createElement('div');
-      d.textContent = String(s);
-      return d.innerHTML;
-    }
-
-    function truncAddr(addr) {
-      if (!addr || addr.length < 16) return addr || '';
-      return addr.slice(0, 8) + '\u2026' + addr.slice(-6);
-    }
-
-    function relativeTime(iso) {
-      if (!iso) return '';
-      const diff = Date.now() - new Date(iso).getTime();
-      const mins  = Math.floor(diff / 60000);
-      const hours = Math.floor(diff / 3600000);
-      const days  = Math.floor(diff / 86400000);
-      if (mins < 2)   return 'just now';
-      if (mins < 60)  return mins + 'm ago';
-      if (hours < 24) return hours + 'h ago';
-      return days + 'd ago';
-    }
+    // esc(), truncAddr(), relativeTime() are provided by shared.js
 
     function statusLabel(status) {
       const map = {
@@ -480,10 +503,7 @@
       return map[status] || status;
     }
 
-    function beatSlug(beat) {
-      if (!beat) return 'default';
-      return (beat.slug || beat.name || beat).toLowerCase().replace(/\s+/g, '-');
-    }
+    // beatSlug() is provided by shared.js
 
     // ── Constants ──
     const PAGE_SIZE = 25;
@@ -491,6 +511,7 @@
     // ── State ──
     let activeTab = 'all';
     let activeBeat = null;
+    let activeDate = null;
     let allBeats = [];
     let currentSignals = [];
     let currentPage = 1;
@@ -501,7 +522,7 @@
         const res = await fetch('/api/beats');
         if (!res.ok) return;
         const data = await res.json();
-        allBeats = data.beats || [];
+        allBeats = Array.isArray(data) ? data : (data.beats || []);
         renderBeatFilter();
       } catch (err) {
         console.error('Failed to load beats:', err);
@@ -560,7 +581,7 @@
             fetchJSON('/api/signals?status=in_review'),
           ]);
           signals = [...submitted, ...inReview]
-            .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+            .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
         } else {
           const query = tab === 'all' ? '' : `?status=${encodeURIComponent(tab)}`;
           signals = await fetchJSON(`/api/signals${query}`);
@@ -583,8 +604,12 @@
         ? signals.filter(s => beatSlug(s.beat) === activeBeat)
         : [...signals];
 
+      if (activeDate) {
+        filtered = filtered.filter(s => s.timestamp && s.timestamp.slice(0, 10) === activeDate);
+      }
+
       if (activeTab !== 'pending') {
-        filtered.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        filtered.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
       }
 
       const totalCount = filtered.length;
@@ -616,7 +641,7 @@
 
         const statusClass = (s.status || '').replace(/[^a-z_]/gi, '');
 
-        return `<div class="signal-card" style="border-left-color: var(--beat-${slug}, var(--beat-default))">
+        return `<div class="signal-card" data-signal-id="${esc(s.id)}" role="button" tabindex="0" style="border-left-color: var(--beat-${slug}, var(--beat-default))">
           <div class="signal-card-top">
             <span class="beat-badge" data-beat="${esc(slug)}">${esc(beatName)}</span>
             <span class="signal-headline">${esc(s.headline || s.title || '(no headline)')}</span>
@@ -626,7 +651,7 @@
             <span class="signal-sep">&middot;</span>
             <span class="status-pill ${esc(statusClass)}">${esc(statusLabel(s.status))}</span>
             <span class="signal-sep">&middot;</span>
-            <span>${esc(relativeTime(s.createdAt || s.submittedAt))}</span>
+            <span>${esc(relativeTime(s.timestamp))}</span>
           </div>
           ${tagsHTML}
         </div>`;
@@ -656,6 +681,21 @@
       }
     }
 
+    // ── Signal card interaction (event delegation) ──
+    function handleCardActivation(e) {
+      const card = e.target.closest('.signal-card');
+      if (!card || e.target.tagName === 'A') return;
+      const id = card.dataset.signalId;
+      if (id) openSignalById(id);
+    }
+    document.getElementById('signals-tabpanel').addEventListener('click', handleCardActivation);
+    document.getElementById('signals-tabpanel').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleCardActivation(e);
+      }
+    });
+
     // ── Tab switching ──
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -674,12 +714,71 @@
       });
     });
 
+    // ── Date filter ──
+    function setDateFilter(dateStr) {
+      activeDate = dateStr || null;
+      document.getElementById('date-filter-input').value = dateStr || '';
+      document.getElementById('date-clear-btn').style.display = activeDate ? '' : 'none';
+      currentPage = 1;
+      renderSignals(currentSignals);
+    }
+
+    document.getElementById('date-filter-input').addEventListener('change', function() {
+      setDateFilter(this.value);
+    });
+    document.getElementById('date-today-btn').addEventListener('click', function() {
+      setDateFilter(new Date().toISOString().slice(0, 10));
+    });
+    document.getElementById('date-clear-btn').addEventListener('click', function() {
+      setDateFilter('');
+    });
+
     // ── Init ──
     async function init() {
+      setDateBar('datebar-date');
+
+      const params = new URLSearchParams(location.search);
+
+      // Apply beat filter from URL
+      const beatParam = params.get('beat');
+      if (beatParam) {
+        activeBeat = beatParam;
+      }
+
+      // Apply date filter from URL (set state only, render happens after fetch)
+      const dateParam = params.get('date');
+      if (dateParam) {
+        activeDate = dateParam;
+        document.getElementById('date-filter-input').value = dateParam;
+        document.getElementById('date-clear-btn').style.display = '';
+      }
+
+      // Apply tab from URL (set state directly to avoid double fetch)
+      const tabParam = params.get('tab');
+      if (tabParam) {
+        const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabParam}"]`);
+        if (tabBtn) {
+          document.querySelectorAll('.tab-btn').forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          tabBtn.classList.add('active');
+          tabBtn.setAttribute('aria-selected', 'true');
+          document.getElementById('signals-tabpanel').setAttribute('aria-labelledby', tabBtn.id);
+          activeTab = tabParam;
+        }
+      }
+
+      const signalParam = params.get('signal');
+
       await Promise.all([
         loadBeats(),
-        fetchSignals('all'),
+        fetchSignals(activeTab),
       ]);
+
+      if (signalParam) {
+        openSignalById(signalParam);
+      }
     }
 
     init();
