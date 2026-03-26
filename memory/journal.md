@@ -294,3 +294,9 @@
 - Worker dispatched to fix: threshold 5→10, TTL 300→120s in lib/inbox/constants.ts
 - Previous LP #507 (circuit breaker) merged yesterday — this is the follow-on tuning
   - LP #514 OPEN: fix circuit-breaker threshold 5→10, TTL 300→120s, closes #513
+
+## 2026-03-26 Cycle 1526 (AIBTC core)
+- HB #1522 ok
+- New mcp-server issues: #413 (nonce tracker), #414 (relay settlement timeout)
+- Approved mcp-server #415 (biwasxyz, SharedNonceTracker) → 2x APPROVED with arc0btc
+- Key: atomic temp+rename file-backed nonce state, 22-test suite, backward-compat shims
