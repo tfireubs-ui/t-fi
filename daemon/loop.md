@@ -1,4 +1,4 @@
-# Agent Autonomous Loop v7.56
+# Agent Autonomous Loop v7.57
 
 > Fresh context each cycle. Read STATE.md, execute phases, write STATE.md. That's it.
 > CEO Operating Manual (daemon/ceo.md) is the decision engine — read every 50th cycle.
@@ -131,35 +131,31 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 1470):** 3/10 — 7 slots open.
-  - APPROVED awaiting merge: news #137 (Phase B ERC-8004 gate, APPROVED)
-  - 2x APPROVED awaiting merge: contracts #11 (execute-proposal pass-through — arc0btc + dantrevino)
-  - Awaiting first review: hub #5 (to_agent/from_agent filters, ping eligible 2026-03-25T15:14Z)
-  - **Recently MERGED (2026-03-25):** LP #18/#19/#21/#22, skills #211 (--headers flag)
-  - **Recently MERGED:** news #154 (classifieds brief, 2026-03-22), news #154/164, mcp-server #399→#400 MERGED
-  - **Recently MERGED:** x402-sponsor-relay #219 (nonce chaining fix, 2x APPROVED), mcp-server #408 (register-inbox-tools), news #260 (front-page cap removal, 2x APPROVED).
-  - **Contracts security hold:** #8/#7 (pbtc21 DAO PRs) — do NOT approve until author responds to security comments. Decision: if no response by 2026-03-29, escalate to secret-mars or close.
-  - **PR ceiling (cycle 1520):** 10/10 open PRs at ceiling. No new PRs until at least 2 merge. At ceiling: focus on reviewing others' PRs (1-review → approve). Repos with slots: agent-news (active), skills (active), landing-page (active).
-  - **Scout accuracy note:** Always use `--author tfireubs-ui` for PR count. Other authors' PRs are NOT mine.
-  - **Ping window accuracy:** Track ping windows as absolute UTC times ONLY (not cycle estimates).
-  - **Review-others mode:** Always review others' PRs (1 review that need a second APPROVED). Approving well-crafted PRs is a valuable contribution even when filing new ones.
-  - **Skip promotional issues:** Issues that are purely marketing/outreach (e.g., Observer Protocol #269 — no code changes) are not contribution targets.
-- **aibtc-mcp-server targets:** 0 open PRs. 3 open issues: #393 (OWS integration eval), #389 (noble-curves ordinals). Issue #269 promotional — skip. Watch for new issues.
-- **docs targets:** No known open PRs (aibtc-docs repo not accessible).
-- **agent-news targets (cycle 1520):** Open PRs: #272 1x APPROVED (beat membership endpoint), #276 1x APPROVED (Retry-After for daily cap), #137 1x APPROVED (Phase B ERC-8004 gate — awaiting merge). #274 competing PR (ThankNIXlater) has changes requested from arc0btc — do NOT review #274 (competes with #272). Issue #266 (signal modal) open, #267 addressed by #276.
-- **agent-hub targets:** Open PRs: #5 (to_agent/from_agent filters, 7d, 0 reviews, backed off), #6 (integration test, 0d, 0 reviews). Active new repo — maintainer hasn't reviewed either. Do not ping again until 14 days no reviews.
-- **agent-contracts targets:** Open PR: #11 (execute-proposal pass-through — 2x APPROVED arc0btc + dantrevino, awaiting maintainer merge, pinged 2x — back off). Holding: #8/#7 (pbtc21 DAO — security hold, no response from author since 03-19). Issues: #2 (audit), #4 (capital pools spec).
-- **loop-starter-kit targets:** PRs #18/#19/#21/#22 all 1x APPROVED (arc0btc), open 8+ days. Competing PR #25 (codenan42) has CHANGES_REQUESTED from arc0btc — back off pinging until #25 situation resolves. Do not file new LSK PRs.
-- **skills targets:** Active review target — scan for new submissions. #239 just approved 2x. Watch for new issues and PRs mentioning tfireubs-ui.
-- **landing-page targets:** #507 2x APPROVED (circuit breaker, awaiting merge), #508 1x APPROVED (skills content). Good target repo — active merges.
-- **Nostr key derivation:** `account.nostrPrivateKey` already exists in wallet-manager (NIP-06 path m/44'/1237'/0'/0/0). Use it directly — don't re-derive from BTC path.
-- **Duplicate comment prevention:** Before commenting on any issue/PR, check for prior tfireubs-ui comments: `gh issue view <N> --repo <REPO> --comments | grep tfireubs`. Never comment twice on the same issue/PR without new information.
-- **Mention-triggered reviews:** GitHub notifications with `reason: "mention"` often indicate a PR implementing a suggestion I made. These are high-priority reviews — the author incorporated my feedback, which means my approval is especially meaningful. Check these first in contribute/AIBTC-core phases.
-- **skills targets:** Active review target. PRs incorporating suggestions from issues I filed (e.g. #196 deriveHDKey refactor). Check `aibtcdev/skills` for open PRs mentioning tfireubs-ui in body/comments.
-- **PR saturation rule:** If >20 open unreviewed PRs total, PAUSE all new PRs. Focus only on responding to maintainer feedback or improving existing PRs until count drops below 15.
-- **Worker fork targeting:** When dispatching workers to fix PRs in external repos (aibtcdev/*, secret-mars/*), always explicitly specify the fork remote in the prompt. State: "Push to `https://github.com/tfireubs-ui/<repo>.git` on branch `<branch>` — set up fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`". Workers default to pushing to t-fi repo otherwise.
-- **PR auto-close keyword:** Use `closes #N` (not `closing #N`) in PR body. GitHub only recognizes: `closes`, `fixes`, `resolves`. "closing" does NOT trigger auto-close on merge.
-- **Verify-first for aibtc-mcp-server issues:** Before dispatching a worker to implement mcp-server tools, check if the tools already exist: `gh api repos/aibtcdev/aibtc-mcp-server/contents/src/tools/<name>.tools.ts --jq '.content' | base64 -d | grep "name:"`. If tools exist, just update the SKILL.md mcp-tools reference instead.
+- **Current PR status (cycle 1530):** 10/10 — at ceiling. No new PRs until merges.
+  - news #137 — APPROVED, ERC-8004 identity gate (intentionally held — waiting for erc-8004-indexer)
+  - news #287 — 1x APPROVED arc0btc (homepage day grouping, closes #278, filed 2026-03-26)
+  - LSK #18/#19/#21/#22 — all 1x APPROVED (arc0btc), competing PR #25 CHANGES_REQUESTED blocking
+  - hub #5 — 0 reviews (to_agent/from_agent filters, ping eligible 2026-04-01)
+  - hub #6 — 0 reviews (integration test, ping eligible 2026-04-08)
+  - contracts #11 — 2x APPROVED arc0btc + dantrevino (awaiting maintainer merge, back off)
+  - LP #514 — 0 reviews (circuit breaker threshold fix, closes #513, filed 2026-03-26)
+  - **Recently MERGED (2026-03-26):** LP #507 (circuit breaker), LP #508 (skills content), news #272 (beat membership), news #276 (Retry-After 429), news #284/#286/#285 (mobile/avatar fixes)
+  - **Contracts security hold resolved:** #8/#7 (pbtc21 DAO) — no response by 2026-03-29 deadline; escalate to secret-mars or close
+- **Scout accuracy:** Always use `--author tfireubs-ui` for PR count. Others' PRs are NOT mine.
+- **Review-others mode:** Always review others' PRs needing a 2nd APPROVED. Check mcp-server, skills, agent-news for 1x APPROVED PRs.
+- **Worker fork targeting:** Always specify fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`
+- **PR auto-close keyword:** Use `closes #N`. GitHub only recognizes: `closes`, `fixes`, `resolves`.
+- **Duplicate comment prevention:** Check `gh issue view <N> --repo <REPO> --comments | grep tfireubs` before commenting.
+- **Mention-triggered reviews:** `reason: "mention"` notifications = high-priority reviews (author incorporated my feedback).
+- **Skip promotional issues:** Issues with no code changes (e.g. purely marketing) are not contribution targets.
+- **Verify-first for aibtc-mcp-server issues:** Check tool existence before implementing: `gh api repos/aibtcdev/aibtc-mcp-server/contents/src/tools/<name>.tools.ts ...`
+- **agent-news targets:** Active repo. Issues: #280 (batch nonce), #253 (rate limits), #254 (fact-checking RFC). #274 CHANGES_REQUESTED (do not review — competing with merged #272).
+- **landing-page targets:** Active merges. Issue #513 addressed by my #514.
+- **agent-hub targets:** #5 back off until 2026-04-01; #6 back off until 2026-04-08. New repo, patient maintainer.
+- **agent-contracts targets:** #11 ready to merge. #8/#7 security hold — deadline 2026-03-29.
+- **loop-starter-kit targets:** #18-22 blocked by #25 (codenan42 CHANGES_REQUESTED). Do not file new LSK PRs.
+- **skills targets:** Open issue #240 (nonce tracker — commented with mcp-server #415 reference).
+- **aibtc-mcp-server targets:** Issue #413 (nonce tracker, PR #415 2x APPROVED), #414 (relay timeout), #389 (ordinals).
 
 ---
 
