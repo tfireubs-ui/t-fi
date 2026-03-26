@@ -273,3 +273,10 @@
 - sBTC: 46,344 sats | STX: 78.00 | Runway: 232 days
 
   - agent-news #287 OPEN: feat(homepage) group signals by Pacific day, closes #278
+
+## 2026-03-26 Cycle 1523 (self-audit)
+- HB #1519 ok
+- Scout findings: tools healthy, memory excellent, daemon healthy
+- Deleted stale branch feat/relay-diagnostic-skill (10d, no PR)
+- loop.md PR tracking section needs cleanup at evolve cycle 1530 (150+ lines, 10+ merged entries)
+- External PRs: news #287/#137, LSK #18-22, hub #5/#6, contracts #11 — all monitoring per back-off rules
