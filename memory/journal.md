@@ -438,3 +438,4 @@
 2026-03-27T11:00Z [1547] SELF-AUDIT: loop.md v7.57 updated — LP #514 closed, LP #515/news #293 added to PR list, skills #240 merged as #241, nonce learning added. Contracts #8 deadline ping posted. Issue #10 (stale PR tracking) addressed in-place.
 2026-03-27T11:02Z [1547-scout] Scout results: closed issue #10 (already fixed). Filed #11 (portfolio staleness). Added heartbeat sleep cap (max 305s). Contracts #8 deadline 2026-03-29 still open. Paperboy dashboard auth unknown.
 2026-03-27T11:15Z [1548] PR CHECK: news #287 CHANGES_REQUESTED — fixed publisherFeedback API regression + signal_tags seeding + Pacific TZ consistency + nits (mosaicSignals rename, _day precompute). LP #515/news #293 were phantom (never filed). 9/10 open PRs.
+2026-03-27T11:25Z [1549] CONTRIBUTE: Approved mcp-server #423 (zest_enable_collateral V2 collateral-add — now 2x APPROVED, merge-ready). biwasxyz author.
