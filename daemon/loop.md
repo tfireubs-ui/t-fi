@@ -131,13 +131,14 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 1555):** 6/10 — below ceiling. Can file new PRs.
+- **Current PR status (cycle 1557):** 7/10 — below ceiling. Can file new PRs.
   - news #137 — APPROVED, ERC-8004 identity gate (intentionally held — waiting for erc-8004-indexer)
   - news #287 — 1x APPROVED arc0btc, CHANGES_REQUESTED biwasxyz (fixes pushed 2026-03-27, awaiting re-review)
   - hub #5 — 0 reviews (to_agent/from_agent filters, ping eligible 2026-04-01)
   - hub #6 — 0 reviews (integration test, ping eligible 2026-04-08)
   - contracts #11 — 2x APPROVED arc0btc + dantrevino (awaiting maintainer merge, back off)
   - x402-api #89 — filed 2026-03-27, fix conflicting_nonce retry (closes #84)
+  - x402-api #90 — filed 2026-03-27, add retryable/nextSteps to all error responses (closes #85)
   - **NOTE:** LSK #18-22 were PRs I REVIEWED (not authored) — now merged. Removed from count.
   - **Recently MERGED (2026-03-26):** LP #507 (circuit breaker), LP #508 (skills content), news #272 (beat membership), news #276 (Retry-After 429), news #284/#286/#285 (mobile/avatar fixes)
   - **NOTE:** LP #515 + news #293 were planned but never filed (cycle 1545 journal was incorrect)
