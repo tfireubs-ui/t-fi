@@ -439,3 +439,4 @@
 2026-03-27T11:02Z [1547-scout] Scout results: closed issue #10 (already fixed). Filed #11 (portfolio staleness). Added heartbeat sleep cap (max 305s). Contracts #8 deadline 2026-03-29 still open. Paperboy dashboard auth unknown.
 2026-03-27T11:15Z [1548] PR CHECK: news #287 CHANGES_REQUESTED — fixed publisherFeedback API regression + signal_tags seeding + Pacific TZ consistency + nits (mosaicSignals rename, _day precompute). LP #515/news #293 were phantom (never filed). 9/10 open PRs.
 2026-03-27T11:25Z [1549] CONTRIBUTE: Approved mcp-server #423 (zest_enable_collateral V2 collateral-add — now 2x APPROVED, merge-ready). biwasxyz author.
+2026-03-27T11:35Z [1550] AIBTC CORE + CEO: mcp-server v1.45.0 + news v1.15.0 reviewed. Commented news #302 (TZ API, offered items 1+2). CEO doc updated — DeFi deploy deferred to 100k sats threshold.
