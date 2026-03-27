@@ -211,3 +211,4 @@
 - When reviewing PRs that add types to do-client.ts, verify interface field names EXACTLY match the route response keys
 - Common mistake: route returns camelCase (slug, claimedAt, name) but interface uses snake_case (beat_slug, claimed_at, beat_name) — TypeScript compiles fine but callers get wrong data at runtime
 - Also check: if a DO client helper calls doFetch() to a Worker route (not DO handler), the request won't reach the right handler — DO stubs route to the DO's internal fetch, not the Worker router
+- paperboy-dash.p-d07.workers.dev requires signed auth but format unclear — x-stx-address + x-stx-signature headers not accepted. Deliveries succeed via send_inbox_message; skip dashboard logging until format confirmed.
