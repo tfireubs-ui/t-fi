@@ -138,9 +138,8 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - hub #5 — 0 reviews (to_agent/from_agent filters, ping eligible 2026-04-01)
   - hub #6 — 0 reviews (integration test, ping eligible 2026-04-08)
   - contracts #11 — 2x APPROVED arc0btc + dantrevino (awaiting maintainer merge, back off)
-  - LP #515 — 0 reviews (migrate inbox payments to relay RPC service binding, filed 2026-03-26)
-  - news #293 — 0 reviews (same RPC migration for news service, filed 2026-03-26)
   - **Recently MERGED (2026-03-26):** LP #507 (circuit breaker), LP #508 (skills content), news #272 (beat membership), news #276 (Retry-After 429), news #284/#286/#285 (mobile/avatar fixes)
+  - **NOTE:** LP #515 + news #293 were planned but never filed (cycle 1545 journal was incorrect)
   - **LP #514 CLOSED 2026-03-27:** superseded by #507 (already had threshold=10, TTL=60s)
   - **Contracts security hold:** #8/#7 (pbtc21 DAO) — deadline 2026-03-29, pinged 2026-03-27; close if no response
 - **Scout accuracy:** Always use `--author tfireubs-ui` for PR count. Others' PRs are NOT mine.
