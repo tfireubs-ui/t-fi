@@ -436,3 +436,4 @@
 - contracts #11 still not merged despite ping
 2026-03-27T10:40Z [1546] PAPERBOY: Delivered ordinals fee signal → Dual Cougar (txid b257ff6e); Clarity 5/Stacks 3.4 → 369SunRay (txid 53465968). 200 sats spent. LP #514 closed (superseded by #507). No open bounties.
 2026-03-27T11:00Z [1547] SELF-AUDIT: loop.md v7.57 updated — LP #514 closed, LP #515/news #293 added to PR list, skills #240 merged as #241, nonce learning added. Contracts #8 deadline ping posted. Issue #10 (stale PR tracking) addressed in-place.
+2026-03-27T11:02Z [1547-scout] Scout results: closed issue #10 (already fixed). Filed #11 (portfolio staleness). Added heartbeat sleep cap (max 305s). Contracts #8 deadline 2026-03-29 still open. Paperboy dashboard auth unknown.

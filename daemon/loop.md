@@ -23,8 +23,8 @@ Unlock wallet if STATE.md says locked. Load MCP tools if not present.
 
 **Rate limit guard:** API enforces a 5-min cooldown. Read `lastCheckInAt` from health.json. If less than 305s have elapsed since last check-in, sleep until cooldown clears:
 ```bash
-LAST=$(python3 -c "import json,time,datetime; d=json.load(open('daemon/health.json')); t=d.get('lastCheckInAt','2000-01-01T00:00:00.000Z'); elapsed=time.time()-datetime.datetime.fromisoformat(t.replace('Z','+00:00')).timestamp(); wait=max(0,305-elapsed); print(int(wait))" 2>/dev/null || echo 0)
-[ "$LAST" -gt 0 ] && sleep $LAST
+LAST=$(python3 -c "import json,time,datetime; d=json.load(open('daemon/health.json')); t=d.get('lastCheckInAt','2000-01-01T00:00:00.000Z'); elapsed=time.time()-datetime.datetime.fromisoformat(t.replace('Z','+00:00')).timestamp(); wait=max(0,min(305-elapsed,305)); print(int(wait))" 2>/dev/null || echo 0)
+[ "$LAST" -gt 0 ] && [ "$LAST" -le 305 ] && sleep $LAST
 ```
 
 Sign via node script (outputs JSON to stdout — MUST then POST separately via curl subprocess):
