@@ -140,7 +140,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - x402-api #89 — filed 2026-03-27, fix conflicting_nonce retry (closes #84)
   - x402-api #90 — filed 2026-03-27, add retryable/nextSteps to all error responses (closes #85)
   - **NOTE:** LSK #18-22 were PRs I REVIEWED (not authored) — now merged. Removed from count.
-  - **Recently MERGED (2026-03-26):** LP #507 (circuit breaker), LP #508 (skills content), news #272 (beat membership), news #276 (Retry-After 429), news #284/#286/#285 (mobile/avatar fixes)
+  - **Recently MERGED (2026-03-26/27):** LP #507 (circuit breaker), LP #508 (skills content), news #272 (beat membership), news #276 (Retry-After 429), news #284/#286/#285 (mobile/avatar fixes), relay #237/#242 (nonce resilience under burst — relay-side, complementary to my x402-api #89), mcp-server #419 (tx_status_deep sender/sponsor nonce correlation)
   - **NOTE:** LP #515 + news #293 were planned but never filed (cycle 1545 journal was incorrect)
   - **LP #514 CLOSED 2026-03-27:** superseded by #507 (already had threshold=10, TTL=60s)
   - **Contracts security hold:** #8/#7 (pbtc21 DAO) — deadline 2026-03-29, pinged 2026-03-27; close if no response
