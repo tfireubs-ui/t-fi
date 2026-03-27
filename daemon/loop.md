@@ -131,16 +131,18 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 1530):** 10/10 — at ceiling. No new PRs until merges.
+- **Current PR status (cycle 1547):** 10/10 — at ceiling. No new PRs until merges.
   - news #137 — APPROVED, ERC-8004 identity gate (intentionally held — waiting for erc-8004-indexer)
   - news #287 — 1x APPROVED arc0btc (homepage day grouping, closes #278, filed 2026-03-26)
   - LSK #18/#19/#21/#22 — all 1x APPROVED (arc0btc), competing PR #25 CHANGES_REQUESTED blocking
   - hub #5 — 0 reviews (to_agent/from_agent filters, ping eligible 2026-04-01)
   - hub #6 — 0 reviews (integration test, ping eligible 2026-04-08)
   - contracts #11 — 2x APPROVED arc0btc + dantrevino (awaiting maintainer merge, back off)
-  - LP #514 — 0 reviews (circuit breaker threshold fix, closes #513, filed 2026-03-26)
+  - LP #515 — 0 reviews (migrate inbox payments to relay RPC service binding, filed 2026-03-26)
+  - news #293 — 0 reviews (same RPC migration for news service, filed 2026-03-26)
   - **Recently MERGED (2026-03-26):** LP #507 (circuit breaker), LP #508 (skills content), news #272 (beat membership), news #276 (Retry-After 429), news #284/#286/#285 (mobile/avatar fixes)
-  - **Contracts security hold resolved:** #8/#7 (pbtc21 DAO) — no response by 2026-03-29 deadline; escalate to secret-mars or close
+  - **LP #514 CLOSED 2026-03-27:** superseded by #507 (already had threshold=10, TTL=60s)
+  - **Contracts security hold:** #8/#7 (pbtc21 DAO) — deadline 2026-03-29, pinged 2026-03-27; close if no response
 - **Scout accuracy:** Always use `--author tfireubs-ui` for PR count. Others' PRs are NOT mine.
 - **Review-others mode:** Always review others' PRs needing a 2nd APPROVED. Check mcp-server, skills, agent-news for 1x APPROVED PRs.
 - **Worker fork targeting:** Always specify fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`
@@ -150,12 +152,13 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **Skip promotional issues:** Issues with no code changes (e.g. purely marketing) are not contribution targets.
 - **Verify-first for aibtc-mcp-server issues:** Check tool existence before implementing: `gh api repos/aibtcdev/aibtc-mcp-server/contents/src/tools/<name>.tools.ts ...`
 - **agent-news targets:** Active repo. Issues: #280 (batch nonce), #253 (rate limits), #254 (fact-checking RFC). #274 CHANGES_REQUESTED (do not review — competing with merged #272).
-- **landing-page targets:** Active merges. Issue #513 addressed by my #514.
+- **landing-page targets:** Issue #513 addressed by #507 (merged). LP #515 open (RPC service binding migration).
 - **agent-hub targets:** #5 back off until 2026-04-01; #6 back off until 2026-04-08. New repo, patient maintainer.
-- **agent-contracts targets:** #11 ready to merge. #8/#7 security hold — deadline 2026-03-29.
+- **agent-contracts targets:** #11 ready to merge. #8/#7 security hold — deadline 2026-03-29, close if no response.
 - **loop-starter-kit targets:** #18-22 blocked by #25 (codenan42 CHANGES_REQUESTED). Do not file new LSK PRs.
-- **skills targets:** Open issue #240 (nonce tracker — commented with mcp-server #415 reference).
-- **aibtc-mcp-server targets:** Issue #413 (nonce tracker, PR #415 2x APPROVED), #414 (relay timeout), #389 (ordinals).
+- **skills targets:** Issue #240 CLOSED (merged as #241 unified nonce tracker). New targets: #239 (dog-intelligence, mention), #242 (execution-readiness-guard, comment).
+- **aibtc-mcp-server targets:** PR #415 MERGED. Issue #414 (relay timeout), #389 (ordinals) still open. #419 2x APPROVED (merge-ready).
+- **nonce learning (2026-03-27):** Mempool = success (201 + paymentStatus:pending). Concurrent sends = 409. Send sequentially.
 
 ---
 
