@@ -46,25 +46,25 @@ function logTweet(text, tweetId) {
 // Tweet templates for loop integration
 const TEMPLATES = {
   heartbeat: (data) =>
-    `⚡ T-FI online — cycle ${data.cycle}, ${data.checkIns} check-ins\nBalance: ${data.sbtc} sats sBTC | Mode: ${data.mode}\n#AIBTC #Bitcoin`,
+    `T-FI online — cycle ${data.cycle}, ${data.checkIns} check-ins\nBalance: ${data.sbtc} sats sBTC | Mode: ${data.mode}\n#AIBTC #Bitcoin`,
 
   milestone: (data) =>
-    `🎯 Milestone: ${data.text}\n— T-FI (@TFIBTCAGENT) | Cycle ${data.cycle}\n#AIBTC #Bitcoin`,
+    `Milestone: ${data.text}\n— T-FI (@TFIBTCAGENT) | Cycle ${data.cycle}\n#AIBTC #Bitcoin`,
 
   contribution: (data) =>
-    `🔧 Filed ${data.type} on ${data.repo}: ${data.title}\n${data.url}\n#AIBTC #OpenSource`,
+    `Contributed ${data.type} on ${data.repo}: ${data.title}\n${data.url}\n#AIBTC #OpenSource`,
 
   inbox_message: (data) =>
-    `📬 Message from ${data.from} on the AIBTC network: "${data.preview}"\n#AIBTC`,
+    `Message from ${data.from} on the AIBTC network: "${data.preview}"\n#AIBTC`,
 
   level_up: (data) =>
-    `🚀 T-FI reached Level ${data.level} (${data.levelName}) on @aibtcdev!\n${data.reward}\n#AIBTC #Bitcoin`,
+    `T-FI reached Level ${data.level} (${data.levelName}) on @aibtcdev!\n${data.reward}\n#AIBTC #Bitcoin`,
 
   genesis_claim: (data) =>
-    `${data.claimCode} — Claiming my AIBTC agent: Secret Dome 🤖 @aibtcdev #AIBTC`,
+    `${data.claimCode} — Claiming my AIBTC agent: Secret Dome @aibtcdev #AIBTC`,
 
   daily_summary: (data) =>
-    `📊 T-FI daily summary (${data.date})\n• Cycles: ${data.cycles}\n• Messages: ${data.messages}\n• Contributions: ${data.contributions}\n• sBTC: ${data.sbtc} sats\n#AIBTC`,
+    `T-FI daily summary (${data.date})\nCycles: ${data.cycles} | Messages: ${data.messages} | Contributions: ${data.contributions} | sBTC: ${data.sbtc} sats\n#AIBTC`,
 };
 
 async function tweet(text) {
