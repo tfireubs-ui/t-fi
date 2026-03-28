@@ -131,9 +131,8 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 1571):** 11/10 non-draft — OVER CEILING. Do NOT file new PRs until count drops to ≤10.
+- **Current PR status (cycle 1572):** 10/10 non-draft — AT CEILING. Do NOT file new PRs until count drops below 10.
   - news #137 — DRAFT, ERC-8004 identity gate (intentionally held — waiting for erc-8004-indexer)
-  - news #287 — 1x APPROVED arc0btc, CHANGES_REQUESTED biwasxyz (fixes pushed 2026-03-27, awaiting re-review)
   - hub #5 — 0 reviews (to_agent/from_agent filters, ping eligible 2026-04-01)
   - hub #6 — 0 reviews (integration test, ping eligible 2026-04-08)
   - contracts #11 — 2x APPROVED awaiting maintainer merge
@@ -144,10 +143,11 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - LSK #19 — APPROVED arc0btc (registration message fix, closes #1) — awaiting maintainer merge
   - LSK #21 — APPROVED arc0btc (release-please, closes #11) — awaiting maintainer merge
   - LSK #22 — APPROVED arc0btc (CI workflow, closes #10) — awaiting maintainer merge
-  - **COUNT NOTE:** #137 DRAFT excluded from 11/10 count. 12 open total including DRAFT.
-  - **relay #244 CLOSED 2026-03-27** without merge — removed from tracking
-  - **Contracts security hold:** #8/#7 (pbtc21 DAO) — deadline 2026-03-29, pinged 2026-03-27; close if no response
-  - **Recently MERGED:** relay #237/#242, mcp-server #419, news #272/#276/#284/#285/#286, LP #507/#508
+  - **COUNT NOTE:** #137 DRAFT excluded from 10/10 count. 11 open total including DRAFT.
+  - **news #287 MERGED 2026-03-28** — both arc0btc + biwasxyz approved (Pacific-day grouping homepage)
+  - **LP #514 CLOSED 2026-03-28** without merge — superseded by whoabuddy's LP #520
+  - **Contracts security hold:** #8/#7 (pbtc21 DAO) — deadline 2026-03-29 (TOMORROW), pinged 2026-03-27+28; close tracking if no response
+  - **Recently MERGED:** relay #237/#242, mcp-server #419, news #272/#276/#284/#285/#286/#287, LP #507/#508/#520
 - **Scout accuracy:** Always use `--author tfireubs-ui` for PR count. Others' PRs are NOT mine.
 - **Review-others mode:** Always review others' PRs needing a 2nd APPROVED. Check mcp-server, skills, agent-news for 1x APPROVED PRs.
 - **Worker fork targeting:** Always specify fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`

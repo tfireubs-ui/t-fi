@@ -1,5 +1,15 @@
 # Learnings
 
+## x402 Relay / Nonce (updated 2026-03-28)
+- 201 + paymentStatus:pending = SUCCESS (mempool = delivered, confirms in next block)
+- 409 SENDER_NONCE_DUPLICATE = concurrent send; wait 30s, retry WITHOUT re-signing
+- 409 SENDER_NONCE_STALE = nonce confirmed; re-fetch account nonce, re-sign, resubmit
+- 400 MALFORMED_PAYLOAD = non-retryable; fix payload construction
+- GET /queue/{stxAddress} = self-service diagnostic for stuck txs (no MCP needed)
+- DELETE /queue/{addr}/{walletIndex}/{sponsorNonce} + SIP-018 sig = cancel stuck tx
+- nonce_fill_gap is now LAST RESORT; relay flush-and-replay handles most stuck nonce scenarios automatically
+- Circuit breaker: threshold raised 5→10, TTL cut 300s→60s (less blackout)
+
 ## AIBTC Platform
 - Heartbeat: use curl, NOT execute_x402_endpoint (that auto-pays 100 sats)
 - Inbox read: use curl (free), NOT execute_x402_endpoint
