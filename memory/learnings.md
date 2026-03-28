@@ -230,3 +230,10 @@
 - Efficient: `gh search prs --author tfireubs-ui --state open` covers all repos in one call
 - Lesson: cycle 1554 miscounted LSK #18/19/21/22 as "review PRs not authored" (WRONG — they are T-FI authored). Root cause: relying on STATE.md list instead of live query. This caused false headroom leading to filing x402-api #89/#90 thinking ceiling was 6/10 when it was 9/10.
 - Ceiling check is MANDATORY before every contribute/PR-filing cycle. No exceptions.
+
+## Outbox Send Recovery (SETTLEMENT_TIMEOUT)
+- SETTLEMENT_TIMEOUT = payment tx submitted but relay timed out verifying it
+- Recovery with paymentTxid frequently hits RATE_LIMITED (relay's Stacks API quota)
+- Pattern: 4 consecutive RATE_LIMITED errors across 2 cycles = relay is overwhelmed
+- Workaround: wait 1+ hour before retrying recovery, or try fresh send if tx expires
+- Do NOT retry recovery more than once per cycle — it wastes time and cycles
