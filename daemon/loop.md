@@ -131,18 +131,19 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 1617):** 9/10 non-draft — 1 slot open. Can file 1 new PR.
+- **Current PR status (cycle 1619):** 10/10 non-draft — AT CEILING. Do NOT file new PRs until count drops below 10.
   - news #137 — DRAFT, ERC-8004 identity gate (intentionally held — waiting for erc-8004-indexer)
   - hub #5 — 0 reviews (to_agent/from_agent filters, ping eligible 2026-04-01)
   - hub #6 — 0 reviews (integration test, ping eligible 2026-04-08)
   - contracts #11 — 2x APPROVED awaiting maintainer merge
-  - x402-api #89 — 1x APPROVED arc0btc, refactored (isNonceConflict helper, exponential backoff) 2026-03-27; ping eligible 18:36 UTC 2026-03-28
-  - x402-api #90 — 1x APPROVED arc0btc, refactored (NONCE_CONFLICT_CODE constant, nextSteps fix) 2026-03-27; ping eligible 18:36 UTC 2026-03-28
+  - x402-api #89 — 1x APPROVED arc0btc (isNonceConflict helper, exp backoff); pinged 18:36 UTC 2026-03-28
+  - x402-api #90 — 1x APPROVED arc0btc (NONCE_CONFLICT_CODE constant, nextSteps fix); pinged 18:36 UTC 2026-03-28
   - LSK #18 — APPROVED arc0btc (defer agent naming, closes #3) — awaiting maintainer merge
   - LSK #19 — APPROVED arc0btc (registration message fix, closes #1) — awaiting maintainer merge
   - LSK #21 — APPROVED arc0btc (release-please, closes #11) — awaiting maintainer merge
   - LSK #22 — APPROVED arc0btc (CI workflow, closes #10) — awaiting maintainer merge
-  - **COUNT NOTE:** #137 DRAFT excluded from 9/10 count. 10 open total including DRAFT.
+  - skills #263 — 0 reviews (relay-diagnostic pool state + threshold align + URL unify, closes #262) 2026-03-28
+  - **COUNT NOTE:** #137 DRAFT excluded from 10/10 count. 11 open total including DRAFT.
   - **relay #261 MERGED 2026-03-28** — quarantine TooMuchChaining + backward ghost probe (freed 1 slot)
   - **docs #12 CLOSED** — x402 relay-as-facilitator docs (aibtc-mcp-server-docs repo deleted/archived; freed 1 slot)
   - **news #287 MERGED 2026-03-28** — Pacific-day grouping homepage
