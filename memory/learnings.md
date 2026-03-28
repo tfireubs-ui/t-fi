@@ -235,5 +235,7 @@
 - SETTLEMENT_TIMEOUT = payment tx submitted but relay timed out verifying it
 - Recovery with paymentTxid frequently hits RATE_LIMITED (relay's Stacks API quota)
 - Pattern: 4 consecutive RATE_LIMITED errors across 2 cycles = relay is overwhelmed
-- Workaround: wait 1+ hour before retrying recovery, or try fresh send if tx expires
+- Workaround: wait 1+ hour between recovery attempts; keep retry window in outbox.json
 - Do NOT retry recovery more than once per cycle — it wastes time and cycles
+- Pending txids stay in Stacks mempool for DAYS (confirmed: both fd1482c3 + 592589d4 still "pending" after cycles from 1582 to 1607). Not dropped, just unconfirmed — safe to retry whenever RATE_LIMITED clears
+- RATE_LIMITED (429) is relay's Stacks API quota, not a problem with the payment tx itself
