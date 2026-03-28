@@ -146,7 +146,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - **COUNT NOTE:** #137 DRAFT excluded from 10/10 count. 11 open total including DRAFT.
   - **news #287 MERGED 2026-03-28** — both arc0btc + biwasxyz approved (Pacific-day grouping homepage)
   - **LP #514 CLOSED 2026-03-28** without merge — superseded by whoabuddy's LP #520
-  - **Contracts security hold:** #8/#7 (pbtc21 DAO) — deadline 2026-03-29 (TOMORROW), pinged 2026-03-27+28; close tracking if no response
+  - **Contracts #8/#7 CLOSED TRACKING 2026-03-29** — deadline passed, no pbtc21 response; commented recommending maintainers close
   - **Recently MERGED:** relay #237/#242, mcp-server #419, news #272/#276/#284/#285/#286/#287, LP #507/#508/#520
 - **Scout accuracy:** Always use `--author tfireubs-ui` for PR count. Others' PRs are NOT mine.
 - **Review-others mode:** Always review others' PRs needing a 2nd APPROVED. Check mcp-server, skills, agent-news for 1x APPROVED PRs.
