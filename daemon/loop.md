@@ -148,7 +148,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - mcp-server #431 — 2x APPROVED (Bortlesboat comprehensive fix, 152 lines tests)
   - news #325 — CHANGES_REQUESTED (biwasxyz: case-insensitive publisher bypass + gate reorder before rateLimit)
   - skills #263 — 1x APPROVED arc0btc, CI green (relay-diagnostic pool state + threshold align + URL unify, closes #262)
-  - x402-relay #264 — 1x APPROVED
+  - x402-relay #264 — GONE (repo aibtcdev/x402-relay no longer exists)
   - LP #528 — 2x APPROVED awaiting merge
   - LP #531-#534 — need 2nd APPROVED review
   - **COUNT NOTE:** #137 DRAFT excluded from ceiling count. Total including DRAFT: 13+.
@@ -165,7 +165,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **landing-page targets:** LP #528 merge-ready. LP #531-534 need 2nd APPROVED. Issue #515 open (RPC service binding migration).
 - **agent-hub targets:** #5 back off until 2026-04-01; #6 back off until 2026-04-08. New repo, patient maintainer.
 - **agent-contracts targets:** #11 ready to merge. #8/#7 security hold — check if deadline passed 2026-03-29; close if no response.
-- **loop-starter-kit targets:** #18-22 + #24 APPROVED awaiting merge. Issue #23 (0x prefix strip on stacksSignature, 1-2 line fix) — quick win once ceiling clears.
+- **loop-starter-kit targets:** #18-22 + #24 APPROVED awaiting merge (pinged 2026-03-28). Issue #23 RESOLVED by kengoon PR #24 (0x prefix strip — 2x APPROVED, merge-ready).
 - **skills targets:** Issue #239 (dog-intelligence, mention), #242 (execution-readiness-guard).
 - **aibtc-mcp-server targets:** Issue #414 (relay timeout), #389 (ordinals) still open.
 - **x402-api targets:** Issue #86 (cron concurrency causing nonce conflicts — investigate which job before PR). Issue #87 (RPC binding migration, after #89/#90 land).
