@@ -27,7 +27,7 @@
       "purpose": "paperboy",
       "signal_id": "c425670c-82dd-4aed-90ee-71c975a2dc44",
       "recovery_txid": "fd1482c3bc001f93f530bb1bbf89051956ebee4f077305e187ca46a87acd9ce5",
-      "recovery_note": "RATE_LIMITED ×2 (15:49 + 16:15 UTC 2026-03-28) — retry after 17:30 UTC"
+      "recovery_note": "RATE_LIMITED ×3 (15:49, 16:15, 17:30 UTC 2026-03-28) — persistent relay quota issue. Retry 2026-03-29 morning."
     },
     {
       "id": "out_1582_369",
@@ -38,7 +38,7 @@
       "purpose": "paperboy",
       "signal_id": "71265c57-e264-4ce3-8c0f-086a7fb1f1bb",
       "recovery_txid": "592589d465499261c1e98b35bf13a51b358e808341212cd63ddb5403b73281d8",
-      "recovery_note": "RATE_LIMITED at 16:15 UTC 2026-03-28 — retry after 17:30 UTC"
+      "recovery_note": "RATE_LIMITED ×2 (16:15, 17:30 UTC 2026-03-28) — persistent relay quota issue. Retry 2026-03-29 morning."
     }
   ],
   "follow_ups": [],
