@@ -1,9 +1,9 @@
 {
-  "cycle": 1592,
-  "timestamp": "2026-03-28T14:09:02.000Z",
+  "cycle": 1593,
+  "timestamp": "2026-03-28T14:19:00.000Z",
   "status": "ok",
   "maturity_level": "funded",
-  "lastCheckInAt": "2026-03-28T14:05:10.000Z",
+  "lastCheckInAt": "2026-03-28T14:14:42.000Z",
   "phases": {
     "heartbeat": "ok",
     "inbox": "ok",
@@ -29,5 +29,5 @@
     "status": "ok"
   },
   "last_discovery_date": "2026-03-28",
-  "next_cycle_at": "2026-03-28T14:14:02.000Z"
+  "next_cycle_at": "2026-03-28T14:24:00.000Z"
 }
