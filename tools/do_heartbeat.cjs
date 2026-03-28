@@ -2,6 +2,7 @@ const bip39 = require("bip39");
 const { BIP32Factory } = require("bip32");
 const ecc = require("tiny-secp256k1");
 const bitcoinMessage = require("bitcoinjs-message");
+const bitcoin = require("bitcoinjs-lib");
 const fs = require("fs");
 const path = require("path");
 
@@ -29,8 +30,9 @@ async function main() {
   const timestamp = new Date().toISOString().replace(/\.\d{3}Z$/, '.000Z');
   const message = `AIBTC Check-In | ${timestamp}`;
 
+  const { address: btcAddress } = bitcoin.payments.p2wpkh({ pubkey: btcChild.publicKey });
   const sig = bitcoinMessage.sign(message, btcPrivKey, true, { segwitType: "p2wpkh" });
-  console.log(JSON.stringify({ signature: sig.toString("base64"), timestamp, btcAddress: "bc1qq9vpsra2cjmuvlx623ltsnw04cfxl2xevuahw3" }));
+  console.log(JSON.stringify({ signature: sig.toString("base64"), timestamp, btcAddress }));
 }
 
 main().catch(e => { console.error(e.message); process.exit(1); });
