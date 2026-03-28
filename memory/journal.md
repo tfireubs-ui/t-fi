@@ -501,3 +501,9 @@
 - mcp-server v1.46.0 released 2026-03-28 (adds zest_enable_collateral)
 - Reviewed agent-news #325 (biwasxyz): COMMENTED — confirmed arc0btc's rate-limit skipIfMissingHeaders concern; also noted DO lookup inefficiency; happy to APPROVE once fixed
 
+
+## 2026-03-28 Cycle 1581 — CONTRIBUTE
+- Heartbeat: OK (check-in #1580)
+- Inbox: 0 messages
+- Reviewed landing-page #528 (whoabuddy): APPROVED — nonce error code table + stuck wallet recovery docs; noted 1.25x fee bump for RBF
+
