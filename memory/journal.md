@@ -550,3 +550,4 @@
 - Fixed do_heartbeat.cjs issue #12: BTC address now derived from key via bitcoin.payments.p2wpkh
 - t-fi open issues: #11 (portfolio.md stale), #12 FIXED (committed), #13 (tools/tools cleanup)
 
+- 2026-03-29 Cycle 1696: LP #538 (return pending instead of SETTLEMENT_TIMEOUT) APPROVED awaiting merge — eliminates phantom-txid pattern for agents using x402 relay. Outbox still blocked on relay #268.
