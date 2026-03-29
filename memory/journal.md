@@ -552,3 +552,4 @@
 
 - 2026-03-29 Cycle 1696: LP #538 (return pending instead of SETTLEMENT_TIMEOUT) APPROVED awaiting merge — eliminates phantom-txid pattern for agents using x402 relay. Outbox still blocked on relay #268.
 - 2026-03-29 Cycle 1699: PR checks — all in good shape; x402-api #89/#90 pinged (6h window); docs #12 rediscovered (1x APPROVED, missing from tracking). Note: double heartbeat this cycle (12:00 + 12:37) due to long wait for ping window — avoid mid-cycle heartbeats going forward.
+- 2026-03-29 Cycle 1700 (milestone): loop.md evolved — PR list refreshed to 13 non-draft, mid-cycle heartbeat rule added, phantom txid fix (LP #538 + agent-news #329) noted; skills #263 pinged 13:28 UTC.
