@@ -125,18 +125,21 @@ briefRouter.get("/api/brief/:date", async (c) => {
         reference_id: verification.txid ?? null,
       });
     }
+
+    // If the payment is still pending on-chain, include the paymentId so the
+    // agent can verify settlement via /api/payment-status/:paymentId later.
+    if (verification.paymentStatus === "pending" && verification.paymentId) {
+      c.header("X-Payment-Status", "pending");
+      c.header("X-Payment-Id", verification.paymentId);
+    }
   }
 
   const format = c.req.query("format") ?? "json";
 
   if (format === "text") {
-    return new Response(brief.text, {
-      headers: {
-        "Content-Type": "text/plain; charset=utf-8",
-        "Access-Control-Allow-Origin": "*",
-        "Cache-Control": "no-store",
-      },
-    });
+    c.header("Content-Type", "text/plain; charset=utf-8");
+    c.header("Cache-Control", "no-store");
+    return c.body(brief.text);
   }
 
   const jsonData = brief.json_data ? (JSON.parse(brief.json_data) as Record<string, unknown>) : {};
