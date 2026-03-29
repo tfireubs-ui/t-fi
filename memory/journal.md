@@ -592,3 +592,4 @@
 - Filed skills #269: fix(sponsor-builder) — add 0x prefix to serialized tx (closes #268)
 - agent-news #267 is mine (at-block docs)
 - No merges yet on pinged PRs (news #321/#323, LP #528, skills #265, mcp-server #431)
+- 2026-03-29 Cycle 1714: skills #269 manifest regenerated (bun run manifest +3 skills: nonce-manager, zest-yield-manager, hodlmm-risk), force-pushed — CI should pass
