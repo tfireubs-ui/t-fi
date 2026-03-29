@@ -594,3 +594,4 @@
 - No merges yet on pinged PRs (news #321/#323, LP #528, skills #265, mcp-server #431)
 - 2026-03-29 Cycle 1714: skills #269 manifest regenerated (bun run manifest +3 skills: nonce-manager, zest-yield-manager, hodlmm-risk), force-pushed — CI should pass
 - 2026-03-29 Cycle 1715: self-audit — agent-news #332 (fixes #325: case-insensitive addr + gate reorder), mcp-server #432 (fixes #426: duplicate guard + log + test post-conds); skills #269 CI green
+- 2026-03-29 Cycle 1717: agent-news #333 — 4 composite indexes for leaderboard query (migration 12, closes #319, 5-10s→<500ms expected)
