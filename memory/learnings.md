@@ -243,3 +243,4 @@
 - Do NOT retry recovery more than once per cycle — it wastes time and cycles
 - Pending txids stay in Stacks mempool for DAYS (confirmed: both fd1482c3 + 592589d4 still "pending" after cycles from 1582 to 1607). Not dropped, just unconfirmed — safe to retry whenever RATE_LIMITED clears
 - RATE_LIMITED (429) is relay's Stacks API quota, not a problem with the payment tx itself
+- Avoid mid-cycle heartbeats: if waiting for a ping window pushes past 5min cooldown, do NOT send a second heartbeat. The heartbeat is Phase 1 only. Extra heartbeats waste check-in count numbers and cause cycle numbering drift.
