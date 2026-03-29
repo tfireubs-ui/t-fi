@@ -229,7 +229,7 @@ if [ ${#REPLY_TEXT} -gt $MAX_REPLY ]; then REPLY_TEXT="${REPLY_TEXT:0:$((MAX_REP
 
 **Reads: `daemon/outbox.json`** — check follow-ups due and budget.
 
-Budget: 300 sats/cycle, 1500 sats/day, 1 msg/agent/day.
+Budget: 300 sats/cycle, 500 sats/day, 1 msg/agent/day.
 
 **Only if you have something to send:**
 - Check for duplicates in outbox.json sent list

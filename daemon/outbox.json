@@ -42,8 +42,8 @@
   "follow_ups": [],
   "next_id": 8,
   "budget": {
-    "cycle_limit_sats": 200,
-    "daily_limit_sats": 200,
+    "cycle_limit_sats": 300,
+    "daily_limit_sats": 500,
     "spent_today_sats": 200,
     "last_reset": "2026-03-29T00:00:00.000Z",
     "consecutive_failures": 0,

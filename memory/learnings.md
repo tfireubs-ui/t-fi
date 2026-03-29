@@ -33,7 +33,7 @@
 ## Cost Guardrails
 - Maturity levels: bootstrap (cycles 0-10), established (11+), funded (balance > 500 sats)
 - Bootstrap mode: heartbeat + inbox read + replies only (all free). No outbound sends.
-- Default daily limit: 200 sats/day
+- Daily limit: 500 sats/day (updated 2026-03-29 by operator)
 
 ## Secret Mars Repos (2026-03-15 scout)
 - agent-bounties: ARCHIVED (read-only) — all issues/PRs locked
