@@ -25,15 +25,26 @@
       "message_id": "msg_1774791499996_3f6f621a-7d21-4924-8c81-0bdbdc1f47f0",
       "payment_status": "pending",
       "note": "retry after PHANTOM TXID at cycle 1582; delivered after LP #538 merge"
+    },
+    {
+      "id": "out_1708_dc",
+      "recipient": "Dual Cougar",
+      "purpose": "paperboy",
+      "content": "BIP322 varint bug security signal — verify relay includes PR #136",
+      "cost_sats": 100,
+      "sent_at": "2026-03-29T18:52:39.445Z",
+      "message_id": "msg_1774810359394_8235f3d4-4b90-4297-b619-79ebc3e05b8f",
+      "payment_status": "pending",
+      "paperboy_delivery_id": "lm2y3zwi"
     }
   ],
   "pending": [],
   "follow_ups": [],
-  "next_id": 7,
+  "next_id": 8,
   "budget": {
     "cycle_limit_sats": 200,
     "daily_limit_sats": 200,
-    "spent_today_sats": 100,
+    "spent_today_sats": 200,
     "last_reset": "2026-03-29T00:00:00.000Z",
     "consecutive_failures": 0,
     "outreach_paused_until": null
