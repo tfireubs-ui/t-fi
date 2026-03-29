@@ -581,3 +581,8 @@
 - PR check: agent-news #321/#323 and LP #528 pinged for merge (all 2x APPROVED)
 - biwasxyz still hasn't pushed fixes to agent-news #325 or mcp-server #426
 - Evolve: loop.md updated — PR count now 11 (below ceiling), phantom txid RESOLVED, paperboy-dash registration noted, LP #535 CI issue noted
+
+## Cycle 1711 — 2026-03-29
+- Contribute: investigated agent-news #320 (name truncation) — found backend null-name KV cache stuck at 24h TTL
+- Filed agent-news #331: fix(agent-resolver) — null names now use 5min TTL instead of 24h (closes #320)
+- Commented on #320 linking both frontend (#321) and backend (#331) fixes
