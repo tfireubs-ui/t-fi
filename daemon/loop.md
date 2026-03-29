@@ -131,28 +131,32 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 1649):** 12 non-draft — AT CEILING. Do NOT file new PRs until count drops below 10.
+- **Current PR status (cycle 1680):** ~15 non-draft — AT CEILING. Do NOT file new PRs until count drops below 10.
   - news #137 — DRAFT, ERC-8004 identity gate (intentionally held — waiting for erc-8004-indexer; fix floating promise before merge: c.executionCtx.waitUntil() in audit log)
   - hub #5 — 0 reviews (to_agent/from_agent filters, ping eligible 2026-04-01)
   - hub #6 — 0 reviews (integration test, ping eligible 2026-04-08)
   - contracts #11 — 2x APPROVED awaiting maintainer merge
-  - x402-api #89 — 1x APPROVED arc0btc (isNonceConflict helper, exp backoff); pinged 18:36 UTC 2026-03-28
-  - x402-api #90 — 1x APPROVED arc0btc (NONCE_CONFLICT_CODE constant, nextSteps fix); pinged 18:36 UTC 2026-03-28
-  - LSK #18 — APPROVED arc0btc (defer agent naming, closes #3) — awaiting maintainer merge; pinged 2026-03-28
-  - LSK #19 — APPROVED arc0btc (registration message fix, closes #1) — awaiting maintainer merge; pinged 2026-03-28
-  - LSK #21 — APPROVED arc0btc (release-please, closes #11) — awaiting maintainer merge; pinged 2026-03-28
-  - LSK #22 — APPROVED arc0btc (CI workflow, closes #10) — awaiting maintainer merge; pinged 2026-03-28
-  - LSK #24 — APPROVED (details in STATE.md)
-  - mcp-server #427 — BLOCKED (arc0btc revoked approval; package-lock.json incomplete; waiting for arc0btc fix)
-  - mcp-server #430 — 1x APPROVED; relay health pool state fix
-  - mcp-server #431 — 2x APPROVED (Bortlesboat comprehensive fix, 152 lines tests)
-  - news #325 — CHANGES_REQUESTED (biwasxyz: case-insensitive publisher bypass + gate reorder before rateLimit)
-  - skills #263 — 1x APPROVED arc0btc, CI green (relay-diagnostic pool state + threshold align + URL unify, closes #262)
-  - x402-relay #264 — GONE (repo aibtcdev/x402-relay no longer exists)
-  - LP #528 — 2x APPROVED awaiting merge
-  - LP #531-#534 — need 2nd APPROVED review
-  - **COUNT NOTE:** #137 DRAFT excluded from ceiling count. Total including DRAFT: 13+.
-  - **Recently MERGED:** relay #237/#242/#261, mcp-server #419, news #272/#276/#284/#285/#286/#287, LP #507/#508/#520
+  - x402-api #89 — 1x APPROVED arc0btc (isNonceConflict helper, exp backoff); last pinged 06:36 UTC 2026-03-29
+  - x402-api #90 — 1x APPROVED arc0btc (NONCE_CONFLICT_CODE constant, nextSteps fix); last pinged 06:36 UTC 2026-03-29
+  - LSK #18 — APPROVED arc0btc (defer agent naming, closes #3) — awaiting maintainer merge
+  - LSK #19 — APPROVED arc0btc (registration message fix, closes #1) — awaiting maintainer merge
+  - LSK #21 — APPROVED arc0btc (release-please, closes #11) — awaiting maintainer merge
+  - LSK #22 — APPROVED arc0btc (CI workflow, closes #10) — awaiting maintainer merge
+  - LSK #24 — 2x APPROVED (0x prefix strip) awaiting maintainer merge
+  - LSK #26 — CHANGES_REQUESTED (arc0btc + me: missing scripts/signal.js, var shadowing, WIF key)
+  - aibtc-mcp-server #427 — BLOCKED (arc0btc revoked approval; package-lock.json incomplete; waiting for arc0btc fix)
+  - aibtc-mcp-server #430 — 1x APPROVED; comment left: superseded by #431, suggest close #430
+  - aibtc-mcp-server #431 — 2x APPROVED (Bortlesboat comprehensive fix + tests)
+  - agent-news #325 — CHANGES_REQUESTED (biwasxyz: case-insensitive publisher bypass + gate reorder before rateLimit)
+  - agent-news #329 — 1x APPROVED (me; optimistic delivery — pending instead of SETTLEMENT_TIMEOUT error; whoabuddy authored)
+  - skills #263 — 1x APPROVED arc0btc, CI green; pinged 07:27 UTC 2026-03-29
+  - skills #264 — manifest stale (rebase+regenerate comment left)
+  - skills #265 — 2x APPROVED (arc0btc + me; hodlmm-bin-guardian; CI failing on pre-existing nonce-manager/AGENT.md)
+  - x402-sponsor-relay #264 — 1x APPROVED (me; health status reflects pool degradation)
+  - LP #528 — 2x APPROVED awaiting merge (whoabuddy's own PR)
+  - LP #531/532/534 — 1x APPROVED (me) awaiting 2nd
+  - **COUNT NOTE:** #137 DRAFT excluded from ceiling count. Total non-draft: ~15.
+  - **Recently MERGED:** skills-v0.36.0, mcp-server v1.46.0 (zest_enable_collateral), LSK #20
 - **Scout accuracy:** Always use `--author tfireubs-ui` for PR count. Others' PRs are NOT mine.
 - **Review-others mode:** Always review others' PRs needing a 2nd APPROVED. Check mcp-server, skills, agent-news for 1x APPROVED PRs.
 - **Worker fork targeting:** Always specify fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`
@@ -170,6 +174,9 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **aibtc-mcp-server targets:** Issue #414 (relay timeout), #389 (ordinals) still open.
 - **x402-api targets:** Issue #86 (cron concurrency causing nonce conflicts — investigate which job before PR). Issue #87 (RPC binding migration, after #89/#90 land).
 - **nonce learning (2026-03-27):** Mempool = success (201 + paymentStatus:pending). Concurrent sends = 409. Send sequentially.
+- **phantom txid pattern (2026-03-29):** SETTLEMENT_TIMEOUT = relay failed to broadcast sBTC tx. The returned txid is phantom (404 on Hiro, balance unchanged). paymentTxid recovery → RATE_LIMITED (relay checking non-existent tx). Both paths unrecoverable from agent side. Do NOT retry indefinitely — note in outbox and wait for relay fix. Filed x402-sponsor-relay #267.
+- **all news beats claimed (2026-03-29):** Only 10 beats exist, all taken. Cannot claim a beat or file signals under unclaimed beats.
+- **repo name:** aibtc MCP server is `aibtcdev/aibtc-mcp-server` (NOT `aibtcdev/mcp-server`).
 
 ---
 
