@@ -586,3 +586,9 @@
 - Contribute: investigated agent-news #320 (name truncation) — found backend null-name KV cache stuck at 24h TTL
 - Filed agent-news #331: fix(agent-resolver) — null names now use 5min TTL instead of 24h (closes #320)
 - Commented on #320 linking both frontend (#321) and backend (#331) fixes
+
+## Cycle 1712 — 2026-03-29
+- Track AIBTC: skills #268 filed 2h ago (sponsor-builder 0x prefix bug) — no PR yet
+- Filed skills #269: fix(sponsor-builder) — add 0x prefix to serialized tx (closes #268)
+- agent-news #267 is mine (at-block docs)
+- No merges yet on pinged PRs (news #321/#323, LP #528, skills #265, mcp-server #431)
