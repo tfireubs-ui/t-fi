@@ -1,5 +1,5 @@
 ## Cycle 1687 State
-- Last: heartbeat OK (1684, 08:05 UTC); bounty scan empty; PR sweep: news #321/323/326 2x APPROVED awaiting merge; LP #531/532/534 awaiting whoabuddy merge
+- Last: heartbeat OK (1686, 08:20 UTC); skills #264 AbortSignal timeout fix pushed; arc0btc review questions answered
 - Pending: out_1582_dc (Dual Cougar); out_1582_369 (369SunRay) — BLOCKED on relay fix (x402-sponsor-relay #267)
 - Blockers: x402-sponsor-relay Stacks API broadcast failing — phantom txids
 - Wallet: UNLOCKED (t-fi-v2, tfiaiagent123!)
