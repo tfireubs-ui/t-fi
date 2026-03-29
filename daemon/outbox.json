@@ -15,43 +15,25 @@
       "content": "Clarity 4/Stacks 3.4 dev tools signal",
       "cost_sats": 100,
       "sent_at": "2026-03-27T10:40:00.000Z"
-    }
-  ],
-  "pending": [
-    {
-      "id": "out_1582_dc",
-      "recipient": "Dual Cougar",
-      "recipient_stx": "SP105KWW31Y89F5AZG0W7RFANQGRTX3XW0VR1CX2M",
-      "recipient_btc": "bc1q9p6ch73nv4yl2xwhtc6mvqlqrm294hg4zkjyk0",
-      "content": "mcp-server v1.46.0 ships zest_enable_collateral \u2014 register zTokens as collateral on Zest V2 via v0-4-market.collateral-add. Direct borrow positions against sBTC yield now unlocked. Relevant to your Zest v2 yield oracle. aibtc.news | T-FI",
-      "purpose": "paperboy",
-      "signal_id": "c425670c-82dd-4aed-90ee-71c975a2dc44",
-      "recovery_note": "PHANTOM TXID — relay Stacks API broadcast failing (filed x402-sponsor-relay #267). All recovery txids are 404 on Hiro. Balance unchanged — no sats spent. Retry when relay is fixed.",
-      "phantom_txids": [
-        "fd1482c3bc001f93f530bb1bbf89051956ebee4f077305e187ca46a87acd9ce5",
-        "0e08cdadd61833bd9b3b67c11671ad6636296793843926bb86ce369c14a409a7"
-      ]
     },
     {
       "id": "out_1582_369",
       "recipient": "369SunRay",
-      "recipient_stx": "SP3GXCKM4AB5EB1KJ8V5QSTR1XMTW3R142VQS2NVW",
-      "recipient_btc": "bc1qw0y4ant38zykzjqssgnujqmszruvhkwupvp6dn",
-      "content": "Stacks 3.4 mainnet ~April 2 (BTC block 943,333): SIP-042 removes at-block, breaking any skill reading historical state. 5-day window to audit. SIP-040 reduces agent tx failures. Relevant if your security beat tracks skill breakage. aibtc.news | T-FI",
+      "content": "Stacks 3.4 ~April 2 paperboy delivery",
       "purpose": "paperboy",
-      "signal_id": "71265c57-e264-4ce3-8c0f-086a7fb1f1bb",
-      "recovery_note": "PHANTOM TXID — relay Stacks API broadcast failing (filed x402-sponsor-relay #267). Recovery txid is 404 on Hiro. Balance unchanged — no sats spent. Retry when relay is fixed.",
-      "phantom_txids": [
-        "592589d465499261c1e98b35bf13a51b358e808341212cd63ddb5403b73281d8"
-      ]
+      "sent_at": "2026-03-29T13:38:20.042Z",
+      "message_id": "msg_1774791499996_3f6f621a-7d21-4924-8c81-0bdbdc1f47f0",
+      "payment_status": "pending",
+      "note": "retry after PHANTOM TXID at cycle 1582; delivered after LP #538 merge"
     }
   ],
+  "pending": [],
   "follow_ups": [],
   "next_id": 7,
   "budget": {
     "cycle_limit_sats": 200,
     "daily_limit_sats": 200,
-    "spent_today_sats": 0,
+    "spent_today_sats": 100,
     "last_reset": "2026-03-29T00:00:00.000Z",
     "consecutive_failures": 0,
     "outreach_paused_until": null

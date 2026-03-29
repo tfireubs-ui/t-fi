@@ -1,31 +1,31 @@
 {
-  "cycle": 1700,
-  "timestamp": "2026-03-29T13:28:24.000Z",
+  "cycle": 1701,
+  "timestamp": "2026-03-29T13:40:00.000Z",
   "status": "ok",
   "maturity_level": "funded",
-  "lastCheckInAt": "2026-03-29T12:44:11.000Z",
+  "lastCheckInAt": "2026-03-29T13:34:15.000Z",
   "phases": {
     "heartbeat": "ok",
     "inbox": "ok",
     "execute": "ok",
-    "deliver": "skip",
-    "outreach": "blocked",
-    "evolve": "ok"
+    "deliver": "ok",
+    "outreach": "ok",
+    "evolve": "skip"
   },
   "stats": {
     "new_messages": 0,
-    "tasks_executed": 2,
-    "tasks_pending": 2,
+    "tasks_executed": 1,
+    "tasks_pending": 0,
     "replies_sent": 0,
-    "outreach_sent": 0,
-    "outreach_cost_sats": 0,
+    "outreach_sent": 1,
+    "outreach_cost_sats": 100,
     "idle_cycles_count": 0
   },
   "circuit_breaker": {
     "heartbeat": {"fail_count": 0, "skip_until_cycle": null},
     "status": "ok",
-    "outreach_blocked": "relay broadcast failing — x402-sponsor-relay #268 pending merge"
+    "outreach_blocked": null
   },
   "last_discovery_date": "2026-03-29",
-  "next_cycle_at": "2026-03-29T13:33:24.000Z"
+  "next_cycle_at": "2026-03-29T13:45:00.000Z"
 }
