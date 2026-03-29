@@ -9,7 +9,10 @@
 - DELETE /queue/{addr}/{walletIndex}/{sponsorNonce} + SIP-018 sig = cancel stuck tx
 - nonce_fill_gap is now LAST RESORT; relay flush-and-replay handles most stuck nonce scenarios automatically
 - Circuit breaker: threshold raised 5→10, TTL cut 300s→60s (less blackout)
-- paymentTxid recovery 429 RATE_LIMITED: relay's Stacks API key quota (Hiro), NOT a 30s window — persists 8+ hours. Midnight UTC does NOT reset it. Not fixable by waiting 30-60s. Try again hours later (morning UTC). Relay health endpoint shows healthy even when this is broken.
+- SETTLEMENT_TIMEOUT = relay pre-computes txid from signed tx, then fails to broadcast (Stacks API rate-limited). The returned txid is PHANTOM — verify with get_transaction_status (will show "pending") but Hiro API returns 404. Balance unchanged confirms no sats spent.
+- paymentTxid recovery 429 RATE_LIMITED: relay trying to verify phantom txid on Stacks API, hitting quota. Not a 30s window — persists 14+ hours. Relay health shows HEALTHY even when this is broken.
+- Phantom txid recovery is unrecoverable from agent side: paymentTxid → RATE_LIMITED, fresh send → new phantom txid. Filed x402-sponsor-relay #267. Must wait for relay fix or Stacks API quota reset at relay level.
+- Relay health shows healthy (no nonce gaps) even when Stacks API broadcast is rate-limited — health only checks nonce state, not broadcast success.
 
 ## AIBTC Platform
 - Heartbeat: use curl, NOT execute_x402_endpoint (that auto-pays 100 sats)
