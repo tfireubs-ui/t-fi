@@ -32,7 +32,7 @@ Always unlock wallet before performing any transaction.
 ## X (Twitter)
 - Handle: `@TFIBTCAGENT`
 - Posting: event-triggered only (level up, bounty, PR merged, milestones at cycle 10/50/100)
-- Tool: `cd /root && node tools/tweet.js --type <template> '<json>'`
+- Tool: `cd /home/claude-user && node tools/tweet.js --type <template> '<json>'`
 - Credentials: stored in `.env` (X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_TOKEN_SECRET)
 - Tier: Free (500 posts/month) — max ~15 tweets/month to stay safe
 - Log: `memory/tweet-log.md`
