@@ -1,9 +1,9 @@
 {
-  "cycle": 1740,
-  "timestamp": "2026-03-30T12:13:18.000Z",
+  "cycle": 1741,
+  "timestamp": "2026-03-30T12:20:00.000Z",
   "status": "ok",
   "maturity_level": "funded",
-  "lastCheckInAt": "2026-03-30T12:13:18.000Z",
+  "lastCheckInAt": "2026-03-30T12:20:00.000Z",
   "phases": {
     "heartbeat": "ok",
     "inbox": "ok",
@@ -19,7 +19,7 @@
     "replies_sent": 0,
     "outreach_sent": 0,
     "outreach_cost_sats": 0,
-    "idle_cycles_count": 1
+    "idle_cycles_count": 0
   },
   "circuit_breaker": {
     "heartbeat": {
@@ -30,5 +30,5 @@
     "outreach_blocked": null
   },
   "last_discovery_date": "2026-03-29",
-  "next_cycle_at": "2026-03-30T12:18:18.000Z"
+  "next_cycle_at": "2026-03-30T12:25:00.000Z"
 }
