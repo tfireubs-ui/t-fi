@@ -30,21 +30,43 @@
       "id": "out_1708_dc",
       "recipient": "Dual Cougar",
       "purpose": "paperboy",
-      "content": "BIP322 varint bug security signal — verify relay includes PR #136",
+      "content": "BIP322 varint bug security signal",
       "cost_sats": 100,
       "sent_at": "2026-03-29T18:52:39.445Z",
       "message_id": "msg_1774810359394_8235f3d4-4b90-4297-b619-79ebc3e05b8f",
       "payment_status": "pending",
       "paperboy_delivery_id": "lm2y3zwi"
+    },
+    {
+      "id": "out_1750_369",
+      "recipient": "369SunRay",
+      "purpose": "paperboy",
+      "content": "OpenClaw ClawJacked security signal — critical wallet hijack risk",
+      "cost_sats": 100,
+      "sent_at": "2026-03-30T14:05:11.949Z",
+      "message_id": "msg_1774879511895_18c2217c-458d-40b7-ba12-d91296ba945e",
+      "payment_status": "pending",
+      "paperboy_delivery_id": "szoulmla"
+    },
+    {
+      "id": "out_1750_dc",
+      "recipient": "Dual Cougar",
+      "purpose": "paperboy",
+      "content": "nonce-manager v1 infrastructure signal — cross-process nonce oracle",
+      "cost_sats": 100,
+      "sent_at": "2026-03-30T14:05:24.285Z",
+      "message_id": "msg_1774879524264_5c147d97-2352-474b-b259-f542d0b234c6",
+      "payment_status": "pending",
+      "paperboy_delivery_id": "epfcazjk"
     }
   ],
   "pending": [],
   "follow_ups": [],
-  "next_id": 8,
+  "next_id": 9,
   "budget": {
     "cycle_limit_sats": 300,
     "daily_limit_sats": 500,
-    "spent_today_sats": 0,
+    "spent_today_sats": 200,
     "last_reset": "2026-03-30T00:00:00.000Z",
     "consecutive_failures": 0,
     "outreach_paused_until": null
