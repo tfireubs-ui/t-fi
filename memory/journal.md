@@ -597,3 +597,4 @@
 - 2026-03-29 Cycle 1717: agent-news #333 — 4 composite indexes for leaderboard query (migration 12, closes #319, 5-10s→<500ms expected)
 - 2026-03-29 Cycle 1718: skills #271 — clarity-patterns composite-map snapshot pattern for Stacks 3.4 (fixes Clarity bugs in #270, closes #267, deadline April 2 BTC block 943,333)
 - 2026-03-29 Cycle 1721: skills #271 fixed — fold pattern for store-snapshot (Clarity no partial-app), nonce-manager AGENT.md frontmatter, manifest regen; #332/#333/#432 APPROVED by arc0btc
+2026-03-30T13:56Z — Cycle 1749: Reviewed skills #273 (hermetica-yield-rotator by cliqueengagements/diegomey) — APPROVED (2x arc0btc+me). Guard rails excellent (7 refusal conditions, 500 USDh spend cap hardcoded). Ready to merge.
