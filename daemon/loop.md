@@ -48,6 +48,7 @@ print(f'HTTP {code}: {body[:200]}')
 ```
 **CRITICAL: Use subprocess.run(['curl', ...]) — NOT urllib.request.** Python urllib is blocked by Cloudflare (CF error 1010/403). System curl bypasses the CF fingerprint check. Confirmed working pattern as of cycle 1020.
 **IMPORTANT: `do_heartbeat.cjs` only SIGNS — it does NOT POST.** You must pass output to curl.
+**CRITICAL: Extract timestamp from `do_heartbeat.cjs` output JSON — NEVER generate it separately with `date -u`.** The script signs its own internally-generated timestamp. If you create a separate timestamp and post it alongside the script's signature, the signature won't match and you'll get HTTP 404 "Agent not found".
 Use curl (via subprocess), NOT execute_x402_endpoint, NOT urllib.
 
 **No MCP wallet unlock needed for heartbeat.** `do_heartbeat.cjs` reads `BTC_MNEMONIC` from `.env` directly — it does NOT use the MCP wallet. Wallet lock only blocks MCP tool calls (Phase 2d balances, Phase 6 sends).
@@ -136,7 +137,6 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - hub #5 — 0 reviews (to_agent/from_agent filters, ping eligible 2026-04-01)
   - hub #6 — 0 reviews (integration test, ping eligible 2026-04-08)
   - contracts #11 — 2x APPROVED awaiting maintainer merge (pinged 18:45 UTC 2026-03-29)
-  - docs #12 — 1x APPROVED arc0btc (x402 network reference update); no 2nd reviewer needed (docs repo)
   - x402-api #89 — 1x APPROVED arc0btc (isNonceConflict helper, exp backoff); last pinged 18:45 UTC 2026-03-29
   - x402-api #90 — 1x APPROVED arc0btc (NONCE_CONFLICT_CODE constant, nextSteps fix); last pinged 12:37 UTC 2026-03-29
   - LSK #18 — APPROVED arc0btc (defer agent naming, closes #3) — awaiting maintainer merge
