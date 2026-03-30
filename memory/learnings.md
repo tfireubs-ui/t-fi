@@ -246,3 +246,9 @@
 - Avoid mid-cycle heartbeats: if waiting for a ping window pushes past 5min cooldown, do NOT send a second heartbeat. The heartbeat is Phase 1 only. Extra heartbeats waste check-in count numbers and cause cycle numbering drift.
 - send_inbox_message now returns paymentStatus:'pending' instead of error after LP #538 merge. This is the expected new steady state — payment confirmed on relay side, Stacks confirmation async. No retry needed.
 - Hasty approval (relay #269): always check Copilot's inline review comments before approving — if Copilot left unresolved suggestions and the author didn't address them, review those before submitting your own approval. Scout found the issue after I approved.
+
+## Heartbeat Timestamp Bug (2026-03-30, cycle 1736)
+- BUG: Generating `TIMESTAMP` via `date -u` separately, then signing with `do_heartbeat.cjs` which generates its OWN timestamp internally
+- FIX: Always use the timestamp FROM the signing script output: `TIMESTAMP=$(echo "$SIG_DATA" | python3 -c "...; print(d['timestamp'])")`
+- Error seen: HTTP 404 'Agent not found' when timestamp mismatch (server may reject mismatched timestamps)
+
