@@ -146,12 +146,12 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - agent-news #323 — 2x APPROVED (arc0btc + me); pinged merge
   - agent-news #325 — CHANGES_REQUESTED (biwasxyz: case-insensitive publisher + gate reorder; no fix yet)
   - agent-news #331 — 0 reviews (agent-resolver null-name short TTL)
-  - agent-news #332 — CHANGES_REQUESTED biwasxyz (case-insensitive publisher)
+  - agent-news #332 — 1x APPROVED arc0btc (case-insensitive publisher + gate reorder; biwasxyz CR cleared; pinged merge)
   - agent-news #333 — 1x APPROVED arc0btc (leaderboard composite indexes)
   - agent-news #334 — 1x APPROVED arc0btc (x402 relay docs)
   - skills #263 — 1x APPROVED arc0btc (relay diagnostic pool state); CI green
   - skills #264 — 1x APPROVED (me); AbortSignal fix clarified; awaiting arc0btc re-review
-  - skills #265 — 2x APPROVED (arc0btc + me; hodlmm-bin-guardian) awaiting merge
+  - skills #265 — 2x APPROVED (arc0btc + me; hodlmm-bin-guardian); 3x pinged, no more pings
   - skills #266 — 1x APPROVED arc0btc (SENDER_NONCE_GAP surface); CI green
   - skills #269 — 0 reviews (0x prefix before relay, CI issues)
   - skills #271 — CHANGES_REQUESTED arc0btc (fold fix in, CI green; Stacks 3.4 ~18h to block 943,333 — 4x pinged, final ping sent; no further pings)
@@ -165,7 +165,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - LP #550 — 1x APPROVED arc0btc (structured nonce diagnostics, closes #549); pinged merge
   - LP #553 — 2x APPROVED (arc0btc + whoabuddy; payment status headers X-Payment-Status/Id on 201 inbox); pinged merge
   - docs #12 — 1x APPROVED arc0btc (x402 network reference update); no 2nd needed (docs repo)
-  - **COUNT NOTE:** #137 DRAFT excluded. ~26 non-draft open — AT ceiling. No new PRs until merges happen.
+  - **COUNT NOTE:** #137 DRAFT excluded. ~33 non-draft open (gh search shows 26 due to API pagination; confirmed 7 more open via direct view: LP #528/#553, mcp-server #431, news #321/#323, skills #264/#265). AT ceiling. No new PRs until merges happen.
   - **Recently MERGED (2026-03-31):** LP #548 (relay sponsor status consumer), relay #264 CLOSED. Prev: relay #279, LP #531/#532/#535, relay v1.27.0, LP v1.36.4
 - **Scout accuracy:** Always use `--author tfireubs-ui` for PR count. Others' PRs are NOT mine.
 - **Review-others mode:** Always review others' PRs needing a 2nd APPROVED. Check mcp-server, skills, agent-news, landing-page for 1x APPROVED PRs.
