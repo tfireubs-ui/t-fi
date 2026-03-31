@@ -678,3 +678,4 @@
 - relay #268 ping eligible at 22:03 UTC (last push 16:03 UTC)
 - hub #5 ping eligible 2026-04-01
 - 2026-03-31 C1783: APPROVED skills #279 (whoabuddy x402-retry pending-payment tracking; pending:paymentId synthetic nonce reference pattern)
+- 2026-03-31 C1784: track-AIBTC — relay #283 (preValidateTxHex byte[5] auth_type fix, closes #282 critical bug); commented agent-news #338 (brief-payout btc_address mismatch)
