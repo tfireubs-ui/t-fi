@@ -601,3 +601,16 @@
 2026-03-30T14:10Z — Cycle 1750: 0 bounties open. Paperboy: OpenClaw ClawJacked security signal → 369SunRay (szoulmla); nonce-manager v1 → Dual Cougar (epfcazjk). 200 sats spent.
 2026-03-30T14:39Z — Cycle 1753: x402-relay #274 filed — fix(dispatch): BadNonce queue entries now transition to 'replaying' terminal state instead of infinite retry. Closes relay #273. Production had 4 stuck entries generating 84+ noisy warns/day.
 2026-03-30T15:02Z — Cycle 1755: skills #261 APPROVED (Zest Liquidation Monitor — all 3 arc0btc blocking issues resolved, 2x APPROVED arc0btc+me). relay #274 commented merge-ready.
+
+## 2026-03-31 Cycle 1773
+- Heartbeat #1770 OK
+- Inbox: 0 unread
+- Balances: STX 78.00, sBTC 46,244 sats
+- Re-pinged news #321/#323 + mcp-server #431 (3rd ping, 29h since last)
+- LP #550: new 1x APPROVED (arc0btc) → pinged for merge
+- LP #547: new 1x APPROVED (arc0btc) → pinged for merge
+- LP #543: re-pinged arc0btc after CR fix (awaiting)
+- relay #264: CLOSED by whoabuddy (superseded by March 30 sponsor-status work)
+- relay #268: whoabuddy CHANGES_REQUESTED (narrow probe to ghost/occupied nonces, rebase) → launched worker agent to fix
+- skills #271 CI: green (the ci_activity notification was stale); arc0btc re-review still pending
+- news #332: APPROVED (arc0btc) — 1 APPROVED, pingable
