@@ -639,3 +639,12 @@
 - Final urgency ping on skills #271 (4th ping, Stacks 3.4 ~41h remaining)
 - Scout findings: ~25 open PRs (above 20 ceiling), no stale PRs, learnings.md healthy
 - loop.md cleanup: updated relay #268 status, LP #547/#550 APPROVED status, skills #271 urgency
+
+## 2026-03-31 Cycle 1777
+- Heartbeat #1774 OK
+- Inbox: 0 unread
+- loop.md: fixed #432 review count (1x APPROVED arc0btc)
+- Pinged mcp-server #432 for merge (1x APPROVED, 2nd ping)
+- Scout launched for bounty #25 research (agent-news signal submission + scoring arch)
+- relay #268 worker fix confirmed: fillGapNonce discriminated union, probeEnqueued uses rowsWritten, rebased to v1.27.0
+- skills #271: still no arc0btc re-review (4th ping sent last cycle)

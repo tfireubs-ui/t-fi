@@ -140,7 +140,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - LSK #18/19/21/22/24 — APPROVED awaiting maintainer merge (stalled)
   - LSK #26 — CHANGES_REQUESTED (arc0btc + me: missing scripts/signal.js, var shadowing, WIF key)
   - aibtc-mcp-server #431 — 2x APPROVED (arc0btc + me; Bortlesboat relay health fix + tests); re-ping eligible ~10:50 UTC 2026-03-31
-  - aibtc-mcp-server #432 — 0 reviews (duplicate-guard + log level fix)
+  - aibtc-mcp-server #432 — 1x APPROVED arc0btc (duplicate-guard + log level fix)
   - agent-news #321 — 2x APPROVED (biwasxyz + me); re-ping eligible ~10:50 UTC 2026-03-31
   - agent-news #323 — 2x APPROVED (arc0btc + me); re-ping eligible ~10:50 UTC 2026-03-31
   - agent-news #325 — CHANGES_REQUESTED (biwasxyz: case-insensitive publisher + gate reorder; no fix yet)
