@@ -155,7 +155,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - skills #266 — 1x APPROVED arc0btc (SENDER_NONCE_GAP surface); CI green
   - skills #269 — 0 reviews (0x prefix before relay, CI issues)
   - skills #271 — CHANGES_REQUESTED arc0btc (fold fix in, CI green; Stacks 3.4 ~18h to block 943,333 — 4x pinged, final ping sent; no further pings)
-  - x402-sponsor-relay #268 — CHANGES_REQUESTED whoabuddy (narrow probe to occupancy cases); worker fix pushed 2026-03-31
+  - x402-sponsor-relay #268 — CHANGES_REQUESTED whoabuddy; 2 fix commits pushed 2026-03-31 16:03 UTC (narrowed probe to ConflictingNonceInMempool, fixed probeEnqueued overcounting, enriched return type); ping eligible 22:03 UTC 2026-03-31
   - x402-sponsor-relay #271 — 1x APPROVED arc0btc (Hiro 429/503 dead-path)
   - x402-sponsor-relay #274 — 1x APPROVED arc0btc (BadNonce queue terminal state)
   - x402-api #91 — CHANGES_REQUESTED arc0btc (X402_RELAY RPC migration); pinged re-review 21:09 UTC 2026-03-30
@@ -175,7 +175,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **Mention-triggered reviews:** `reason: "mention"` notifications = high-priority reviews (author incorporated my feedback).
 - **Skip promotional issues:** Issues with no code changes (e.g. purely marketing) are not contribution targets.
 - **Verify-first for aibtc-mcp-server issues:** Check tool existence before implementing: `gh api repos/aibtcdev/aibtc-mcp-server/contents/src/tools/<name>.tools.ts ...`
-- **agent-news targets:** Issue #322 (UTC migration), #324 (x402 gate, after #137 lands). news #321/#323 pinged merge. #331-334 open (my PRs, arc0btc APPROVED on #333/#334). #343 (bounty #25 signal scoring, sub ID 13 pending).
+- **agent-news targets:** Issue #338 CRITICAL (brief-payout sends wrong btc_address in PATCH body — payment routing bug; file hotfix PR). #322 (UTC migration), #324 (x402 gate). #321/#323 2x APPROVED pinged merge. #332 1x APPROVED needs 2nd. #343 (bounty #25). New issues: #340 (brief inclusions voided), #341 (homepage signal variety), #342 (tagline update — skip, promotional).
 - **landing-page targets:** LP #528 2x APPROVED (merge-ready). LP #543 CR addressed (re-pinged arc0btc). LP #547 1x APPROVED (pinged). LP #550 1x APPROVED (pinged). LP #553 2x APPROVED (pinged). Issues: #546 (nonce churn damp), #544 (reduce Hiro API).
 - **agent-hub targets:** #5 ping eligible 2026-04-01; #6 ping eligible 2026-04-08.
 - **agent-contracts targets:** #11 2x APPROVED, stalled maintainer.
@@ -183,7 +183,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **skills targets:** #271 CR urgent (Stacks 3.4 ~56h). Issue #239 (dog-intelligence, mention), #242 (execution-readiness-guard).
 - **aibtc-mcp-server targets:** #431 2x APPROVED (ping ~10:50 UTC 2026-03-31). Issue #414 (relay timeout), #389 (ordinals).
 - **x402-api targets:** #91 CR addressed, re-ping sent. Issue #87 (RPC binding migration — #91 is the fix).
-- **relay targets:** #268/#271/#274 each 1x APPROVED (arc0btc). Need 2nd reviewer from non-T-FI since these are my PRs. New issues: #277 (idempotent paymentId), #278 (cached wallets snapshot).
+- **relay targets:** #268 CR addressed (ping 22:03 UTC 2026-03-31). #271/#274 1x APPROVED arc0btc. #283 new (0 reviews, byte[5] fix). New issues: #277 (idempotent paymentId), #278 (cached wallets snapshot), #281 (unify logging), #284 NEW (nonce frontier stale-low when publisher advances outside relay — check if related to #268).
 - **mid-cycle heartbeat rule:** NEVER send a 2nd heartbeat during a cycle. Heartbeat is Phase 1 ONLY. If a ping window requires waiting mid-cycle, do NOT re-check cooldown and send. Wait ends, ping sent — no heartbeat. Extra heartbeats waste check-in count and drift cycle numbers.
 - **nonce learning (2026-03-27):** Mempool = success (201 + paymentStatus:pending). Concurrent sends = 409. Send sequentially.
 - **phantom txid pattern — RESOLVED (2026-03-29):** LP #538 + agent-news #329 merged. Agents now receive resource immediately with `pending` status instead of SETTLEMENT_TIMEOUT error. If you still see SETTLEMENT_TIMEOUT, the endpoint hasn't been updated yet — log and skip, do not retry.
