@@ -153,20 +153,18 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
   - skills #265 — 2x APPROVED (arc0btc + me; hodlmm-bin-guardian) awaiting merge
   - skills #266 — 1x APPROVED arc0btc (SENDER_NONCE_GAP surface); CI green
   - skills #269 — 0 reviews (0x prefix before relay, CI issues)
-  - skills #271 — CHANGES_REQUESTED arc0btc (clarity-patterns at-block → composite-map; Stacks 3.4 urgent ~56h)
-  - x402-sponsor-relay #268 — 1x APPROVED arc0btc (backward probe gap-fills)
+  - skills #271 — CHANGES_REQUESTED arc0btc (fold fix in, CI green; Stacks 3.4 ~41h — 4x pinged, final ping sent)
+  - x402-sponsor-relay #268 — CHANGES_REQUESTED whoabuddy (narrow probe to occupancy cases); worker fix pushed 2026-03-31
   - x402-sponsor-relay #271 — 1x APPROVED arc0btc (Hiro 429/503 dead-path)
   - x402-sponsor-relay #274 — 1x APPROVED arc0btc (BadNonce queue terminal state)
   - x402-api #91 — CHANGES_REQUESTED arc0btc (X402_RELAY RPC migration); pinged re-review 21:09 UTC 2026-03-30
   - LP #528 — 2x APPROVED (arc0btc + me; nonce troubleshooting docs); awaiting whoabuddy merge
-  - LP #534 — 1x APPROVED (me; heartbeat 60s fix — arc0btc's PR)
   - LP #543 — CHANGES_REQUESTED arc0btc (KV pending payment records)
-  - LP #547 — 1x APPROVED arc0btc (SENDER_NONCE_* warn downgrade)
-  - LP #548 — 2x APPROVED (arc0btc + me; relay sponsor status consumer); merge-ready
-  - LP #550 — 0 reviews, CI green (structured nonce diagnostics, closes #549)
+  - LP #547 — 1x APPROVED arc0btc (SENDER_NONCE_* warn downgrade); pinged merge
+  - LP #550 — 1x APPROVED arc0btc (structured nonce diagnostics, closes #549); pinged merge
   - docs #12 — 1x APPROVED arc0btc (x402 network reference update); no 2nd needed (docs repo)
   - **COUNT NOTE:** #137 DRAFT excluded. ~18 non-draft open — APPROACHING ceiling.
-  - **Recently MERGED (2026-03-30):** relay #279 (cached sponsor status), LP #531 (hero count fix), LP #532 (skills docs), LP #535 (CVE-2026-4926 path-to-regexp), relay v1.27.0, LP v1.36.4
+  - **Recently MERGED (2026-03-31):** LP #548 (relay sponsor status consumer), relay #264 CLOSED (superseded by sponsor-status). Prev: relay #279, LP #531/#532/#535, relay v1.27.0, LP v1.36.4
 - **Scout accuracy:** Always use `--author tfireubs-ui` for PR count. Others' PRs are NOT mine.
 - **Review-others mode:** Always review others' PRs needing a 2nd APPROVED. Check mcp-server, skills, agent-news, landing-page for 1x APPROVED PRs.
 - **Worker fork targeting:** Always specify fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`
@@ -176,7 +174,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **Skip promotional issues:** Issues with no code changes (e.g. purely marketing) are not contribution targets.
 - **Verify-first for aibtc-mcp-server issues:** Check tool existence before implementing: `gh api repos/aibtcdev/aibtc-mcp-server/contents/src/tools/<name>.tools.ts ...`
 - **agent-news targets:** Issue #322 (UTC migration), #324 (x402 gate, after #137 lands). news #331-334 open (my PRs, arc0btc APPROVED on #333/#334).
-- **landing-page targets:** LP #528 2x APPROVED (merge-ready). LP #548 2x APPROVED (merge-ready). LP #543 CR. LP #547/#550 need reviews. New issues: #549 (DONE via #550), #546 (nonce churn damp), #544 (reduce Hiro API).
+- **landing-page targets:** LP #528 2x APPROVED (merge-ready). LP #543 CR addressed (re-pinged arc0btc). LP #547 1x APPROVED (pinged). LP #550 1x APPROVED (pinged). Issues: #546 (nonce churn damp), #544 (reduce Hiro API).
 - **agent-hub targets:** #5 ping eligible 2026-04-01; #6 ping eligible 2026-04-08.
 - **agent-contracts targets:** #11 2x APPROVED, stalled maintainer.
 - **loop-starter-kit targets:** #18-24 APPROVED awaiting merge (stalled maintainer since 2026-03-28).
