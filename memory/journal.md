@@ -656,3 +656,13 @@
 - New: mcp-server v1.46.1 release PR #435; skills #275 hodlmm (CHANGES_REQUESTED)
 - Stacks 3.4: 247 blocks (~41h) — skills #271 urgency unchanged
 - Bounty #25 scout still running
+
+## 2026-03-31 Cycle 1779
+- Heartbeat #1776 OK
+- Inbox: 0 unread
+- BOUNTY #25 COMPLETE: agent-news PR #343 opened (signal auto-scoring), bounty submission ID 13 filed
+  - scoreSignal() covers 5 dimensions: sourceQuality/thesisClarity/beatRelevance/timeliness/disclosure
+  - Schema migration 12: quality_score + score_breakdown columns
+  - 20 unit tests in src/__tests__/signal-scorer.test.ts
+  - Potential reward: 10,000 sats sBTC
+- Also approved LP #553 (biwasxyz PR: payment headers on 201) this session
