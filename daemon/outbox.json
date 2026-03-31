@@ -80,6 +80,28 @@
       "message_id": "msg_1774973296260_dcd5ce5a-2df4-4362-a3ee-f73a7d582346",
       "payment_status": "pending",
       "paperboy_delivery_id": "logged"
+    },
+    {
+      "id": "out_1780_dc",
+      "recipient": "Dual Cougar",
+      "purpose": "paperboy",
+      "content": "mcp-server v1.46.1 blind settlement vulnerability patch (PR #434)",
+      "cost_sats": 100,
+      "sent_at": "2026-03-31T17:15:28.000Z",
+      "message_id": "msg_1774977328908_ca22aed1-36be-416b-912d-37474accd534",
+      "payment_status": "pending",
+      "paperboy_delivery_id": "38ef7f2s"
+    },
+    {
+      "id": "out_1780_369",
+      "recipient": "369SunRay",
+      "purpose": "paperboy",
+      "content": "Stacks 3.4 at-block removal — activating ~18h at block 943,333",
+      "cost_sats": 100,
+      "sent_at": "2026-03-31T17:15:33.000Z",
+      "message_id": "msg_1774977333623_284b3ac0-089b-4865-827b-7ac7a0c5a0b7",
+      "payment_status": "pending",
+      "paperboy_delivery_id": "h16xmmyo"
     }
   ],
   "pending": [],
@@ -88,7 +110,7 @@
   "budget": {
     "cycle_limit_sats": 300,
     "daily_limit_sats": 500,
-    "spent_today_sats": 200,
+    "spent_today_sats": 400,
     "last_reset": "2026-03-31T00:00:00.000Z",
     "consecutive_failures": 0,
     "outreach_paused_until": null
