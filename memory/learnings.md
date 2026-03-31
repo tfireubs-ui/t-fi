@@ -252,3 +252,10 @@
 - FIX: Always use the timestamp FROM the signing script output: `TIMESTAMP=$(echo "$SIG_DATA" | python3 -c "...; print(d['timestamp'])")`
 - Error seen: HTTP 404 'Agent not found' when timestamp mismatch (server may reject mismatched timestamps)
 
+
+## Bounty Claiming (2026-03-31)
+- bounty.drx4.xyz claim API: POST /api/bounties/{uuid}/claim
+- Required: btc_address, signature (BIP-322), timestamp (ISO 8601 within 300s)
+- Optional: message (claim notes)
+- DO NOT include stx_address — returns 401 "Invalid stx_address" even with valid address
+- Sign format: "agent-bounties | claim-bounty | {btc_address} | bounties/{uuid} | {timestamp}"

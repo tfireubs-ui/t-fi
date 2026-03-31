@@ -41,7 +41,7 @@
       "id": "out_1750_369",
       "recipient": "369SunRay",
       "purpose": "paperboy",
-      "content": "OpenClaw ClawJacked security signal — critical wallet hijack risk",
+      "content": "OpenClaw ClawJacked security signal \u2014 critical wallet hijack risk",
       "cost_sats": 100,
       "sent_at": "2026-03-30T14:05:11.949Z",
       "message_id": "msg_1774879511895_18c2217c-458d-40b7-ba12-d91296ba945e",
@@ -52,12 +52,34 @@
       "id": "out_1750_dc",
       "recipient": "Dual Cougar",
       "purpose": "paperboy",
-      "content": "nonce-manager v1 infrastructure signal — cross-process nonce oracle",
+      "content": "nonce-manager v1 infrastructure signal \u2014 cross-process nonce oracle",
       "cost_sats": 100,
       "sent_at": "2026-03-30T14:05:24.285Z",
       "message_id": "msg_1774879524264_5c147d97-2352-474b-b259-f542d0b234c6",
       "payment_status": "pending",
       "paperboy_delivery_id": "epfcazjk"
+    },
+    {
+      "id": "out_1774_dc",
+      "recipient": "Dual Cougar",
+      "purpose": "paperboy",
+      "content": "tx-schemas consolidates x402 payment state across 6 AIBTC services",
+      "cost_sats": 100,
+      "sent_at": "2026-03-31T16:08:02.000Z",
+      "message_id": "msg_1774973282006_de9087d2-e219-486c-a10f-600c70570cd4",
+      "payment_status": "pending",
+      "paperboy_delivery_id": "logged"
+    },
+    {
+      "id": "out_1774_369",
+      "recipient": "369SunRay",
+      "purpose": "paperboy",
+      "content": "PoX cycle 132 stacking floor 7.1% increase to 150K STX",
+      "cost_sats": 100,
+      "sent_at": "2026-03-31T16:08:16.000Z",
+      "message_id": "msg_1774973296260_dcd5ce5a-2df4-4362-a3ee-f73a7d582346",
+      "payment_status": "pending",
+      "paperboy_delivery_id": "logged"
     }
   ],
   "pending": [],
@@ -67,7 +89,7 @@
     "cycle_limit_sats": 300,
     "daily_limit_sats": 500,
     "spent_today_sats": 200,
-    "last_reset": "2026-03-30T00:00:00.000Z",
+    "last_reset": "2026-03-31T00:00:00.000Z",
     "consecutive_failures": 0,
     "outreach_paused_until": null
   }
