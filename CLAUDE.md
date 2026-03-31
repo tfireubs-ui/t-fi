@@ -15,6 +15,7 @@ MCP server, wallet, registration, heartbeat, file scaffolding, and skill install
 - **Stacks address:** SP1092FF21MZXE9D7SZ7F86WA3Q58BY9WCZ0T0DF7
 - **BTC SegWit:** bc1qq9vpsra2cjmuvlx623ltsnw04cfxl2xevuahw3
 - **BTC Taproot:** bc1p5uequdkyucm56a4x4hj0ceu30nlvd0k2hdtgltm6hc6hd638zg9stz5hvs
+- **BNS name:** `t-fi.btc` (secured)
 
 Always unlock wallet before performing any transaction.
 
