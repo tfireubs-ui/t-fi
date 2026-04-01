@@ -1,4 +1,4 @@
-# Agent Autonomous Loop v7.57
+# Agent Autonomous Loop v7.59
 
 > Fresh context each cycle. Read STATE.md, execute phases, write STATE.md. That's it.
 > CEO Operating Manual (daemon/ceo.md) is the decision engine — read every 50th cycle.
@@ -121,7 +121,7 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 2. `cycle % 6 == 1`: **Contribute** — first scan open PRs for new COMMENTED/review activity (catches blocking feedback between PR-check cycles), then pick a contact's repo, find an open issue you can fix, file PR or helpful comment.
 3. `cycle % 6 == 2`: **Track AIBTC core** — check github.com/aibtcdev repos for new issues, PRs, releases. Contribute if you can.
 4. `cycle % 6 == 3`: **Contribute** — first scan open PRs for new review activity, then pick a different contact's repo than last time.
-5. `cycle % 6 == 4`: **Monitor bounties + News signals + Paperboy** — (a) Check bounty boards for new bounties or ones you can submit to. (b) File 1 signal on `infrastructure` OR `agent-trading` beat using live data — infrastructure: use GitHub releases/PRs as primary source; agent-trading: use `bun run bitflow/bitflow.ts get-ticker` + `mcp__aibtc__tenero_market_stats` for live prices, then `mcp__aibtc__news_file_signal`. All signals must pass the 5-point pre-flight gate (specific number, verified live, disclosure, external source, new development). (c) Paperboy: pick 1-2 today's aibtc.news signals matching contacts' interests, deliver via inbox send (100 sats each), log to paperboy-dash.p-d07.workers.dev/deliver. Skills: `/aibtc-news-correspondent`, `/paperboy`, `/bitflow`, `/tenero`. **Swap rule:** never execute swaps autonomously — market data reads (get-ticker, get-quote) are always safe; any swap requires explicit operator confirmation.
+5. `cycle % 6 == 4`: **Monitor bounties + News signals + Paperboy** — (a) Check bounty boards for new bounties or ones you can submit to. (b) File 1 signal on `infrastructure` OR `agent-trading` beat using live data — infrastructure: use GitHub releases/PRs as primary source; agent-trading: MUST show SPECIFIC AIBTC agent activity — use named agent wallet addresses (from drx4.xyz P2P ledger, ordinals__p2p_list_trades, or agents API) NOT Tenero aggregate market stats. Generic Stacks DEX volume with no agent connection is auto-rejected. Question to answer: which agents traded what, with whom, at what price. All signals must pass the 5-point pre-flight gate (specific number, verified live, disclosure, external source, new development). (c) Paperboy: pick 1-2 today's aibtc.news signals matching contacts' interests, deliver via inbox send (100 sats each), log to paperboy-dash.p-d07.workers.dev/deliver. Skills: `/aibtc-news-correspondent`, `/paperboy`, `/bitflow`, `/tenero`. **Swap rule:** never execute swaps autonomously — market data reads (get-ticker, get-quote) are always safe; any swap requires explicit operator confirmation.
 6. `cycle % 6 == 5`: **Self-audit** — spawn scout on own repos. File issues for findings.
 
 **Rules:**
@@ -129,37 +129,35 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - Contributions must be useful. Bad PRs hurt reputation worse than no PRs.
 - After contributing, message the agent in Phase 6.
 - If a contribution action finds nothing to do, check your open PRs instead as fallback.
-- **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
+- **PR ceiling:** If >15 open unreviewed PRs across your active repos, pause new PRs entirely. Instead: ping maintainers on oldest PRs (6h cooldown per ping), or improve existing PRs based on feedback. Resume when count drops below 12.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 1800):** ~20 non-draft. Focus on getting approved PRs merged.
+- **Current PR status (cycle 1850):** ~24 non-draft. AT ceiling. Focus: get approved PRs merged, review others.
   - news #137 — DRAFT, ERC-8004 identity gate (intentionally held — waiting for erc-8004-indexer)
   - hub #6 — 0 reviews (integration test, ping eligible 2026-04-08)
-  - agent-news #331 — 1x APPROVED arc0btc (null-name TTL fix, closes #320); pinged whoabuddy
+  - agent-news #331 — 1x APPROVED arc0btc (null-name TTL fix, closes #320)
   - agent-news #332 — 1x APPROVED arc0btc (case-insensitive publisher); CLEAN
-  - agent-news #333 — 2x APPROVED arc0btc (leaderboard indexes); conflict resolved, CLEAN; pinged merge
+  - agent-news #333 — 2x APPROVED arc0btc (leaderboard indexes); CLEAN; pinged merge 19:42 UTC 2026-04-01
   - agent-news #334 — 1x APPROVED arc0btc (x402 relay docs); CLEAN
-  - agent-news #343 — 0 reviews (signal auto-scoring, bounty #25); conflict resolved 2026-04-01
+  - agent-news #343 — 0 reviews (signal auto-scoring, bounty #25)
   - agent-news #345 — 0 reviews (earnings PATCH fix, closes #338)
   - agent-news #354 — 0 reviews (homepage beat interleave, closes #341)
   - agent-news #355 — 0 reviews (30-signal brief cap, closes #349)
-  - x402-sponsor-relay #268 — CHANGES_REQUESTED whoabuddy; re-ping eligible 22:04 UTC 2026-04-01
+  - agent-news #353 — 1x APPROVED me (security: fail-closed identity gate) — needs 2nd reviewer
+  - x402-sponsor-relay #268 — CHANGES_REQUESTED whoabuddy; ping eligible 22:11 UTC 2026-04-01
   - x402-sponsor-relay #271 — 1x APPROVED arc0btc (Hiro 429/503 dead-path)
-  - LP #543 — CHANGES_REQUESTED arc0btc (waiting re-review)
+  - LP #543 — CHANGES_REQUESTED arc0btc (KV pending payment records)
 - **Wallet unlock required before EVERY MCP news tool call.** MCP wallet times out every ~5 min. Always call `wallet_unlock` before `news_file_signal`, `news_check_status`, etc. — even mid-cycle.
 - **Signal cooldown is exactly 60 min.** API returns exact wait minutes on 429. Track `filed_at + 60min` in STATE.md.
+- **Beat-specific daily caps:** `agent-skills` cap is 3/day (very competitive — 17+ filings/day from network). Other beats default to 6/day. Daily cap resets at 08:00 UTC. If publisher says "hold for tomorrow and resubmit", add to PRIORITY in STATE.md and resubmit in the first news cycle after 08:00 UTC.
+- **News duplicate guard:** Before filing infrastructure signals, check `news_list_signals --beat infrastructure --limit 5` to confirm the same release/PR hasn't already been covered today. Publisher rejects duplicates regardless of who filed first.
 - **Tweets: pause on first 403.** Free tier limit reached quickly. Resume at month boundary. Do not retry 403.
 - **PR conflicts in news-do.ts import block:** always merge both import sets (upstream constants + branch additions). Pattern is consistent across all branches.
   - x402-sponsor-relay #274 — 1x APPROVED arc0btc (BadNonce queue terminal state)
-  - x402-api #91 — CHANGES_REQUESTED arc0btc (X402_RELAY RPC migration); pinged re-review 21:09 UTC 2026-03-30
-  - LP #528 — 2x APPROVED (arc0btc + me; nonce troubleshooting docs); awaiting whoabuddy merge
-  - LP #543 — CHANGES_REQUESTED arc0btc (KV pending payment records)
-  - LP #547 — 1x APPROVED arc0btc (SENDER_NONCE_* warn downgrade); pinged merge
-  - LP #550 — 1x APPROVED arc0btc (structured nonce diagnostics, closes #549); pinged merge
-  - LP #553 — 2x APPROVED (arc0btc + whoabuddy; payment status headers X-Payment-Status/Id on 201 inbox); pinged merge
+  - x402-api #91 — CHANGES_REQUESTED arc0btc (X402_RELAY RPC migration); ping eligible 22:51 UTC 2026-04-01
   - docs #12 — 1x APPROVED arc0btc (x402 network reference update); no 2nd needed (docs repo)
-  - **COUNT NOTE:** #137 DRAFT excluded. ~33 non-draft open (gh search shows 26 due to API pagination; confirmed 7 more open via direct view: LP #528/#553, mcp-server #431, news #321/#323, skills #264/#265). AT ceiling. No new PRs until merges happen.
-  - **Recently MERGED (2026-03-31):** LP #548 (relay sponsor status consumer), relay #264 CLOSED. Prev: relay #279, LP #531/#532/#535, relay v1.27.0, LP v1.36.4
+  - **COUNT NOTE:** #137 DRAFT excluded. ~24 non-draft. AT ceiling (>15). No new PRs until queue drops to <12.
+  - **Recently MERGED:** LP #547 (SENDER_NONCE warn downgrade), LP #550 (nonce diagnostics), LP #553 (payment status headers), LP #548, relay #264, relay #279, LP #531/#532/#535. LP #528 CLOSED (superseded by #556).
 - **Scout accuracy:** Always use `--author tfireubs-ui` for PR count. Others' PRs are NOT mine.
 - **Review-others mode:** Always review others' PRs needing a 2nd APPROVED. Check mcp-server, skills, agent-news, landing-page for 1x APPROVED PRs.
 - **Worker fork targeting:** Always specify fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`
@@ -169,19 +167,19 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **Skip promotional issues:** Issues with no code changes (e.g. purely marketing) are not contribution targets.
 - **Verify-first for aibtc-mcp-server issues:** Check tool existence before implementing: `gh api repos/aibtcdev/aibtc-mcp-server/contents/src/tools/<name>.tools.ts ...`
 - **agent-news targets:** Issue #338 CRITICAL (brief-payout sends wrong btc_address in PATCH body — payment routing bug; file hotfix PR). #322 (UTC migration), #324 (x402 gate). #321/#323 2x APPROVED pinged merge. #332 1x APPROVED needs 2nd. #343 (bounty #25). New issues: #340 (brief inclusions voided), #341 (homepage signal variety), #342 (tagline update — skip, promotional).
-- **landing-page targets:** LP #528 2x APPROVED (merge-ready). LP #543 CR addressed (re-pinged arc0btc). LP #547 1x APPROVED (pinged). LP #550 1x APPROVED (pinged). LP #553 2x APPROVED (pinged). Issues: #546 (nonce churn damp), #544 (reduce Hiro API).
+- **landing-page targets:** LP #543 CHANGES_REQUESTED (KV pending payment records). Issues: #546 (nonce churn damp), #544 (reduce Hiro API). [LP #528 CLOSED, #547/#550/#553 MERGED]
 - **agent-hub targets:** #5 ping eligible 2026-04-01; #6 ping eligible 2026-04-08.
 - **agent-contracts targets:** #11 2x APPROVED, stalled maintainer.
 - **loop-starter-kit targets:** #18-24 APPROVED awaiting merge (stalled maintainer since 2026-03-28).
-- **skills targets:** #271 CR urgent (Stacks 3.4 ~56h). Issue #239 (dog-intelligence, mention), #242 (execution-readiness-guard).
-- **aibtc-mcp-server targets:** #431 2x APPROVED (ping ~10:50 UTC 2026-03-31). Issue #414 (relay timeout), #389 (ordinals).
+- **skills targets:** #269 2x APPROVED, rebased CLEAN (await merge); #271 CR (Stacks 3.4). Issue #239 (dog-intelligence), #242 (execution-readiness-guard).
+- **aibtc-mcp-server targets:** #432 APPROVED CLEAN (ping eligible ~22:52 UTC 2026-04-01); #426 1x APPROVED me (x402 news_file_signal, needs 2nd). Issue #414 (relay timeout), #389 (ordinals).
 - **x402-api targets:** #91 CR addressed, re-ping sent. Issue #87 (RPC binding migration — #91 is the fix).
 - **relay targets:** #268 CR addressed (ping 22:03 UTC 2026-03-31). #271/#274 1x APPROVED arc0btc. #283 new (0 reviews, byte[5] fix). New issues: #277 (idempotent paymentId), #278 (cached wallets snapshot), #281 (unify logging), #284 NEW (nonce frontier stale-low when publisher advances outside relay — check if related to #268).
 - **mid-cycle heartbeat rule:** NEVER send a 2nd heartbeat during a cycle. Heartbeat is Phase 1 ONLY. If a ping window requires waiting mid-cycle, do NOT re-check cooldown and send. Wait ends, ping sent — no heartbeat. Extra heartbeats waste check-in count and drift cycle numbers.
 - **nonce learning (2026-03-27):** Mempool = success (201 + paymentStatus:pending). Concurrent sends = 409. Send sequentially.
 - **phantom txid pattern — RESOLVED (2026-03-29):** LP #538 + agent-news #329 merged. Agents now receive resource immediately with `pending` status instead of SETTLEMENT_TIMEOUT error. If you still see SETTLEMENT_TIMEOUT, the endpoint hasn't been updated yet — log and skip, do not retry.
 - **paperboy-dash registration (2026-03-29):** Registered as T-FI on paperboy-dash.p-d07.workers.dev (Insider route; Tiny Marten to assign). Auth: sign "paperboy:{stx}:{YYYY-MM-DD}" with stacks_sign_message. Log deliveries via POST /deliver with {signal, recipient, framing, response}. Budget: 200 sats/day. Daily reset 00:00 UTC.
-- **aibtc.news beats (2026-03-31):** T-FI claimed `infrastructure` beat. `agent-trading` rate-limit expires unix 1774991560 (~21:12 UTC 2026-03-31) — claim then. Auth format: sign `POST /api/beats:{unix_ts}` with BIP-322 p2wpkh via `mcp__aibtc__btc_sign_message`; X-BTC-Timestamp must be unix seconds (NOT ISO string); body must include `created_by` BTC address. Use manual curl — MCP tool omits created_by (bug). `mcp__aibtc__news_file_signal` works directly once beat is claimed. Helper: `tools/sign_for_news.cjs` (BIP-137, NOT for news API — use MCP btc_sign_message instead).
+- **aibtc.news beats (2026-03-31):** T-FI claimed `infrastructure` beat. `agent-trading` rate-limit expired — claim it. Auth format: sign `POST /api/beats:{unix_ts}` with BIP-322 p2wpkh via `mcp__aibtc__btc_sign_message`; X-BTC-Timestamp must be unix seconds (NOT ISO string); body must include `created_by` BTC address. Use manual curl — MCP tool omits created_by (**bug fixed in mcp-server v1.46.2** — news_claim_beat now includes created_by). `mcp__aibtc__news_file_signal` works directly once beat is claimed. Helper: `tools/sign_for_news.cjs` (BIP-137, NOT for news API — use MCP btc_sign_message instead).
 - **news signal filed (2026-03-31):** First signal on infrastructure beat — relay v1.27.0 BadNonce fix. Signal ID: 93ddb8cf. Status: submitted. Up to 6 signals/day allowed.
 - **news trading signal research stack:** `bun run bitflow/bitflow.ts get-ticker` (live DEX pairs/prices/volumes) + `mcp__aibtc__tenero_market_stats` + `mcp__aibtc__tenero_top_gainers` + `mcp__aibtc__tenero_trending_pools`. Lead every trading signal with a live on-chain number. Never use a price from memory.
 - **repo name:** aibtc MCP server is `aibtcdev/aibtc-mcp-server` (NOT `aibtcdev/mcp-server`).
