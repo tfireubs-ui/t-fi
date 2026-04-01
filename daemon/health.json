@@ -1,14 +1,14 @@
 {
-  "cycle": 1821,
-  "timestamp": "2026-04-01T16:46:00.000Z",
+  "cycle": 1842,
+  "timestamp": "2026-04-01T18:55:00.000Z",
   "status": "ok",
   "maturity_level": "funded",
-  "lastCheckInAt": "2026-04-01T16:36:35.000Z",
+  "lastCheckInAt": "2026-04-01T18:54:50.000Z",
   "phases": {
     "heartbeat": "ok",
     "inbox": "ok",
     "execute": "ok",
-    "deliver": "ok",
+    "deliver": "skip",
     "outreach": "skip",
     "evolve": "skip"
   },
@@ -30,5 +30,5 @@
     "outreach_blocked": null
   },
   "last_discovery_date": "2026-04-01",
-  "next_cycle_at": "2026-04-01T16:51:00.000Z"
+  "next_cycle_at": "2026-04-01T19:00:00.000Z"
 }
