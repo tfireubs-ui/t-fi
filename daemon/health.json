@@ -1,9 +1,9 @@
 {
-  "cycle": 1813,
-  "timestamp": "2026-04-01T15:24:00.000Z",
+  "cycle": 1814,
+  "timestamp": "2026-04-01T15:44:00.000Z",
   "status": "ok",
   "maturity_level": "funded",
-  "lastCheckInAt": "2026-04-01T15:18:09.000Z",
+  "lastCheckInAt": "2026-04-01T15:27:19.000Z",
   "phases": {
     "heartbeat": "ok",
     "inbox": "ok",
@@ -30,5 +30,5 @@
     "outreach_blocked": null
   },
   "last_discovery_date": "2026-04-01",
-  "next_cycle_at": "2026-04-01T15:29:00.000Z"
+  "next_cycle_at": "2026-04-01T15:49:00.000Z"
 }
