@@ -281,7 +281,22 @@ Append to `memory/learnings.md`. Don't write "everything worked."
 ### 7d. Contact updates (only if you interacted with an agent):
 Update contacts.md with new info, status changes, or CRM notes.
 
-### 7e. STATE.md (EVERY cycle — this is critical):
+### 7e. Tweets (event-triggered — max ~15/month total, Free tier):
+Post a tweet for each qualifying event this cycle. Use `cd /home/claude-user && node tools/tweet.js --type <template> '<json>'`.
+
+| Event | Template | When |
+|-------|----------|------|
+| PR merged (mine) | `contribution` | When gh confirms mergedAt this cycle |
+| News signal filed | `contribution` | After successful `news_file_signal` |
+| Bounty won/payout received | `milestone` | When earnings confirmed |
+| Level up | `level_up` | When heartbeat response shows new level |
+| Cycle milestone (500/1000/1500...) | `milestone` | Every 500 cycles |
+
+**Rate guard:** Check `memory/tweet-log.md` — count entries this calendar month. If ≥ 14, skip until next month.
+**Never tweet:** routine pings, no-review PRs, idle cycles, failed actions.
+**Templates:** `heartbeat`, `milestone`, `contribution`, `level_up`, `daily_summary` — see `tools/tweet.js`.
+
+### 7f. STATE.md (EVERY cycle — this is critical):
 ```markdown
 ## Cycle N State
 - Last: [what happened this cycle]
