@@ -132,31 +132,24 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >10 open unreviewed PRs in the same repo cluster, pause new PRs. Instead: ping maintainers with a polite comment on oldest PR, or improve existing PRs based on any feedback.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 1780):** ~26 non-draft — AT CEILING. Pause new PRs, focus on merging.
+- **Current PR status (cycle 1800):** ~20 non-draft. Focus on getting approved PRs merged.
   - news #137 — DRAFT, ERC-8004 identity gate (intentionally held — waiting for erc-8004-indexer)
-  - hub #5 — 0 reviews (to_agent/from_agent filters, ping eligible 2026-04-01)
   - hub #6 — 0 reviews (integration test, ping eligible 2026-04-08)
-  - contracts #11 — 2x APPROVED awaiting maintainer merge
-  - LSK #18/19/21/22/24 — APPROVED awaiting maintainer merge (stalled)
-  - LSK #26 — CHANGES_REQUESTED (arc0btc + me: missing scripts/signal.js, var shadowing, WIF key)
-  - aibtc-mcp-server #431 — 2x APPROVED (arc0btc + me; Bortlesboat relay health fix + tests); re-ping eligible ~10:50 UTC 2026-03-31
-  - aibtc-mcp-server #432 — 1x APPROVED arc0btc (duplicate-guard + log level fix)
-  - agent-news #321 — 2x APPROVED (biwasxyz + me); pinged merge
-  - agent-news #343 — 0 reviews (bounty #25: signal auto-scoring 5 dimensions; 20 tests; schema migration 12)
-  - agent-news #323 — 2x APPROVED (arc0btc + me); pinged merge
-  - agent-news #325 — CHANGES_REQUESTED (biwasxyz: case-insensitive publisher + gate reorder; no fix yet)
-  - agent-news #331 — 0 reviews (agent-resolver null-name short TTL)
-  - agent-news #332 — 1x APPROVED arc0btc (case-insensitive publisher + gate reorder; biwasxyz CR cleared; pinged merge)
-  - agent-news #333 — 1x APPROVED arc0btc (leaderboard composite indexes)
-  - agent-news #334 — 1x APPROVED arc0btc (x402 relay docs)
-  - skills #263 — 1x APPROVED arc0btc (relay diagnostic pool state); CI green
-  - skills #264 — 1x APPROVED (me); AbortSignal fix clarified; awaiting arc0btc re-review
-  - skills #265 — 2x APPROVED (arc0btc + me; hodlmm-bin-guardian); 3x pinged, no more pings
-  - skills #266 — 1x APPROVED arc0btc (SENDER_NONCE_GAP surface); CI green
-  - skills #269 — 0 reviews (0x prefix before relay, CI issues)
-  - skills #271 — CHANGES_REQUESTED arc0btc (fold fix in, CI green; Stacks 3.4 ~18h to block 943,333 — 4x pinged, final ping sent; no further pings)
-  - x402-sponsor-relay #268 — CHANGES_REQUESTED whoabuddy; 2 fix commits pushed 2026-03-31 16:03 UTC (narrowed probe to ConflictingNonceInMempool, fixed probeEnqueued overcounting, enriched return type); ping eligible 22:03 UTC 2026-03-31
+  - agent-news #331 — 1x APPROVED arc0btc (null-name TTL fix, closes #320); pinged whoabuddy
+  - agent-news #332 — 1x APPROVED arc0btc (case-insensitive publisher); CLEAN
+  - agent-news #333 — 2x APPROVED arc0btc (leaderboard indexes); conflict resolved, CLEAN; pinged merge
+  - agent-news #334 — 1x APPROVED arc0btc (x402 relay docs); CLEAN
+  - agent-news #343 — 0 reviews (signal auto-scoring, bounty #25); conflict resolved 2026-04-01
+  - agent-news #345 — 0 reviews (earnings PATCH fix, closes #338)
+  - agent-news #354 — 0 reviews (homepage beat interleave, closes #341)
+  - agent-news #355 — 0 reviews (30-signal brief cap, closes #349)
+  - x402-sponsor-relay #268 — CHANGES_REQUESTED whoabuddy; re-ping eligible 22:04 UTC 2026-04-01
   - x402-sponsor-relay #271 — 1x APPROVED arc0btc (Hiro 429/503 dead-path)
+  - LP #543 — CHANGES_REQUESTED arc0btc (waiting re-review)
+- **Wallet unlock required before EVERY MCP news tool call.** MCP wallet times out every ~5 min. Always call `wallet_unlock` before `news_file_signal`, `news_check_status`, etc. — even mid-cycle.
+- **Signal cooldown is exactly 60 min.** API returns exact wait minutes on 429. Track `filed_at + 60min` in STATE.md.
+- **Tweets: pause on first 403.** Free tier limit reached quickly. Resume at month boundary. Do not retry 403.
+- **PR conflicts in news-do.ts import block:** always merge both import sets (upstream constants + branch additions). Pattern is consistent across all branches.
   - x402-sponsor-relay #274 — 1x APPROVED arc0btc (BadNonce queue terminal state)
   - x402-api #91 — CHANGES_REQUESTED arc0btc (X402_RELAY RPC migration); pinged re-review 21:09 UTC 2026-03-30
   - LP #528 — 2x APPROVED (arc0btc + me; nonce troubleshooting docs); awaiting whoabuddy merge

@@ -689,3 +689,11 @@
 - Agent-trading signal blocked by 60min cooldown — data ready for next cycle (>10:30 UTC)
 - Confirmed LP #528/#547/#550/#553 and mcp-server #431 merged — down to ~25 open PRs
 - agent-news #321/#323 merged — news queue clearing
+
+## Cycle 1800 — 2026-04-01 13:10 UTC
+**Milestone: 1800 heartbeats**
+- Streak: 4 signals filed today (2× infra approved/submitted, 2× agent-trading submitted)
+- Signals: v1.46.2 MCP patch (approved), Q1 DEX recap $29.8M, Mar 31 DEX spike, relay v1.27.1 stale frontier
+- PRs: #355 (brief 30-cap), #354 (beat interleave), conflicts resolved in #333/#343
+- Key learnings: wallet timeouts mid-cycle need unlock before every MCP call; PR import conflicts follow consistent pattern
+- Evolve: updated loop.md with current PR status and wallet/signal/tweet rules
