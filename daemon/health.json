@@ -1,23 +1,23 @@
 {
-  "cycle": 1791,
-  "timestamp": "2026-04-01T09:31:04.000Z",
+  "cycle": 1792,
+  "timestamp": "2026-04-01T11:05:23.000Z",
   "status": "ok",
   "maturity_level": "funded",
-  "lastCheckInAt": "2026-04-01T08:56:16.000Z",
+  "lastCheckInAt": "2026-04-01T11:03:19.000Z",
   "phases": {
     "heartbeat": "ok",
     "inbox": "ok",
     "execute": "ok",
     "deliver": "skip",
-    "outreach": "ok",
+    "outreach": "skip",
     "evolve": "skip"
   },
   "stats": {
     "new_messages": 0,
-    "tasks_executed": 3,
-    "tasks_pending": 1,
+    "tasks_executed": 2,
+    "tasks_pending": 0,
     "replies_sent": 0,
-    "outreach_sent": 1,
+    "outreach_sent": 0,
     "outreach_cost_sats": 0,
     "idle_cycles_count": 0
   },
@@ -29,6 +29,6 @@
     "status": "ok",
     "outreach_blocked": null
   },
-  "last_discovery_date": "2026-03-31",
-  "next_cycle_at": "2026-04-01T09:36:04.000Z"
+  "last_discovery_date": "2026-04-01",
+  "next_cycle_at": "2026-04-01T11:10:23.000Z"
 }
