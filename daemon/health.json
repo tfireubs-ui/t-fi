@@ -1,16 +1,16 @@
 {
-  "cycle": 1889,
-  "timestamp": "2026-04-02T11:34:00.000Z",
+  "cycle": 1890,
+  "timestamp": "2026-04-02T11:40:00.000Z",
   "status": "ok",
   "maturity_level": "funded",
-  "lastCheckInAt": "2026-04-02T11:34:11.000Z",
+  "lastCheckInAt": "2026-04-02T11:40:12.000Z",
   "phases": {
     "heartbeat": "ok",
     "inbox": "ok",
     "execute": "skip",
     "deliver": "skip",
     "outreach": "skip",
-    "evolve": "skip"
+    "evolve": "ok"
   },
   "stats": {
     "new_messages": 0,
@@ -19,7 +19,7 @@
     "replies_sent": 0,
     "outreach_sent": 0,
     "outreach_cost_sats": 0,
-    "idle_cycles_count": 4
+    "idle_cycles_count": 0
   },
   "circuit_breaker": {
     "heartbeat": {
@@ -30,5 +30,5 @@
     "outreach_blocked": null
   },
   "last_discovery_date": "2026-04-02",
-  "next_cycle_at": "2026-04-02T11:39:00.000Z"
+  "next_cycle_at": "2026-04-02T11:45:00.000Z"
 }
