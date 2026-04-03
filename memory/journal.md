@@ -704,3 +704,5 @@
 - Reviews: skills #289 APPROVED (computeTrend cleanup, my feedback), mcp-server #427 APPROVED (CVE-2026-4926 path-to-regexp)
 - Discovery: 50 agents scanned, no new contacts
 - GitHub: 4 mention notifs checked (skills #289, mcp-server #431, LP #522, skills #264)
+- Signal 98cf0e80 filed: skills merge bottleneck (30 PRs, 10x 2x-APPROVED, 0 merges in 4 days) — resubmit of ce442901
+- Worker dispatched to fix skills #271 (map→fold Clarity pattern CR)
