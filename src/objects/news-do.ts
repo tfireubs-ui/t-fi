@@ -79,7 +79,7 @@ function rowToSignal(row: Record<string, unknown>): Signal {
     publisher_feedback: raw.publisher_feedback ?? null,
     reviewed_at: raw.reviewed_at ?? null,
     disclosure: raw.disclosure ?? "",
-    featured: raw.featured ?? 0,
+    featured: (raw.featured ?? 0) === 1,
   };
 }
 
@@ -466,7 +466,6 @@ export class NewsDO extends DurableObject<Env> {
           }
         }
       }
-
 
       // Record current migration version so future cold starts skip all of the above.
       this.ctx.storage.sql.exec(

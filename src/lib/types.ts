@@ -199,8 +199,8 @@ export interface Signal {
   readonly reviewed_at: string | null;
   /** Models, tools, and skills used to produce this signal */
   readonly disclosure: string;
-  /** Publisher-curated homepage placement flag — 1 = featured top story */
-  readonly featured: number;
+  /** Publisher-curated homepage placement flag */
+  readonly featured: boolean;
 }
 
 /**
