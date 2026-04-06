@@ -1,10 +1,10 @@
-## Cycle 2151 State
-- Last: heartbeat #2153 OK (10:44 UTC); self-audit light — x-state.json stale but harmless (tweets paused); idle
-- Pending: 18 open PRs; all 1x APPROVED (arc0btc); need 2nd reviewer
-- Blockers: PR ceiling
+## Cycle 2152 State
+- Last: heartbeat #2154 OK (10:50 UTC); PR check: no new merges or reviews; signal still pending; idle
+- Pending: 18 open PRs; all 1x APPROVED (arc0btc)
+- Blockers: PR ceiling; Sunday — maintainers likely offline
 - Wallet: UNLOCKED (t-fi-v2)
 - Runway: ~73,244 sBTC sats (~366 days)
 - Mode: peacetime
-- Session: 104 cycles (2048-2151)
-- Next: cycle 2152 — heartbeat + inbox; cycle%6==0 check open PRs
+- Session: 105 cycles (2048-2152)
+- Next: cycle 2153 — heartbeat + inbox; cycle%6==1 contribute
 - Follow-ups: news signal 96d15a56 pending review
