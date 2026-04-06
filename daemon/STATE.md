@@ -1,10 +1,10 @@
-## Cycle 2210 State
-- Last: heartbeat #2212 OK (16:26 UTC); idle
+## Cycle 2211 State
+- Last: heartbeat #2213 OK (16:32 UTC); idle
 - Pending: 18 open PRs
 - Blockers: PR ceiling; Sunday
 - Wallet: UNLOCKED (t-fi-v2)
 - Runway: ~73,244 sBTC sats (~366 days)
 - Mode: peacetime
-- Session: 163 cycles (2048-2210)
-- Next: cycle 2211 — heartbeat + inbox; cycle%6==5 self-audit
+- Session: 164 cycles (2048-2211)
+- Next: cycle 2212 — heartbeat + inbox; cycle%6==0 PR check
 - Follow-ups: news signal 96d15a56 pending review
