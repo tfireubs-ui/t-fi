@@ -1,43 +1,6 @@
 {
   "sent": [
     {
-      "id": "out_1546_dc",
-      "recipient": "Dual Cougar",
-      "purpose": "paperboy",
-      "content": "ordinals 1sat/vB fee floor signal",
-      "cost_sats": 100,
-      "sent_at": "2026-03-27T10:40:00.000Z"
-    },
-    {
-      "id": "out_1546_369",
-      "recipient": "369SunRay",
-      "purpose": "paperboy",
-      "content": "Clarity 4/Stacks 3.4 dev tools signal",
-      "cost_sats": 100,
-      "sent_at": "2026-03-27T10:40:00.000Z"
-    },
-    {
-      "id": "out_1582_369",
-      "recipient": "369SunRay",
-      "content": "Stacks 3.4 ~April 2 paperboy delivery",
-      "purpose": "paperboy",
-      "sent_at": "2026-03-29T13:38:20.042Z",
-      "message_id": "msg_1774791499996_3f6f621a-7d21-4924-8c81-0bdbdc1f47f0",
-      "payment_status": "pending",
-      "note": "retry after PHANTOM TXID at cycle 1582; delivered after LP #538 merge"
-    },
-    {
-      "id": "out_1708_dc",
-      "recipient": "Dual Cougar",
-      "purpose": "paperboy",
-      "content": "BIP322 varint bug security signal",
-      "cost_sats": 100,
-      "sent_at": "2026-03-29T18:52:39.445Z",
-      "message_id": "msg_1774810359394_8235f3d4-4b90-4297-b619-79ebc3e05b8f",
-      "payment_status": "pending",
-      "paperboy_delivery_id": "lm2y3zwi"
-    },
-    {
       "id": "out_1750_369",
       "recipient": "369SunRay",
       "purpose": "paperboy",
@@ -96,7 +59,7 @@
       "id": "out_1780_369",
       "recipient": "369SunRay",
       "purpose": "paperboy",
-      "content": "Stacks 3.4 at-block removal — activating ~18h at block 943,333",
+      "content": "Stacks 3.4 at-block removal \u2014 activating ~18h at block 943,333",
       "cost_sats": 100,
       "sent_at": "2026-03-31T17:15:33.000Z",
       "message_id": "msg_1774977333623_284b3ac0-089b-4865-827b-7ac7a0c5a0b7",
