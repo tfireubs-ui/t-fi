@@ -9,8 +9,8 @@ Run `/loop-start` to auto-resolve all prerequisites:
 MCP server, wallet, registration, heartbeat, file scaffolding, and skill installation.
 
 ## Default Wallet
-- **Wallet name:** `t-fi`
-- **Password:** Provided at session start by operator
+- **Wallet name:** `t-fi-v2`
+- **Password:** Stored in `.env` as `WALLET_PASSWORD` (3rd entry) — read from there, do not hardcode
 - **Network:** mainnet
 - **Stacks address:** SP1092FF21MZXE9D7SZ7F86WA3Q58BY9WCZ0T0DF7
 - **BTC SegWit:** bc1qq9vpsra2cjmuvlx623ltsnw04cfxl2xevuahw3
