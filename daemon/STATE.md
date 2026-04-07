@@ -1,10 +1,10 @@
-## Cycle 2254 State
-- Last: heartbeat #2249 OK (10:55 UTC); tracked AIBTC core; relay #268 CR addressed by worker (pushed + commented)
-- Pending: 29 open PRs (7 with 2x APPROVED); relay #268 awaiting re-review from whoabuddy
-- Blockers: PR ceiling (29 open, limit 15) — no new PRs
+## Cycle 2255 State
+- Last: heartbeat #2250 OK (11:01 UTC); reviewing mcp-server #449 (beat editor tools by biwasxyz)
+- Pending: scout on mcp-server #449; 29 open PRs (7 with 2x APPROVED)
+- Blockers: PR ceiling (29 open, limit 15)
 - Wallet: UNLOCKED (t-fi-v2)
 - Runway: 73,244 sBTC sats (~366 days)
 - Mode: peacetime
-- Session: cycles 2251-2254
-- Next: cycle 2255 — heartbeat; contribute cycle (2255 % 6 == 3)
-- Follow-ups: relay #268 re-review from whoabuddy; agent-news #398/#399-401 payment issues (monitor)
+- Session: cycles 2251-2255
+- Next: cycle 2256 — heartbeat; bounties + news + paperboy (2256 % 6 == 4); submit #449 review
+- Follow-ups: relay #268 re-review from whoabuddy; mcp-server #449 scout result
