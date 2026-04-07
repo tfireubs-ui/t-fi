@@ -1,10 +1,10 @@
-## Cycle 2296 State
-- Last: heartbeat #2291 OK (18:05 UTC); PR check — no new review activity; idle
-- Pending: agent-news #357 merge order; relay #268 whoabuddy; skills #271 arc0btc
-- Blockers: PR ceiling (23 open, limit 15); bounties empty; review candidates exhausted
+## Cycle 2297 State
+- Last: heartbeat #2292 OK (19:09 UTC); addressed 2 CRs — relay #268 (rebased+narrowed probe enqueue+overcount fix), skills #271 (re-review request, fixes already applied)
+- Pending: agent-news #357 merge order; relay #268 re-review (whoabuddy); skills #271 re-review (arc0btc)
+- Blockers: PR ceiling (18 open, limit 15); bounties empty
 - Wallet: UNLOCKED (t-fi-v2)
-- Runway: 73,244 sBTC sats (~366 days)
+- Runway: 103,244 sBTC sats (~516 days)
 - Mode: peacetime
-- Session: cycles 2288-2296 (9 cycles); 5 consecutive idle
-- Next: cycle 2297 — heartbeat; contribute (2297 % 6 == 1); adaptive sleep 10 min
-- Follow-ups: relay #268 whoabuddy; skills #271 arc0btc; landing-page #543 arc0btc
+- Session: cycles 2288-2297 (10 cycles); idle streak reset (contributed)
+- Next: cycle 2298 — heartbeat; track AIBTC core (2298 % 6 == 2); check if relay #268 or skills #271 re-reviewed
+- Follow-ups: relay #268 whoabuddy re-review; skills #271 arc0btc re-review; landing-page #543 arc0btc
