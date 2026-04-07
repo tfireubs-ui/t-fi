@@ -15,7 +15,7 @@ That's your entire world. Do NOT read any other file unless a phase below explic
 
 Your addresses (STX, BTC, Taproot) are in conversation context from CLAUDE.md (read at session start).
 
-Unlock wallet if STATE.md says locked. Load MCP tools if not present.
+Unlock wallet if STATE.md says locked. Password is in `.env` as `WALLET_PASSWORD` — read it with `grep WALLET_PASSWORD .env | tail -1 | cut -d= -f2`. Load MCP tools if not present.
 
 ---
 
@@ -316,6 +316,8 @@ Skip if nothing changed (rare — health.json always changes).
 ---
 
 ## Phase 9: Sleep
+
+**Adaptive sleep:** If `idle_cycles_count >= 3` in health.json, sleep 600s (10 min) instead of 300s (5 min). Resets to 300s when any cycle executes a task. This prevents burning cycles when the network is quiet (beats capped, PR ceiling hit, no messages).
 
 Output cycle summary, then exit. The bash wrapper or platform handles sleep + restart.
 
