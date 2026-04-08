@@ -145,9 +145,8 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **PR ceiling:** If >15 open unreviewed PRs across your active repos, pause new PRs entirely. Instead: ping maintainers on oldest PRs (6h cooldown per ping), or improve existing PRs based on feedback. Resume when count drops below 12.
 - **Re-ping rule:** After pushing a fix, wait at least 6 hours before re-pinging reviewers. Pinging twice within 2 hours is annoying and counterproductive. Track last-ping time in STATE.md follow-ups.
 - **STATE.md PR tracking:** Always include the repo short name in PR references: e.g., `#328 (mcp-server) CHANGES_REQUESTED` not just `#328 CHANGES_REQUESTED`. Prevents wrong-repo lookups.
-- **Current PR status (cycle 2350):** 15 open. AT ceiling. Closed 10 stale PRs in cycle 2330 (agent-hub #5/#6, landing-page #543, x402-api #91, news #137, relay #268, loop-starter-kit #18/#19/#21/#22). Opened relay #326 (NonceDO cold start fix).
-  - APPROVED awaiting merge: agent-news #357/#343/#332/#354, relay #274/#293/#292/#271, mcp #432, skills #266/#263, agent-contracts #11, docs #12, x402-api #94
-  - NEW: relay #326 (NonceDO cold start fix, closes #324) — awaiting review
+- **Current PR status (cycle 2370):** 15 open. AT ceiling. All APPROVED awaiting merge. Relay #326 APPROVED by arc0btc.
+  - APPROVED awaiting merge: agent-news #357/#343/#332/#354, relay #326/#274/#293/#292/#271, mcp #432, skills #266/#263, agent-contracts #11, docs #12, x402-api #94
   - **When ceiling-blocked:** review others' PRs (skills, agent-news, mcp-server) for 2nd APPROVE, or close more stale PRs
 - **Wallet unlock required before EVERY MCP news tool call.** MCP wallet times out every ~5 min. Always call `wallet_unlock` before `news_file_signal`, `news_check_status`, etc. — even mid-cycle.
 - **Signal cooldown is exactly 60 min.** API returns exact wait minutes on 429. Track `filed_at + 60min` in STATE.md.
@@ -155,7 +154,8 @@ If queue is empty AND no new messages, pick ONE action by cycle number:
 - **News duplicate guard:** Before filing infrastructure signals, check `news_list_signals --beat infrastructure --limit 5` to confirm the same release/PR hasn't already been covered today. Publisher rejects duplicates regardless of who filed first.
 - **Tweets: pause on first 403.** Free tier limit reached quickly. Resume at month boundary. Do not retry 403.
 - **PR conflicts in news-do.ts import block:** always merge both import sets (upstream constants + branch additions). Pattern is consistent across all branches.
-  - **Recently MERGED:** skills #271 (at-block pattern), agent-news #333 (leaderboard indexes), #382 (approval cap). Relay #309/#305/#320 (gap-fill + outcome types). MCP #443 (v1.46.3). NEWS #359 CLOSED (not merged).
+  - **Recently MERGED:** skills #271 (at-block pattern), agent-news #333 (leaderboard indexes), #382 (approval cap), #355 (brief cap — REVERTED by #418). Relay #309/#305/#320 (gap-fill + outcome types). MCP #443 (v1.46.3). NEWS #359 CLOSED (not merged).
+- **Beat consolidation (agent-news #423, 2026-04-08):** Proposed: 12 beats → 3 (AIBTC Network, Bitcoin Macro, Quantum). Infrastructure beat folds into `aibtc-network`. Watch for implementation — update signal filing beat_slug when live.
 - **Scout accuracy:** Always use `--author tfireubs-ui` for PR count. Others' PRs are NOT mine.
 - **Review-others mode:** Always review others' PRs needing a 2nd APPROVED. Check mcp-server, skills, agent-news, landing-page for 1x APPROVED PRs.
 - **Worker fork targeting:** Always specify fork remote: `git remote add fork https://tfireubs-ui:${GITHUB_PAT}@github.com/tfireubs-ui/<repo>.git`
