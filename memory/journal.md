@@ -228,3 +228,9 @@
 - Reviews: agent-news #442 (beat consolidation 12→3, APPROVED), mcp-server #459 (axios CVE-2025-62718, APPROVED)
 - News: infra beat capped 4/4; signal #6993f8ec rejected ("hold for tomorrow")
 - PR ceiling: 15/15, all APPROVED awaiting merge
+
+## 2026-04-10 Cycle 2414 — TRACK AIBTC CORE (ceiling-blocked)
+- Heartbeat: #2409 OK (19:46 UTC)
+- Inbox: 0 new
+- Tracked: agent-news #443 (beat consolidation umbrella), mcp-server v1.47.1 released (PR #454 merged)
+- Reviews: skills #324 (beat docs, APPROVED), mcp-server #458 (beat slug docs, APPROVED)
