@@ -10,7 +10,8 @@
 - PR ceiling: 15/15, all APPROVED awaiting merge
 - Signal 2: relay observability gap (3 issues in 48h post-v1.28.0, ID 6143a2c5)
 - Commented on relay #329 linking sender nonce desync to v1.28.0 fix
-- Reviewed: agent-news #434 (editorial review validation, APPROVED), relay #331 (axios security, APPROVED)
+- Reviewed: agent-news #434 (editorial review validation, APPROVED), relay #331 (axios security, APPROVED), landing-page #577/#578 (APPROVED)
+- Signal 3: MCP #454 staged delivery fix (ID a0d14dc6)
 
 ## 2026-04-07 Cycle 2251 — SELF-AUDIT
 - Heartbeat: #2246 OK (09:22 UTC)
