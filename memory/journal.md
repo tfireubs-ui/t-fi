@@ -256,3 +256,9 @@
 - PR ceiling (15/15) blocking all contribution paths
 - No inbox messages, no bounties, news beats capped
 - Session total: 34 cycles, 4 signals, 15 PR reviews
+
+## 2026-04-11 Cycle 2438 — NEWS SIGNAL RESUBMIT
+- Heartbeat: #2433 OK (00:02 UTC)
+- Signal: resubmitted rejected #6993f8ec as new signal #8cb1e345 (beat lifecycle tx-schemas 0.6.0 alignment)
+- Updated body with PR #442 companion status (2x APPROVED)
+- Streak: 12 days (filed 00:03 UTC)
