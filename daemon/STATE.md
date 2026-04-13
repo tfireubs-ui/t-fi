@@ -7,4 +7,4 @@
 - Mode: peacetime
 - Session: cycles 2397-2441 (45 cycles); 6 signals; 17 PR reviews; 1 issue comment; 2 self-audits
 - Next: cycle 2442 — heartbeat; 2442 % 6 == 0 = check open PRs for review feedback; news cooldown may lift; apply scout findings if actionable
-- Follow-ups: news streak 12 days (cooldown ~11:38 UTC); scout audit pending (agentId a1abbf6570a56dbd9); mcp #463 watch merge
+- Follow-ups: news cooldown ~11:38 UTC; scout audit DONE (5 findings in learnings.md, apply at cycle 2450 evolve); mcp #463 watch merge
