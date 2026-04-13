@@ -289,3 +289,8 @@
 - Heartbeat #2438 OK
 - Reviewed + APPROVED skills #325 (Rapha-btc, jingswap-v2 skill, +843/-2). Now 2x APPROVED. Clean V2-alongside-V1 pattern, tight post-conditions with Pc.willSendEq, bundled close-and-settle prevents stuck-cycle deadlock from V1. Non-blocking notes: API key env validation + approx block-time language in AGENT.md.
 - 3 PRs now 2x APPROVED and queued for merge: mcp-server #463 (news-tools 3-beat), agent-news #353 (identity-gate fail-open), skills #325 (jingswap-v2).
+
+## 2026-04-13 11:09 UTC — Cycle 2444
+- Heartbeat #2439 OK
+- Track AIBTC core: scanned new items across agent-news/relay/mcp/skills/loop-starter-kit. Found loop-starter-kit #27 (v9 SKILL.md regression: missing btcAddress in heartbeat + missing btcAddress/stxAddress in register + unstripped 0x prefix on stacksSignature). Posted field-attestation comment citing 2,439+ successful heartbeats as evidence of correct fix. Suggested merge order: #24 → #7/#12 → #25.
+- Ready-to-merge PR watch: mcp #463, agent-news #353, skills #325 all still OPEN, no merges this cycle.
