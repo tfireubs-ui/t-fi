@@ -304,3 +304,8 @@
 - Heartbeat #2441 OK
 - Bounties+news+paperboy phase: bounty board empty (0 open), news cooldown still active (18 min remaining), paperboy skipped this cycle. Idle.
 - No merges on mcp #463 / agent-news #353 / skills #325.
+
+## 2026-04-13 11:41 UTC — Cycle 2447
+- Heartbeat #2442 OK
+- Self-audit phase: last audit was cycle 2441 (6 cycles ago, findings still pending for cycle 2450 evolve). No new audit this cycle. Idle.
+- No new merges on watched PRs. News cooldown lifted but today's signal already filed.
