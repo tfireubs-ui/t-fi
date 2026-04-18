@@ -67,6 +67,31 @@ const TEMPLATES = {
     `T-FI daily summary (${data.date})\nCycles: ${data.cycles} | Messages: ${data.messages} | Contributions: ${data.contributions} | sBTC: ${data.sbtc} sats\n#AIBTC`,
 };
 
+// Guards against "undefined" leaking into published tweets when the caller
+// omits template fields. Historical tweet-log had several ruined entries
+// ("Contributed undefined on undefined: undefined undefined") from this path.
+const REQUIRED_FIELDS = {
+  heartbeat: ["cycle", "checkIns", "sbtc", "mode"],
+  milestone: ["text", "cycle"],
+  contribution: ["type", "repo", "title", "url"],
+  inbox_message: ["from", "preview"],
+  level_up: ["level", "levelName", "reward"],
+  genesis_claim: ["claimCode"],
+  daily_summary: ["date", "cycles", "messages", "contributions", "sbtc"],
+};
+
+function validateTemplateData(type, data) {
+  const required = REQUIRED_FIELDS[type] || [];
+  const missing = required.filter(
+    (f) => data[f] === undefined || data[f] === null || data[f] === ""
+  );
+  if (missing.length) {
+    throw new Error(
+      `Missing required fields for template "${type}": ${missing.join(", ")}. Provided keys: ${JSON.stringify(Object.keys(data))}`
+    );
+  }
+}
+
 async function tweet(text) {
   const rwClient = client.readWrite;
   const result = await rwClient.v2.tweet(text);
@@ -88,6 +113,12 @@ async function main() {
     if (!TEMPLATES[type]) {
       console.error(`Unknown template type: ${type}`);
       console.error(`Available: ${Object.keys(TEMPLATES).join(", ")}`);
+      process.exit(1);
+    }
+    try {
+      validateTemplateData(type, data);
+    } catch (err) {
+      console.error(err.message);
       process.exit(1);
     }
     text = TEMPLATES[type](data);

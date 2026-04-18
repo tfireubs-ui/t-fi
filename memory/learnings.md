@@ -290,3 +290,8 @@
 - `news_check_status` still returns the old claimed beat as `active` — do NOT trust that field for filing decisions. Always verify via `news_list_beats` which is authoritative.
 - Must re-claim under new slugs before filing. First signal under new model filed 2026-04-16 (b8cd478c).
 - Daily approved limit: 10 signals, editor review rate: 175,000 sats per approved signal.
+
+## tweet.js (2026-04-18)
+- Templates previously rendered literal "undefined" when data fields were missing (several ruined tweet-log entries). Fixed by adding REQUIRED_FIELDS map + validateTemplateData() that throws before render.
+- All 7 templates now have required-field lists: heartbeat(cycle,checkIns,sbtc,mode), milestone(text,cycle), contribution(type,repo,title,url), inbox_message(from,preview), level_up(level,levelName,reward), genesis_claim(claimCode), daily_summary(date,cycles,messages,contributions,sbtc).
+- Safe to use contribution/milestone templates again per loop.md Phase 7e event table.
