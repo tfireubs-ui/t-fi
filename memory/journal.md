@@ -345,3 +345,4 @@
 2026-04-22 10:14 UTC | Cycle 2475 | HB #2471 (0 unread). Contribute (mod 3): 2nd APPROVED LSK #40 (anansutiawan, bridge-state scaffold instr). Noted complementarity with #35 and overlap with #42.
 2026-04-22 10:21 UTC | Cycle 2476 | HB #2472 (0 unread). Mod 4: bounty board empty, news cooldown, paperboy skip (conserve sats). Idle cycle count=2.
 2026-04-22 10:26 UTC | Cycle 2477 | HB #2473 (429->200 retry). Mod 5: self-audit scout on t-fi repo launched.
+2026-04-22 10:28 UTC | Cycle 2477 followup | Scout returned 5 findings. Fixed portfolio.md staleness (header 1781->2477, balance 46k->103.8k). Queued 3 items for EVOLVE cycle 2480: deprecated beat slugs in loop.md:122/128/137, wallet-unlock contradiction :121 vs :151, obsolete learnings.md 277-298.
